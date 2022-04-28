@@ -42,7 +42,8 @@
         position: sticky;
       }
 
-      .top-bar svg {
+      .svg-button {
+        cursor: pointer;
         height: 32px;
         width: 32px;
       }
@@ -107,10 +108,6 @@
         transform: translateX(26px);
       }
 
-      .svg-button {
-        cursor: pointer;
-      }
-
       .main-content-container {
         background: var(--color-background);
         color: var(--color-text);
@@ -142,15 +139,6 @@
         --color-background: var(--color-white);
         --color-text: var(--color-black);
       }
-
-      @keyframes reveal {
-        from {
-          clip-path: inset(0 0 0 100%);
-        }
-        to {
-          clip-path: inset(0 0 0 0);
-        }
-      }
       
       .main-content-container.theme-transition.bs {
         left: 0;
@@ -173,12 +161,12 @@
         color: var(--color-text);
       }
 
-      ul {
+      dl {
         list-style: none;
         padding: 0;
       }
 
-      ul li {
+      dl div {
         display: flex;
         border: 1px solid var(--color-text);
         font-size: 2rem;
@@ -186,7 +174,7 @@
         margin: 24px 0;
       }
 
-      ul li label {
+      dl div dt {
         display: flex;
         background: var(--color-text);
         color: var(--color-background);
@@ -194,10 +182,10 @@
         padding: 12px;
       }
 
-      ul li .content {
+      dl div dl {
         padding: 12px;
-        text-align: center;
         width: 100%;
+        margin: 0;
       }
 
       .sheep-head-logo {
@@ -206,6 +194,15 @@
 
       .sheep-head-logo g path {
         stroke: var(--color-text);
+      }
+
+      @keyframes reveal {
+        from {
+          clip-path: inset(0 0 0 100%);
+        }
+        to {
+          clip-path: inset(0 0 0 0);
+        }
       }
     </style>
 
@@ -227,27 +224,26 @@
     <main class='main-content-container white-sheep'>
       <div class='main-content'>
         <h1>A Software Company</h1>
-        <ul>
-          <li>
-            <label>Genre</label>
-            <span class="content">Information Sharing</span>
-          </li>
-          <li>
-            <label>Motto<span class='ws-mode'>&nbsp;(latin)</span></label>
-            <span class='content bs-mode'>"Less bullshit"</span>
-            <!-- From Stackoverflow. Don't trust this translation. https://latin.stackexchange.com/questions/13512/what-is-bullshit-in-latin#:~:text=You%20can%20also%20say%3A%20Nugas,garris!%20or%20simply%3A%20nugas!  -->
-            <span class='content ws-mode'>"Minus nugae"</span>
-          </li>
-          <li>
-            <label>Sole Proprietor</label>
-            <span class="content">Jacob Covey</span>
-          </li>
-          <li>
-            <label>Open Source?</label>
-            <span class='content bs-mode'>You bet your ass!</span>
-            <span class='content ws-mode'>You betcha!</span>
-          </li>
-        </ul>
+        <dl>
+          <div>
+            <dt>Genre</dt>
+            <dl>Information Sharing</dl>
+          </div>
+          <div>
+            <dt>Motto<span class='ws-mode'>&nbsp;(latin)</span></dt>
+            <dl class='bs-mode'>"Less bullshit"</dl>
+            <dl class='ws-mode'>"Minus nugae"</dl>
+          </div>
+          <div>
+            <dt>Sole Proprietor</dt>
+            <dl>Jacob Covey</dl>
+          </div>
+          <div>
+            <dt>Open Source?</dt>
+            <dl class='bs-mode'>You bet your ass!</dl>
+            <dl class='ws-mode'>You betcha!</dl>
+          </div>
+        </dl>
 
         <figure>
           <svg class="sheep-head-logo" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 1140 977" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
