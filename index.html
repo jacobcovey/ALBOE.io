@@ -27,21 +27,26 @@
       h1 {
         margin: 0;
         font-size: 3em;
+        text-align: center;
       }
 
       h3 {
         margin: 0;
-        font-size: 2em;
+        font-size: 1.5em;
       }
 
       .top-bar {
+        /* position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 1; */
         background: var(--color-white);
         color: var(--color-black);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 12px 24px;
-        position: sticky;
+        padding: 12px;
       }
 
       .svg-button {
@@ -164,14 +169,15 @@
       }
 
       dl {
-        list-style: none;
+        max-width: calc(100% - 24px);
         padding: 0;
+        margin: 0;
       }
 
       dl div {
         display: flex;
         border: 1px solid var(--color-text);
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: bold;
         margin: 24px 0;
       }
@@ -180,8 +186,8 @@
         display: flex;
         background: var(--color-text);
         color: var(--color-background);
-        min-width: 234px;
         padding: 12px;
+        min-width: 137px;
       }
 
       dl div dl {
@@ -191,11 +197,35 @@
       }
 
       .sheep-head-logo {
-        width: 50vw;
+        width: 66.66vw;
       }
 
       .sheep-head-logo g path {
         stroke: var(--color-text);
+      }
+
+      @media only screen and (min-width: 600px) {
+        h3 {
+          margin: 0;
+          font-size: 2em;
+        }
+
+        .top-bar {
+          padding: 12px 24px;
+        }
+
+        dl div dt {
+          display: flex;
+          min-width: 234px;
+        }
+
+        dl div {
+          font-size: 2rem;
+        }
+
+        .sheep-head-logo {
+          width: 50vw;
+        }
       }
 
       @keyframes reveal {
