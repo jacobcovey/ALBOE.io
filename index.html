@@ -14,7 +14,9 @@
         --color-primary: var(--color-dark-gray);
         --color-background: var(--color-white);
         --color-accent: var(--color-green);
-        --color-text: var(--color-black)
+        --color-text: var(--color-black);
+
+        --transition-time: 400ms;
       }
 
       body {
@@ -74,8 +76,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-        -webkit-transition: .4s;
-        transition: .4s;
+        -webkit-transition: var(--transition-time);
+        transition: var(--transition-time);
         border-radius: 34px;
         border: 2px solid var(--color-black);
       }
@@ -88,8 +90,8 @@
         left: 4px;
         bottom: 3px;
         background-color: var(--color-white);
-        -webkit-transition: .4s;
-        transition: .4s;
+        -webkit-transition: var(--transition-time);
+        transition: var(--transition-time);
         border-radius: 50%;
         border: 2px solid var(--color-black);
       }
@@ -129,11 +131,11 @@
       }
 
       .main-content-container.theme-transition.pre-bs {
-        transition: width .4s;
+        transition: width var(--transition-time);
       }
 
       .main-content-container.theme-transition.ws {
-        animation: reveal .4s forwards;
+        animation: reveal var(--transition-time) forwards;
         width: 100vw;
         --color-primary: var(--color-dark-gray);
         --color-background: var(--color-white);
@@ -305,6 +307,9 @@
     </main>
 
     <script>
+      const cssTransitionTime = getComputedStyle(document.documentElement).getPropertyValue('--transition-time');
+
+      const CSS_TRANSITION_MS = cssTransitionTime ? Number(cssTransitionTime.substring(0, cssTransitionTime.length - 2)) : 400;
       const LS_DARK = 'black-sheep-mode';
 
       const setTheme = (dark, setLocalStorage) => {
@@ -337,8 +342,8 @@
               const contentContainer = window.document.getElementsByClassName('main-content-container')[0];
               contentContainer.classList.remove('white-sheep');
               contentContainer.classList.add('black-sheep');
-            }, 400);
-          }, 4);
+            }, CSS_TRANSITION_MS);
+          }, 1);
         } else {
           setTimeout(() => {
             mainContentContainerCopy && mainContentContainerCopy.classList.add('ws') && mainContentContainerCopy.classList.add('white-sheep');;
@@ -350,8 +355,8 @@
               const contentContainer = window.document.getElementsByClassName('main-content-container')[0];
               contentContainer.classList.remove('black-sheep');
               contentContainer.classList.add('white-sheep');
-            }, 400);
-          }, 4);
+            }, CSS_TRANSITION_MS);
+          }, 1);
         }
 
       }
@@ -373,11 +378,10 @@
       // watch for user theme switching
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
         if (window.localStorage.getItem(LS_DARK) === null) {
-          const newColorScheme = event.matches ? 'dark' : 'light';
-          if (newColorScheme === 'dark') {
+          if (event.matches === 'dark') {
             setTheme(true);
             themeSwitch.checked = true;
-          } else if (newColorScheme === 'light') {
+          } else {
             setTheme(false);
             themeSwitch.checked = false;
           }

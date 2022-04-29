@@ -1,0 +1,91 @@
+{
+  "directories": [
+    { 
+      "id": "0-dir",
+      "title": "Projects",
+      "subtitle": "What ALBOE is making",
+      "slug": "/projects",
+      "subs": [
+        {
+          "id": "0-prj",
+          "slug": "/projects/dotHTML",
+          "title": "dotHTML",
+          "subtitle": "For the ❤️ of HTML"     
+        },
+        {
+          "id": "1-prj",
+          "slug": "/projects/codeHTML",
+          "title": "codeHTML.app",
+          "subtitle": "A MacOs/iOS native text editor for building web pages"     
+        }
+      ]
+    },
+    { 
+      "id" : "1-dir",
+      "title" : "dotHTML Pieces",
+      "subtitle": "Perennial .html documents minted as NFTs",
+      "slug": "/pieces",
+      "subs": [
+        {
+          "id": "0-pe",
+          "slug": "/pieces/gatsbyOnTheInternet",
+          "title": "Gatsby On The Internet",
+          "subtitle": "The Great Gatsby by F. Scott Fitzgerald (web book)",
+          "tags": [
+            "public-domain",
+            "book"
+          ]
+        },
+        {
+          "id": "1-pe",
+          "slug": "/pieces/theOldElwaDam",
+          "title": "The Old Elwa Dam",
+          "subtitle": "By Jacob Covey & Abby Christensen",
+          "tags": [
+            "original"
+          ]
+        }
+      ]
+    },
+    { 
+      "id": "2-dir",
+      "title": "Posts",
+      "subtitle": "'\"The hell if I know\"",
+      "slug": "/posts",
+      "subs": [
+        {
+          "id": "0-po",
+          "slug": "/posts/iWantToPlay",
+          "title": "I Want To Play",
+          "subtitle": ""        
+        }
+      ]
+    },
+    {
+      "id": "3-dir",
+      "title": "Internal Resources",
+      "subtitle": "Things we feed the website (e.g. stylesheets, WebComponents, etc.)",
+      "slug": "/internalResources",
+      "subs": [
+        {
+          "id": "0-ir",
+          "slug": "/internalResources/iWantToPlay",
+          "title": "Site Structure",
+          "subtitle": "Where I am typing this right now."        
+        },
+        {
+          "id": "1-ir",
+          "slug": "/internalResources/styleSheets",
+          "title": "Style Sheets",
+          "subtitle": "The .css files that style this website"        
+        },
+        {
+          "id": "2-ir",
+          "slug": "/internalResources/webComponents",
+          "title": "Web Components",
+          "subtitle": "Vanilla WebComponents in .js files"        
+        }
+      ]
+    }
+  ]
+}
