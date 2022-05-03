@@ -1,7 +1,7 @@
 const SHEEP_HEAD_LOGO_STYLE = `
   .sheep-head-logo {
-    width: 66.66vw;
     --lettering-color: var(--color-text);
+    margin: 0;
   }
 
   .sheep-head-logo g path {
@@ -10,14 +10,14 @@ const SHEEP_HEAD_LOGO_STYLE = `
     transform-origin: center;
   }
 
-  .shake .sheep-head-logo g path {
+  .shake.sheep-head-logo g path {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
   }
 
-   .hide-lettering .sheep-head-logo g path.lettering {
+   .hide-lettering.sheep-head-logo g path.lettering {
     opacity: 0;
   }
   
@@ -25,12 +25,6 @@ const SHEEP_HEAD_LOGO_STYLE = `
     stroke: var(--lettering-color);
     opacity: 1;
     transition: opacity .15s;
-  }
-
-  @media only screen and (min-width: 600px) {
-    .sheep-head-logo {
-      width: 50vw;
-    }
   }
 
   @keyframes shake {
@@ -69,9 +63,11 @@ class SheepHeadLogo extends HTMLElement {
     const shadow = this.attachShadow({mode: 'open'});
 
     const container = document.createElement('figure');
+    container.classList.add('sheep-head-logo');
     const initialAnimation = this.hasAttribute('initial-animation');
     if (initialAnimation) {
-      container.setAttribute('class', 'pre-animate hide-lettering');
+      container.classList.add('pre-animate');
+      container.classList.add('hide-lettering');
 
       container.addEventListener('click', () => {
         container.classList.add('shake');

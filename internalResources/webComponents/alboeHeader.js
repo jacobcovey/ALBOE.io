@@ -28,6 +28,7 @@ const STYLE_TEXT_CONTENT = `
     display: flex;
     align-items: center;
     gap: 8px;
+    height: var(--header-bar-content-height);
   }
 
   .svg-btn svg {
@@ -206,19 +207,26 @@ function setTheme(dark, setLocalStorage) {
   const root = document.documentElement;
   let mainContentContainerCopy = null;
   if (setLocalStorage) {
-    const mainContentContainer = window.document.getElementsByClassName('main-content-container')[0];
-    mainContentContainerCopy = mainContentContainer.cloneNode(true);
+    const mainContent = window.document.getElementsByClassName('main-content')[0];
+    mainContentCopy = mainContent.cloneNode(true);
+    mainContentContainerCopy = document.createElement('div');
+    mainContentContainerCopy.classList.add('main-content-container');
+    mainContentContainerCopy.appendChild(mainContentCopy);
     mainContentContainerCopy.classList.add('theme-transition');
     if (dark) {
       mainContentContainerCopy.classList.remove('white-sheep');
       mainContentContainerCopy.classList.add('black-sheep');
+      mainContentCopy.classList.remove('white-sheep');
+      mainContentCopy.classList.add('black-sheep');
       mainContentContainerCopy.classList.add('pre-bs');
     } else {
       mainContentContainerCopy.classList.add('white-sheep');
       mainContentContainerCopy.classList.remove('black-sheep');
+      mainContentCopy.classList.add('white-sheep');
+      mainContentCopy.classList.remove('black-sheep');
     }
-    mainContentContainerCopy.style.height = mainContentContainer.scrollHeight + 'px';
-    mainContentContainer.parentNode.appendChild(mainContentContainerCopy);
+
+    mainContent.parentNode.appendChild(mainContentContainerCopy);
   }
 
   if (dark) {
@@ -229,7 +237,7 @@ function setTheme(dark, setLocalStorage) {
         root.style.setProperty('--color-background', 'var(--color-black)');
         root.style.setProperty('--color-text', 'var(--color-white)');
         setLocalStorage && mainContentContainerCopy.parentNode.removeChild(mainContentContainerCopy);
-        const contentContainer = window.document.getElementsByClassName('main-content-container')[0];
+        const contentContainer = window.document.getElementsByClassName('main-content')[0];
         contentContainer.classList.remove('white-sheep');
         contentContainer.classList.add('black-sheep');
       }, CSS_TRANSITION_MS);
@@ -242,7 +250,7 @@ function setTheme(dark, setLocalStorage) {
         root.style.setProperty('--color-background', 'var(--color-white)');
         root.style.setProperty('--color-text', 'var(--color-black)');
         setLocalStorage && mainContentContainerCopy.parentNode.removeChild(mainContentContainerCopy);
-        const contentContainer = window.document.getElementsByClassName('main-content-container')[0];
+        const contentContainer = window.document.getElementsByClassName('main-content')[0];
         contentContainer.classList.remove('black-sheep');
         contentContainer.classList.add('white-sheep');
       }, CSS_TRANSITION_MS);

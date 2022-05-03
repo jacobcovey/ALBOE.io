@@ -29,7 +29,7 @@
       }
 
       h1 {
-        margin: 0;
+        margin: 24px 0;
         font-size: 3em;
         text-align: center;
       }
@@ -39,24 +39,27 @@
         font-size: 1.5em;
       }
 
-      .main-content-container {
-        position: absolute;
-        top: calc( var(--header-bar-content-height) + calc( var(--header-bar-top-bottom-padding) * 2 ) );
+      .main-content {
+        margin-top: calc( var(--header-bar-content-height) + calc( var(--header-bar-top-bottom-padding) * 2 ) );
         background: var(--color-background);
         color: var(--color-text);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
       }
 
-      .main-content-container.black-sheep .ws-mode  {
+      .main-content.black-sheep .ws-mode  {
         display: none;
       }
 
-      .main-content-container.white-sheep .bs-mode  {
+      .main-content.white-sheep .bs-mode  {
         display: none;
       }
 
       .main-content-container.theme-transition {
         position: absolute;
-        height: 100%;
+        top: 0;
         overflow-x: hidden;
         width: 0;
       }
@@ -81,23 +84,11 @@
         --color-text: var(--color-white);
       }
 
-      .main-content {
-        width: 100vw;
-        position: absolute;
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 24px;
-        background: var(--color-background);
-        color: var(--color-text);
-      }
-
       .alboe-info {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
+        margin-bottom: 24px;
       }
 
       dl {
@@ -129,13 +120,9 @@
         margin: 0;
       }
 
-      .sheep-head-logo {
+      sheep-head-logo {
         width: 66.66vw;
-      }
-
-      .sheep-head-logo g path {
-        stroke: var(--color-text);
-        stroke-width: 12;
+        height: 58vw;
       }
 
       @media only screen and (min-width: 600px) {
@@ -163,8 +150,9 @@
           font-size: 2rem;
         }
 
-        .sheep-head-logo {
+        sheep-head-logo {
           width: 50vw;
+          height: 43vw;
         }
       }
 
@@ -180,33 +168,53 @@
   </head>
   <body>
     <alboe-header></alboe-header>
-    <main class='main-content-container white-sheep'>
-      <div class='main-content'>
-        <h1>A Software Company</h1>
-        <div class='alboe-info'>
-          <dl>
-            <div>
-              <dt>Genre</dt>
-              <dl>Information Sharing</dl>
-            </div>
-            <div>
-              <dt>Motto<span class='ws-mode'>&nbsp;(latin)</span></dt>
-              <dl class='bs-mode'>"Less bullshit"</dl>
-              <dl class='ws-mode'>"Minus nugae"</dl>
-            </div>
-            <div>
-              <dt>Sole Proprietor</dt>
-              <dl>Jacob Covey</dl>
-            </div>
-            <div>
-              <dt>Open Source?</dt>
-              <dl class='bs-mode'>You bet your ass!</dl>
-              <dl class='ws-mode'>You betcha!</dl>
-            </div>
-          </dl>
-          <sheep-head-logo initial-animation></sheep-head-logo>
-        </div>
+    <main class='main-content white-sheep'>
+      <h1>A Software Company</h1>
+      <div class='alboe-info'>
+        <dl>
+          <div>
+            <dt>Genre</dt>
+            <dl>Information Sharing</dl>
+          </div>
+          <div>
+            <dt>Motto<span class='ws-mode'>&nbsp;(latin)</span></dt>
+            <dl class='bs-mode'>"Less bullshit"</dl>
+            <dl class='ws-mode'>"Minus nugae"</dl>
+          </div>
+          <div>
+            <dt>Sole Proprietor</dt>
+            <dl>Jacob Covey</dl>
+          </div>
+          <div>
+            <dt>Open Source?</dt>
+            <dl class='bs-mode'>You bet your ass!</dl>
+            <dl class='ws-mode'>You betcha!</dl>
+          </div>
+        </dl>
+        <sheep-head-logo initial-animation></sheep-head-logo>
       </div>
     </main>
+    <footer>
+      <div class='site-directory'>
+        <h3>Site Directory</h3>
+        <menu>
+          <li>
+            <a>Projects</a>
+            <menu>
+              <li><a>codeHTML</a></li>
+              <li><a>codeHTML</a></li>
+            </menu>
+          </li>
+          <li>
+            <a>Peices</a>
+            <menu>
+              <li><a>GatsbyOnTheInternet</a></li>
+            </menu>
+          </li>
+          <li>Posts</li>
+          <li>Internal Resources</li>
+        </menu>
+      </div>
+    </footer>
   </body>
 </html>
