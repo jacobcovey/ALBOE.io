@@ -6,7 +6,7 @@ const ABLOE_FOOTER_STYLE = `
     background: var(--color-black);
     color: var(--color-white);
     padding: var(--header-bar-top-bottom-padding);
-    border-top: 6px solid var(--color-white);
+    border-top: 4px solid var(--color-white);
     --line-color: var(--color-black);
     padding-bottom: 32px;
   }
@@ -24,7 +24,7 @@ const ABLOE_FOOTER_STYLE = `
     position: absolute;
     background: var(--color-black);
     right: 50%;
-    top: 0;
+    top: -2px;
     transform: translate(50%, -50%);
     padding: 0 8px;
     font-weight: bold;
@@ -35,33 +35,45 @@ const ABLOE_FOOTER_STYLE = `
     position: relative;
   }
 
-  menu::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    transform: translate(10px, -10px);
-    width: 2px;
-    height: 100%;
-    background: var(--line-color);
+  menu.collapsable {
+    --collapsable-menu-height: 0;
+    overflow-y: hidden;
+    height: var(--collapsable-menu-height);
+    transition: height .4s;
   }
 
-  menu.main::before {
-    height: 306px;
+  .drop-down-arrow {
+    --arrow-color: var(--color-white);
+    position: absolute;
+    right: -12px;
+    top: -4px;
+    width: 48px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .drop-down-arrow::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--arrow-color);
+    transition: all .4s;
+    transform: rotate(0deg);
+  }
+  
+  .drop-down-arrow.expanded::after {
+    transform: rotate(180deg);
   }
 
   li {
     list-style-type: none;
     margin: 12px 0;
-  }
-
-  li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    transform: translate(10px, 12px);
-    height: 2px;
-    width: 24px;
-    background: var(--line-color);
+    position: relative;
   }
 
   a {
@@ -87,7 +99,7 @@ const ABLOE_FOOTER_STYLE = `
 
   dl div.box {
     display: flex;
-    border: 1px solid var(--color-white);
+    border: 2px solid var(--color-white);
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 8px;
@@ -121,6 +133,10 @@ const ABLOE_FOOTER_STYLE = `
   @media only screen and (min-width: 600px) {
     footer {
       padding: var(--header-bar-top-bottom-padding) calc(var(--header-bar-top-bottom-padding) * 2);
+    }
+
+    .drop-down-arrow:hover {
+      --arrow-color: var(--color-link);
     }
   }
 `;
@@ -163,7 +179,20 @@ class AlboeFooter extends HTMLElement {
           liEl.appendChild(aEl);
           if (dir.subs) {
             const subMenuEl = document.createElement('menu');
+            subMenuEl.classList.add('collapsable');
             liEl.appendChild(subMenuEl);
+            const expandArrow = document.createElement('span');
+            expandArrow.classList.add('drop-down-arrow');
+            expandArrow.addEventListener('click', () => {
+              if (expandArrow.classList.contains('expanded')) {
+                expandArrow.classList.remove('expanded');
+                subMenuEl.style.setProperty('--collapsable-menu-height', '0');
+              } else {
+                expandArrow.classList.add('expanded');
+                subMenuEl.style.setProperty('--collapsable-menu-height', subMenuEl.scrollHeight + 'px');
+              }
+            });
+            liEl.appendChild(expandArrow);
             dir.subs.map(sub => {
               const subLiEl = document.createElement('li');
               const subAel = document.createElement('a');
@@ -174,6 +203,12 @@ class AlboeFooter extends HTMLElement {
               subLiEl.appendChild(subAel);
               subMenuEl.appendChild(subLiEl);
             });
+
+            // start with first expanded
+            if (dir.id === '0-dir') {
+              expandArrow.classList.add('expanded');
+              subMenuEl.style.setProperty('--collapsable-menu-height', subMenuEl.scrollHeight + 'px');
+            }
           }
         })
       })

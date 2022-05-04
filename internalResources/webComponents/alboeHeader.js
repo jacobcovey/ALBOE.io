@@ -123,10 +123,12 @@ class AlboeHeader extends HTMLElement {
 
     const switchLabel = document.createElement('label');
     switchLabel.setAttribute('class', 'switch');
+    switchLabel.setAttribute('for', 'theme-switch');
 
     const switchInput = document.createElement('input');
     switchInput.setAttribute('type', 'checkbox');
     switchInput.setAttribute('id', 'theme-switch');
+    switchInput.setAttribute('name', 'theme-switch');
     switchInput.addEventListener('click', (e) => setTheme(e.target.checked, true));
 
     const switchSpan = document.createElement('span');
