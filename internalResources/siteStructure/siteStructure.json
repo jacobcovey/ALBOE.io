@@ -35,15 +35,6 @@
             "public-domain",
             "book"
           ]
-        },
-        {
-          "id": "1-pe",
-          "slug": "/pieces/theOldElwaDam",
-          "title": "The Old Elwa Dam",
-          "subtitle": "By Jacob Covey & Abby Christensen",
-          "tags": [
-            "original"
-          ]
         }
       ]
     },
@@ -55,8 +46,8 @@
       "subs": [
         {
           "id": "0-po",
-          "slug": "/posts/iWantToPlay",
-          "title": "I Want To Play",
+          "slug": "/posts/HTMLplusNTF",
+          "title": "HTML + NFT = ?",
           "subtitle": ""        
         }
       ]
@@ -69,7 +60,7 @@
       "subs": [
         {
           "id": "0-ir",
-          "slug": "/internalResources/iWantToPlay",
+          "slug": "/internalResources/siteStructure",
           "title": "Site Structure",
           "subtitle": "Where I am typing this right now."        
         },

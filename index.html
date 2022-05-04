@@ -4,6 +4,7 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
     <script src='internalResources/webComponents/alboeHeader.js' defer></script>
+    <script src='internalResources/webComponents/alboeFooter.js' defer></script>
     <script src='internalResources/webComponents/sheepHeadLogo.js' defer></script>
     <style>
       :root {
@@ -12,7 +13,8 @@
         --color-green: #1B4332;
         --color-dark-gray: #2a2b2a;
         --color-light-gray: #f4f4f4;
-
+        
+        --color-link: #0073ff;
         --color-primary: var(--color-dark-gray);
         --color-background: var(--color-white);
         --color-accent: var(--color-green);
@@ -111,10 +113,9 @@
         background: var(--color-text);
         color: var(--color-background);
         padding: 12px;
-        /* min-width: 137px; */
       }
 
-      dl div dl {
+      dl div dd {
         padding: 12px;
         width: 100%;
         margin: 0;
@@ -174,47 +175,26 @@
         <dl>
           <div>
             <dt>Genre</dt>
-            <dl>Information Sharing</dl>
+            <dd>Information Sharing</dd>
           </div>
           <div>
             <dt>Motto<span class='ws-mode'>&nbsp;(latin)</span></dt>
-            <dl class='bs-mode'>"Less bullshit"</dl>
-            <dl class='ws-mode'>"Minus nugae"</dl>
+            <dd class='bs-mode'>"Less bullshit"</dd>
+            <dd class='ws-mode'>"Minus nugae"</dd>
           </div>
           <div>
             <dt>Sole Proprietor</dt>
-            <dl>Jacob Covey</dl>
+            <dd>Jacob Covey</dd>
           </div>
           <div>
             <dt>Open Source?</dt>
-            <dl class='bs-mode'>You bet your ass!</dl>
-            <dl class='ws-mode'>You betcha!</dl>
+            <dd class='bs-mode'>You bet your ass!</dd>
+            <dd class='ws-mode'>You betcha!</dd>
           </div>
         </dl>
         <sheep-head-logo initial-animation></sheep-head-logo>
       </div>
     </main>
-    <footer>
-      <div class='site-directory'>
-        <h3>Site Directory</h3>
-        <menu>
-          <li>
-            <a>Projects</a>
-            <menu>
-              <li><a>codeHTML</a></li>
-              <li><a>codeHTML</a></li>
-            </menu>
-          </li>
-          <li>
-            <a>Peices</a>
-            <menu>
-              <li><a>GatsbyOnTheInternet</a></li>
-            </menu>
-          </li>
-          <li>Posts</li>
-          <li>Internal Resources</li>
-        </menu>
-      </div>
-    </footer>
+    <alboe-footer></alboe-footer>
   </body>
 </html>
