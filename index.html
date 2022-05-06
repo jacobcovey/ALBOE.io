@@ -102,6 +102,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 48px;
       }
 
       dl {
@@ -141,6 +142,7 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
+        margin-bottom: 64px;
       }
 
       .featured-content h2 {
@@ -149,7 +151,6 @@
         padding: 12px 0;
         border-top: 4px solid var(--color-text);
         border-bottom: 4px solid var(--color-text);
-        margin-bottom: 48px;
         width: 100%;
       }
 
@@ -158,7 +159,8 @@
         position: relative;
         padding-inline-start: var(--padding-inline);
         max-width: 1000px;
-        width: 100%;
+        width: calc( 100% - 40px);
+        margin: 0;
       }
 
       .featured-content li {
@@ -230,6 +232,21 @@
           max-width: 400px;
           height: 43vw;
           max-height: 343px;
+        }
+
+        .featured-content h2 {
+          font-size: 2.5rem;
+          border: none;
+          width: 100%;
+        }
+
+        .featured-content .li-content {
+          flex-direction: row;
+          justify-content: center;
+        }
+
+        .featured-content .li-content .info-container {
+          min-width: 400px;
         }
       }
 
@@ -319,13 +336,17 @@
                 .catch(console.error.bind(console));
             }
 
+            const infoDiv = document.createElement('div');
+            infoDiv.classList.add('info-container');
+            containerEl.appendChild(infoDiv);
+
             const headerEl = document.createElement('h3');
             headerEl.innerText = content.title;
-            containerEl.appendChild(headerEl);
+            infoDiv.appendChild(headerEl);
 
             const pEl = document.createElement('p');
             pEl.innerText = content.subtitle;
-            containerEl.appendChild(pEl);
+            infoDiv.appendChild(pEl);
           });
         })
         .catch(console.error.bind(console));

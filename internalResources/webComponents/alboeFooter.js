@@ -19,7 +19,7 @@ const ABLOE_FOOTER_STYLE = `
     border: 4px solid var(--color-white);
     font-size: 1.25rem;
     font-weight: bold;
-    width: 100%;
+    width: calc(100% - 32px);
     max-width: calc(1000px - 32px);
   }
 
