@@ -31,13 +31,13 @@
         margin: 0;
       }
 
-      h1 {
+      main-content h1 {
         margin: 24px 0;
         font-size: 3em;
         text-align: center;
       }
 
-      h3 {
+      main-content h3 {
         margin: 0;
         font-size: 1.5em;
       }
@@ -297,7 +297,8 @@
               const figureEl = document.createElement('figure');
               containerEl.appendChild(figureEl);
   
-              fetch(content.slug + content.icon)
+              const svgUrl = content.slug.substring(1) + content.icon;
+              fetch(svgUrl)
                 .then(r => r.text())
                 .then(inner => {
                   figureEl.innerHTML = inner;
