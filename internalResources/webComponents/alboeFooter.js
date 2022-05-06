@@ -1,3 +1,4 @@
+const LS_DIRECTORIES_EXPANDED = 'directory-expanded-ids';
 const ABLOE_FOOTER_STYLE = `
   footer {
     display: flex;
@@ -183,9 +184,16 @@ class AlboeFooter extends HTMLElement {
     menu.classList.add('main');
     nav.appendChild(menu);
 
+    const lsDirsExpanded = window.localStorage.getItem(LS_DIRECTORIES_EXPANDED);
+    if (!lsDirsExpanded) {
+      window.localStorage.setItem(LS_DIRECTORIES_EXPANDED, JSON.stringify(['0-dir']));
+    }
+
     fetch('internalResources/siteStructure/siteStructure.json')
       .then(r => r.json())
       .then(j => {
+        let expandedDirs = JSON.parse(window.localStorage.getItem(LS_DIRECTORIES_EXPANDED));
+
         j.directories.map((dir) => {
           const liEl = document.createElement('li');
           menu.appendChild(liEl);
@@ -204,9 +212,17 @@ class AlboeFooter extends HTMLElement {
               if (expandArrow.classList.contains('expanded')) {
                 expandArrow.classList.remove('expanded');
                 subMenuEl.style.setProperty('--collapsable-menu-height', '0');
+                if (expandedDirs) {
+                  expandedDirs = expandedDirs.filter((id) => id !== dir.id);
+                  window.localStorage.setItem(LS_DIRECTORIES_EXPANDED, JSON.stringify(expandedDirs));
+                }
               } else {
                 expandArrow.classList.add('expanded');
                 subMenuEl.style.setProperty('--collapsable-menu-height', subMenuEl.scrollHeight + 'px');
+                if (expandedDirs) {
+                  expandedDirs.push(dir.id);
+                  window.localStorage.setItem(LS_DIRECTORIES_EXPANDED, JSON.stringify(expandedDirs));
+                }
               }
             });
             liEl.appendChild(expandArrow);
@@ -222,7 +238,12 @@ class AlboeFooter extends HTMLElement {
             });
 
             // start with first expanded
-            if (dir.id === '0-dir') {
+            // if (dir.id === '0-dir') {
+            //   expandArrow.classList.add('expanded');
+            //   subMenuEl.style.setProperty('--collapsable-menu-height', subMenuEl.scrollHeight + 'px');
+            // }
+
+            if (expandedDirs.includes(dir.id)) {
               expandArrow.classList.add('expanded');
               subMenuEl.style.setProperty('--collapsable-menu-height', subMenuEl.scrollHeight + 'px');
             }
