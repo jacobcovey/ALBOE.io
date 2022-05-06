@@ -29,12 +29,12 @@ const ABLOE_FOOTER_STYLE = `
     font-weight: bold;
   }
 
-  menu {
+  ul {
     margin: 0;
     position: relative;
   }
 
-  menu.collapsable {
+  ul.collapsable {
     --collapsable-menu-height: 0;
     overflow-y: hidden;
     height: var(--collapsable-menu-height);
@@ -179,7 +179,7 @@ class AlboeFooter extends HTMLElement {
     rootLink.setAttribute('href', '/');
     nav.appendChild(rootLink);
 
-    const menu = document.createElement('menu');
+    const menu = document.createElement('ul');
     menu.classList.add('main');
     nav.appendChild(menu);
 
@@ -195,7 +195,7 @@ class AlboeFooter extends HTMLElement {
           aEl.setAttribute('title', dir.title);
           liEl.appendChild(aEl);
           if (dir.subs) {
-            const subMenuEl = document.createElement('menu');
+            const subMenuEl = document.createElement('ul');
             subMenuEl.classList.add('collapsable');
             liEl.appendChild(subMenuEl);
             const expandArrow = document.createElement('span');
