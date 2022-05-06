@@ -26,6 +26,13 @@
         --header-bar-top-bottom-padding: 12px;
       }
 
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-background: var(--color-black);
+          --color-text: var(--color-white);
+        }
+      }
+
       body {
         font-family: system-ui, serif;
         margin: 0;
@@ -89,7 +96,7 @@
 
       .alboe-info {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
       }
 
@@ -199,11 +206,6 @@
           padding: var(--header-bar-top-bottom-padding) calc(var(--header-bar-top-bottom-padding) * 2);
         }
 
-        .alboe-info {
-          display: flex;
-          flex-direction: column;
-        }
-
         dl div dt {
           display: flex;
           min-width: 234px;
@@ -211,12 +213,13 @@
 
         dl div {
           flex-direction: row;
-          font-size: 2rem;
         }
 
         sheep-head-logo {
           width: 50vw;
+          max-width: 400px;
           height: 43vw;
+          max-height: 343px;
         }
       }
 
@@ -232,8 +235,9 @@
   </head>
   <body>
     <alboe-header></alboe-header>
-    <main class='main-content white-sheep'>
+    <main class='main-content black-sheep'>
       <h1>A Software Company</h1>
+      <sheep-head-logo initial-animation></sheep-head-logo>
       <div class='alboe-info'>
         <dl>
           <div>
@@ -255,7 +259,6 @@
             <dd class='ws-mode'>You betcha!</dd>
           </div>
         </dl>
-        <sheep-head-logo initial-animation></sheep-head-logo>
       </div>
       <div class="featured-content">
         <h2>Featured Pages</h2>

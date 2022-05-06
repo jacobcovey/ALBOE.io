@@ -15,6 +15,12 @@ const STYLE_TEXT_CONTENT = `
     justify-content: space-between;
     align-items: center;
     padding: var(--header-bar-top-bottom-padding);
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .8s;
+  }
+
+  .top-bar.with-border {
+    border-bottom: 2px solid var(--color-text);
   }
 
   .top-bar .logo-link {
@@ -102,6 +108,17 @@ class AlboeHeader extends HTMLElement {
   constructor() {
     super();
 
+    const switchInput = document.createElement('input');
+    const lsDarkThemeValue = window.localStorage.getItem(LS_DARK);
+    if (lsDarkThemeValue !== null) {
+      const isDarkTheme = lsDarkThemeValue === 'true';
+      setTheme(isDarkTheme);
+      switchInput.checked = isDarkTheme;
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme(true);
+      switchInput.checked = true;
+    }
+
     const shadow = this.attachShadow({mode: 'open'});
 
     const header = document.createElement('header');
@@ -125,7 +142,6 @@ class AlboeHeader extends HTMLElement {
     switchLabel.setAttribute('class', 'switch');
     switchLabel.setAttribute('for', 'theme-switch');
 
-    const switchInput = document.createElement('input');
     switchInput.setAttribute('type', 'checkbox');
     switchInput.setAttribute('id', 'theme-switch');
     switchInput.setAttribute('name', 'theme-switch');
@@ -176,17 +192,6 @@ class AlboeHeader extends HTMLElement {
     shadow.appendChild(style);
     shadow.appendChild(header);
 
-
-    const lsDarkThemeValue = window.localStorage.getItem(LS_DARK);
-    if (lsDarkThemeValue !== null) {
-      const isDarkTheme = lsDarkThemeValue === 'true';
-      setTheme(isDarkTheme);
-      switchInput.checked = isDarkTheme;
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme(true);
-      switchInput.checked = true;
-    }
-  
     // watch for user theme switching
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
       if (window.localStorage.getItem(LS_DARK) === null) {
@@ -197,6 +202,14 @@ class AlboeHeader extends HTMLElement {
           setTheme(false);
           switchInput.checked = false;
         }
+      }
+    });
+
+    document.addEventListener('scroll', (e) => {
+      if (window.pageYOffset > 2) {
+        header.classList.add('with-border');
+      } else {
+        header.classList.remove('with-border');
       }
     });
   }
