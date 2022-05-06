@@ -206,9 +206,9 @@ class AlboeHeader extends HTMLElement {
     });
 
     document.addEventListener('scroll', (e) => {
-      if (window.pageYOffset > 2) {
+      if (window.pageYOffset > 2 && !header.classList.contains('with-border')) {
         header.classList.add('with-border');
-      } else {
+      } else if (window.pageYOffset < 2 &&  header.classList.contains('with-border')) {
         header.classList.remove('with-border');
       }
     });
