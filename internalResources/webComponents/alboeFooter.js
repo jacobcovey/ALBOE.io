@@ -134,7 +134,7 @@ const ABLOE_FOOTER_STYLE = `
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-top: 12px;
     gap: 24px;
