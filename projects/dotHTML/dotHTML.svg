@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="376px" height="478px" viewBox="0 0 376 478" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>document (1)</title>
+    <g id="DOThtml" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="document-(1)">
+            <path class='text-color-svg' d="M256.2,-5.68434189e-14 L256.2,102.4 C256.2,111.826 263.841,119.467 273.267,119.467 L273.267,119.467 L375.667,119.467 L375.667,426.667 C375.667,454.944 352.744,477.867 324.467,477.867 L324.467,477.867 L51.4,477.867 C23.123,477.867 0.2,454.944 0.2,426.667 L0.2,426.667 L0.2,51.2 C0.2,22.923 23.123,-5.68434189e-14 51.4,-5.68434189e-14 L51.4,-5.68434189e-14 L256.2,-5.68434189e-14 Z M355,363 L21,363 L21,425 C21,442.673112 35.326888,457 53,457 L53,457 L323,457 C340.673112,457 355,442.673112 355,425 L355,425 L355,363 Z M275.666,4.001 L371.666,100.001 L275.666,100.001 L275.666,4.001 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero"></path>
+            <text class='text-color-svg' id=".html" font-family="Futura-Medium, Futura" font-size="72" font-weight="400" line-spacing="90" letter-spacing="8.13599997" fill="#000000">
+                <tspan x="55" y="440">.html</tspan>
+            </text>
+            <text class='background-color-svg' id="&lt;/&gt;-{:}-{;}" font-family="Futura-Medium, Futura" font-size="72" font-weight="400" letter-spacing="8.13599997" fill="#FFFFFF">
+                <tspan x="55" y="116">&lt;/&gt;</tspan>
+                <tspan x="55" y="210">{:}</tspan>
+                <tspan x="55" y="304">{;}</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

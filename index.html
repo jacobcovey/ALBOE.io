@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>ALBOE Software</title>
     <meta charset='utf-8'>
@@ -91,7 +91,6 @@
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        margin-bottom: 24px;
       }
 
       dl {
@@ -124,6 +123,70 @@
       sheep-head-logo {
         width: 66.66vw;
         height: 58vw;
+      }
+
+      .featured-content {
+        width: 100%;
+      }
+
+      .featured-content h2 {
+        text-align: center;
+        font-size: 2rem;
+        padding: 12px 0;
+        border-top: 4px solid var(--color-text);
+        border-bottom: 4px solid var(--color-text);
+        margin-bottom: 48px;
+      }
+
+      #featured-content-list {
+        --padding-inline: 40px;
+        position: relative;
+        padding-inline-start: var(--padding-inline);
+      }
+
+      .featured-content li {
+        margin: 12px 0;
+      }
+
+      .featured-content li::marker {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .featured-content li a {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--color-text);
+        z-index: 1;
+      }
+
+      .featured-content li a:hover {
+        color: var(--color-link);
+      }
+
+      .featured-content .li-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: calc( var(--padding-inline) * -1);
+        margin-top: 24px;
+      }
+
+      .featured-content figure svg {
+        width: 120px;
+        height: auto;
+      }
+
+      .featured-content figure svg .text-color-svg {
+        fill: var(--color-text);
+      }
+
+      .featured-content figure svg .background-color-svg {
+        fill: var(--color-background);
+      }
+
+      .featured-content figure svg .background-color-svg-stroke {
+        stroke: var(--color-background);
       }
 
       @media only screen and (min-width: 600px) {
@@ -194,7 +257,64 @@
         </dl>
         <sheep-head-logo initial-animation></sheep-head-logo>
       </div>
+      <div class="featured-content">
+        <h2>Featured Pages</h2>
+        <ol id="featured-content-list"></ol>
+      </div>
     </main>
     <alboe-footer></alboe-footer>
+    <script>
+      fetch('internalResources/siteStructure/siteStructure.json')
+        .then(r => r.json())
+        .then(j => {
+          let featuredContent = [];
+          j.directories.map((dir) => {
+            if (dir.subs) {
+              dir.subs.map(sub => {
+                if (sub.featured) {
+                  featuredContent.push(sub);
+                }
+              });
+            }
+          });
+          
+          const olEl = document.getElementById('featured-content-list');
+          const featuredContentSorted = featuredContent.sort((a, b) => a.featured - b.featured);
+          featuredContentSorted.map((content) => {
+            const liEl = document.createElement('li');
+            olEl.appendChild(liEl);
+
+            const linkEl = document.createElement('a');
+            linkEl.setAttribute('href', content.slug);
+            linkEl.innerText = content.slug;
+            liEl.appendChild(linkEl);
+
+            const containerEl = document.createElement('div');
+            containerEl.classList.add('li-content');
+            liEl.appendChild(containerEl);
+
+            if (content.icon) {
+              const figureEl = document.createElement('figure');
+              containerEl.appendChild(figureEl);
+  
+              fetch(content.slug + content.icon)
+                .then(r => r.text())
+                .then(inner => {
+                  figureEl.innerHTML = inner;
+                })
+                .catch(console.error.bind(console));
+            }
+
+            const headerEl = document.createElement('h3');
+            headerEl.innerText = content.title;
+            containerEl.appendChild(headerEl);
+
+            const pEl = document.createElement('p');
+            pEl.innerText = content.subtitle;
+            containerEl.appendChild(pEl);
+          });
+        })
+        .catch(console.error.bind(console));
+    </script>
   </body>
 </html>

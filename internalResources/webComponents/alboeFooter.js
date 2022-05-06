@@ -77,7 +77,6 @@ const ABLOE_FOOTER_STYLE = `
   }
 
   a {
-    text-decoration: none;
     color: var(--color-white);
   }
 

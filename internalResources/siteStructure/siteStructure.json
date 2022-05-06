@@ -10,7 +10,9 @@
           "id": "0-prj",
           "slug": "/projects/dotHTML",
           "title": "dotHTML",
-          "subtitle": "For the ❤️ of HTML"     
+          "subtitle": "For the ❤️ of HTML",
+          "icon": "/dotHTML.svg",
+          "featured": 3
         },
         {
           "id": "1-prj",
@@ -31,6 +33,8 @@
           "slug": "/pieces/gatsbyOnTheInternet",
           "title": "Gatsby On The Internet",
           "subtitle": "The Great Gatsby by F. Scott Fitzgerald (web book)",
+          "icon": "/gatsbyOnTheInternet.svg",
+          "featured": 2,
           "tags": [
             "public-domain",
             "book"
@@ -46,9 +50,11 @@
       "subs": [
         {
           "id": "0-po",
-          "slug": "/posts/HTMLplusNTF",
+          "slug": "/posts/HTMLplusNFT",
           "title": "HTML + NFT = ?",
-          "subtitle": ""        
+          "subtitle": "",
+          "icon": "/HTMLplusNFT.svg",
+          "featured": 1
         }
       ]
     },
