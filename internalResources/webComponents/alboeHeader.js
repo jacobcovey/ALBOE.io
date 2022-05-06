@@ -12,11 +12,18 @@ const STYLE_TEXT_CONTENT = `
     background: var(--color-white);
     color: var(--color-black);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     padding: var(--header-bar-top-bottom-padding);
     border-bottom: 2px solid transparent;
     transition: border-bottom .8s;
+  }
+
+  .top-bar .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
   }
 
   .top-bar.with-border {
@@ -122,14 +129,18 @@ class AlboeHeader extends HTMLElement {
     const shadow = this.attachShadow({mode: 'open'});
 
     const header = document.createElement('header');
-    header.setAttribute('class', 'top-bar');
+    header.classList.add('top-bar');
+
+    const headerInner = document.createElement('div');
+    headerInner.classList.add('header-inner');
+    header.appendChild(headerInner);
 
     const logoLink = document.createElement('a');
     logoLink.innerText = 'ALBOE.io';
     logoLink.setAttribute('href', '/');
     logoLink.setAttribute('class', 'logo-link');
 
-    header.appendChild(logoLink);
+    headerInner.appendChild(logoLink);
 
     const rightContent = document.createElement('div');
     rightContent.setAttribute('class', 'right-content');
@@ -184,7 +195,7 @@ class AlboeHeader extends HTMLElement {
     rightContent.appendChild(switchLabel);
     rightContent.appendChild(bsButton);
 
-    header.appendChild(rightContent);
+    headerInner.appendChild(rightContent);
 
     const style = document.createElement('style');
     style.textContent = STYLE_TEXT_CONTENT;

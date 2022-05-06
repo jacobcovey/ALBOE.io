@@ -3,6 +3,7 @@ const ABLOE_FOOTER_STYLE = `
   footer {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 12px;
     background: var(--color-black);
     color: var(--color-white);
@@ -18,6 +19,8 @@ const ABLOE_FOOTER_STYLE = `
     border: 4px solid var(--color-white);
     font-size: 1.25rem;
     font-weight: bold;
+    width: 100%;
+    max-width: calc(1000px - 32px);
   }
 
   .nav-title {
@@ -89,6 +92,8 @@ const ABLOE_FOOTER_STYLE = `
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 1000px;
   }
 
   dl {
