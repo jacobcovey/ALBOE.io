@@ -8,7 +8,6 @@ const ABLOE_FOOTER_STYLE = `
     padding: var(--header-bar-top-bottom-padding);
     border-top: 4px solid var(--color-white);
     --line-color: var(--color-black);
-    padding-bottom: 32px;
   }
 
   nav {
@@ -87,13 +86,14 @@ const ABLOE_FOOTER_STYLE = `
 
   .footer-info {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
   }
 
   dl {
     padding: 0;
     margin: 0;
+    width: 100%;
   }
 
   dl div.box {
@@ -101,7 +101,7 @@ const ABLOE_FOOTER_STYLE = `
     border: 2px solid var(--color-white);
     font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
 
   dl div.icon-container {
@@ -115,7 +115,7 @@ const ABLOE_FOOTER_STYLE = `
     background: var(--color-white);
     color: var(--color-black);
     padding: 6px;
-    width: 64px;
+    width: 100px;
   }
 
   dl div dd {
@@ -125,8 +125,26 @@ const ABLOE_FOOTER_STYLE = `
 
   .logo-container {
     --color-text: var(--color-white);
-    width: 200px;
-    max-width: 37vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    gap: 24px;
+  }
+
+  .logo-container sheep-head-logo {
+    width: 120px;
+  }
+
+  .icon-container {
+    display: flex;
+    gap: 12px;
+  }
+
+  .icon-container a {
+    text-decoration: none;
   }
 
   @media only screen and (min-width: 600px) {
@@ -223,7 +241,7 @@ class AlboeFooter extends HTMLElement {
 
     const detailList = document.createElement('dl');
     addDetailListItem(detailList, 'Est.', '2022');
-    addDetailListItem(detailList, 'Made in', 'Clallam WA USA');
+    addDetailListItem(detailList, 'Made in', 'Clallam County WA USA');
     addDetailListItem(detailList, 'License', 'MIT');
     const iconDiv = document.createElement('div');
     iconDiv.classList.add('icon-container');
@@ -251,10 +269,10 @@ class AlboeFooter extends HTMLElement {
     iconDiv.appendChild(gitHubA);
     iconDiv.appendChild(aMusicA);
 
-    detailList.appendChild(iconDiv);
-
-    footerInfo.appendChild(logoContainer);
+    logoContainer.appendChild(iconDiv);
+    
     footerInfo.appendChild(detailList);
+    footerInfo.appendChild(logoContainer);
       
     footer.appendChild(nav);
     footer.appendChild(footerInfo);
