@@ -56,6 +56,8 @@ const COLORS_ARR = [
   '#FF0000',
 ];
 
+const LS_LOGO_LETTER_COLOR = 'logo-letter-color';
+
 class SheepHeadLogo extends HTMLElement {
   constructor() {
     super();
@@ -68,31 +70,37 @@ class SheepHeadLogo extends HTMLElement {
     if (initialAnimation) {
       container.classList.add('pre-animate');
       container.classList.add('hide-lettering');
-
-      container.addEventListener('click', () => {
-        container.classList.add('shake');
-        container.classList.add('hide-lettering');
-        setTimeout(() => {
-          container.classList.remove('shake');
-          
-          const currentLetteringColor = getComputedStyle(container.firstElementChild).getPropertyValue('--lettering-color');
-          const currentTextColor = getComputedStyle(container.firstElementChild).getPropertyValue('--color-text');
-          if (currentLetteringColor.trim() == currentTextColor.trim()) {
-            let randColorIndex = (Math.floor(Math.random() * COLORS_ARR.length) + 1) - 1;
-            container.firstElementChild.style.setProperty('--lettering-color', COLORS_ARR[randColorIndex]);
-          } else {
-            container.firstElementChild.style.setProperty('--lettering-color', currentTextColor);
-          }
-          container.classList.remove('hide-lettering');
-        }, 820);
-      });
     }
+    
+    container.addEventListener('click', () => {
+      container.classList.add('shake');
+      container.classList.add('hide-lettering');
+      setTimeout(() => {
+        container.classList.remove('shake');
+        
+        const currentLetteringColor = getComputedStyle(container.firstElementChild).getPropertyValue('--lettering-color');
+        const currentTextColor = getComputedStyle(container.firstElementChild).getPropertyValue('--color-text');
+        if (currentLetteringColor.trim() == currentTextColor.trim()) {
+          let randColorIndex = (Math.floor(Math.random() * COLORS_ARR.length) + 1) - 1;
+          const randColor = COLORS_ARR[randColorIndex];
+          container.firstElementChild.style.setProperty('--lettering-color', randColor);
+          window.localStorage.setItem(LS_LOGO_LETTER_COLOR, randColor);
+        } else {
+          container.firstElementChild.style.setProperty('--lettering-color', 'var(--color-text)');
+          window.localStorage.removeItem(LS_LOGO_LETTER_COLOR);
+
+        }
+        container.classList.remove('hide-lettering');
+      }, 820);
+    });
 
 
     fetch('internalResources/assets/alboe.svg')
       .then(r => r.text())
       .then(inner => {
         container.innerHTML = inner;
+        const lsColorVal = window.localStorage.getItem(LS_LOGO_LETTER_COLOR);
+        lsColorVal && container.firstElementChild.style.setProperty('--lettering-color', lsColorVal);
         if (initialAnimation) {
           container.classList.remove('pre-animate');
           setTimeout(() => {
