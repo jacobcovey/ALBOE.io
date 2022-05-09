@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <title>The Great Gatsby Web-book</title>
+    <meta
+      name='description'
+      content='A free, lightweight HTML version of the Great Gatsby by F. Scott Fitzgerald (Public Domain)'
+    >
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script>
@@ -34,12 +39,16 @@
       </p>
       </blockquote>
       </div>
+
+      <button class="next-chapter-btn" data-next="i">
+        Chapter I
+      </button>
       `;
       const dedication = `
       <div class="dedication">
       <p>
       Once again<br>
-      to<br>
+      To<br>
       Zelda
       </p>
       </div>
@@ -679,6 +688,10 @@
       I decided to call to him. Miss Baker had mentioned him at dinner, and that would do for an introduction. But I didn’t call to him, for he gave a sudden intimation that he was content to be alone—he stretched out his arms toward the dark water in a curious way, and, far as I was from him, I could have sworn he was trembling. Involuntarily I glanced seaward—and distinguished nothing except a single green light, minute and far away, that might have been the end of a dock. When I looked once more for Gatsby he had vanished, and I was alone again in the unquiet darkness.
       </p>
       </div>
+
+      <button class="next-chapter-btn" data-next="ii">
+        Chapter II
+      </button>
       `;
       const ii = `
       <div id="chapter-2">
@@ -1232,6 +1245,9 @@
       Then I was lying half asleep in the cold lower level of the Pennsylvania Station, staring at the morning <i>Tribune</i>, and waiting for the four o’clock train.
       </p>
       </div>
+      <button class="next-chapter-btn" data-next="iii">
+        Chapter III
+      </button>
       `;
       const iii = `
       <div id="chapter-3">
@@ -1923,6 +1939,10 @@
       Everyone suspects himself of at least one of the cardinal virtues, and this is mine: I am one of the few honest people that I have ever known.
       </p>
       </div>
+
+      <button class="next-chapter-btn" data-next="iv">
+        Chapter IV
+      </button>
       `;
       const iv = `
       <div id="chapter-4">
@@ -2622,6 +2642,10 @@
       We passed a barrier of dark trees, and then the façade of Fifty-Ninth Street, a block of delicate pale light, beamed down into the park. Unlike Gatsby and Tom Buchanan, I had no girl whose disembodied face floated along the dark cornices and blinding signs, and so I drew up the girl beside me, tightening my arms. Her wan, scornful mouth smiled, and so I drew her up again closer, this time to my face.
       </p>
       </div>
+
+      <button class="next-chapter-btn" data-next="v">
+        Chapter V
+      </button>
       `;
       const v = `
       <div id="chapter-5">
@@ -3251,6 +3275,10 @@
       They had forgotten me, but Daisy glanced up and held out her hand; Gatsby didn’t know me now at all. I looked once more at them and they looked back at me, remotely, possessed by intense life. Then I went out of the room and down the marble steps into the rain, leaving them there together.
       </p>
       </div>
+
+      <button class="next-chapter-btn" data-next="vi">
+        Chapter VI
+      </button>
       `;
       const vi = `
       <div id="chapter-6">
@@ -3798,6 +3826,10 @@
       Through all he said, even through his appalling sentimentality, I was reminded of something—an elusive rhythm, a fragment of lost words, that I had heard somewhere a long time ago. For a moment a phrase tried to take shape in my mouth and my lips parted like a dumb man’s, as though there was more struggling upon them than a wisp of startled air. But they made no sound, and what I had almost remembered was uncommunicable forever.
       </p>
       </div>
+
+      <button class="next-chapter-btn" data-next="vii">
+        Chapter VII
+      </button>
       `;
       const vii = `
       <div id="chapter-7">
@@ -5471,6 +5503,10 @@
       He put his hands in his coat pockets and turned back eagerly to his scrutiny of the house, as though my presence marred the sacredness of the vigil. So I walked away and left him standing there in the moonlight—watching over nothing.
       </p>
       </div>
+
+      <button class="next-chapter-btn" data-next="viii">
+        Chapter VIII
+      </button>
       `;
       const viii = `
       <div id="chapter-8">
@@ -5942,6 +5978,10 @@
       It was after we started with Gatsby toward the house that the gardener saw Wilson’s body a little way off in the grass, and the holocaust was complete.
       </p>
       </div>
+
+      <button class="next-chapter-btn" data-next="ix">
+        Chapter IX
+      </button>
       `;
       const ix = `
       <div id="chapter-9">
@@ -6655,29 +6695,39 @@
     <style>   
     
       :root {
-        /* --dark-sky-blue: #143349; */
-        /* --primary-green: #184a46; */
-        --primary-green: #1B4332;
-        --dark-green: #081c15;
-        /* --gold: #c3af40; */
         --gold: #e0b642;
         --old-gold: #cfb53b;
         --antique-gold: #b0903d;
-        --creme: #f6f3e4;
+        --color-black: #000000;
+        --color-white: #ffff;
         --drawer-width: 300px;
         --drawer-transition: left 0.25s ease-in-out;
 
-        --color-primary: var(--primary-green);
-        --color-primary-dark: var(--dark-green);
-        --color-accent: var(--antique-gold);
-        --color-text: var(--creme)
+        --color-background: var(--color-white);
+        --color-accent: var(--gold);
+        --color-text: var(--color-black);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-background: var(--color-black);
+          --color-text: var(--color-white);
+        }
       }
 
       body {
-        background: black;
+        background: var(--color-background);
         color: var(--color-text);
         font-family: Garamond, serif;
         margin: 0;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 3rem;
+        position: sticky;
+        top: 0;
+        background-color: var(--color-background);
       }
 
       p {
@@ -6688,7 +6738,10 @@
       }
 
       hr {
-        border-top: 3px solid var(--color-accent);
+        border-color: var(--color-accent);
+        border-style: double;
+        border-width: 12px;
+        height: 4px;
       }
 
       #main {
@@ -6703,7 +6756,41 @@
       }
 
       #current-content {
-        padding: 64px 16px 32px;
+        padding: 32px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .dedication p {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 20vh 0;
+      }
+
+      blockquote.verse {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .next-chapter-btn {
+        cursor: pointer;
+        background: var(--color-black);
+        font-size: 2rem;
+        color: var(--color-accent);
+        font-family: Garamond, serif;
+        border: 4px solid var(--color-accent);
+        border-radius: 12px;
+        padding: 12px;
+        font-weight: bold;
+        margin: 24px 0;
+        text-transform: uppercase;
+      }
+
+      .next-chapter-btn:hover {
+        background-color: var(--color-accent);
+        color: var(--color-black);
       }
 
       #drawer {
@@ -6715,24 +6802,24 @@
         width: var(--drawer-width);
         left: calc(var(--drawer-width) * -1);
         top: 0;
-        background: var(--color-primary);
+        background: var(--color-text);
         transition: var(--drawer-transition);
       }
 
       #drawer .title-logo-svg {
         width: 240px;
         stroke-width: 0;
-        fill: var(--color-primary-dark);
+        fill: var(--color-background);
         margin-top: 24px;
-        border-bottom: 1px solid var(--color-primary-dark);
+        border-bottom: 1px solid var(--color-background);
         padding-bottom: 6px;
       }
 
       .fitz-svg {
         width: 100px;
         stroke-width: 0;
-        fill: var(--color-primary-dark);
-        margin-top: 6px;
+        fill: var(--color-background);
+        padding: 8px 0 4px 0;
       }
 
       #drawer h3 {
@@ -6746,19 +6833,16 @@
       #menu-icon {
         position: fixed;
         padding: 16px;
-        background: var(--color-primary);
+        background: var(--color-text);
         border-radius: 0 16px 16px 0;
         cursor: pointer;
         margin-left: -1px;
+        z-index: 1;
       }
 
       #menu-icon g {
-        fill: var(--color-text);
+        fill: var(--color-background);
         transition: fill 0.15s ease-out;
-      }
-
-      #menu-icon.drawer-open g {
-        fill: var(--color-primary-dark);
       }
 
       #close-icon {
@@ -6788,19 +6872,24 @@
         height: 60px;
         width: 60px;
         border-radius: 50%;
-        background: var(--color-primary-dark);
-        border: 6px solid var(--color-accent);
-        color: var(--color-text);
+        background: var(--color-text);
+        border: 6px solid var(--color-background);
+        color: var(--color-background);
         font-weight: bold;
         font-size: 18px;
       }
       
       #table-of-contents li.active-nav-btn {
+        color: var(--color-black);
         background: var(--color-accent);
-        color: var(--color-primary-dark);
+        border: 6px solid var(--color-accent);
       }
 
-
+      @media only screen and (min-width: 600px) {
+        #main.drawer-open {
+          width: calc(100vw - 300px);
+        }
+      }
     </style>
 
 
@@ -6835,8 +6924,32 @@
     </div>
 
     <script defer>
+      const LS_CURRENT_CHAPTER = 'current-chapter';
+      const LS_CHAPTER_SCROLLED = 'current-chapter-scroll-percent';
       const currentContent = window.document.getElementById('current-content');
-      currentContent.innerHTML = contents.title;
+
+      const lsCurrentChapter = window.localStorage.getItem(LS_CURRENT_CHAPTER);
+      
+      const setMenuBtnActive = (id) => {
+        const currentMenuBtn = document.getElementsByClassName('active-nav-btn')[0];
+        currentMenuBtn.classList.remove('active-nav-btn');
+
+        const nextMenuBtn = window.document.getElementById(id);
+        nextMenuBtn.classList.add('active-nav-btn');
+      } 
+
+      if (lsCurrentChapter) {
+        currentContent.innerHTML = contents[lsCurrentChapter];
+        setMenuBtnActive(lsCurrentChapter);
+
+        const lsScrollPercentage = window.localStorage.getItem(LS_CHAPTER_SCROLLED);
+        if (lsScrollPercentage) {
+          const scrollTo = window.document.getElementById('main').scrollHeight * lsScrollPercentage;
+          window.scrollTo(scrollTo, 0);
+        }
+      } else {
+        currentContent.innerHTML = contents.title;
+      }
 
       const tableOfContentsUL = window.document.querySelectorAll('#table-of-contents li');
 
@@ -6861,14 +6974,38 @@
         activeNavBtnList[0] && activeNavBtnList[0].classList.remove('active-nav-btn');
       };
 
+      const addNextChapterBtnListener = () => {
+        const nextBtns = window.document.querySelectorAll('.next-chapter-btn');
+
+        nextBtns.forEach((el) => {
+          el.addEventListener('click', (e) => {
+            const dataNext = el.getAttribute('data-next');
+            setMenuBtnActive(dataNext);
+            currentContent.innerHTML = contents[dataNext];
+            addNextChapterBtnListener();
+            window.scrollTo(0,0);
+            window.localStorage.setItem(LS_CURRENT_CHAPTER, dataNext);
+          });
+        });
+      }
+
       tableOfContentsUL.forEach((el) => {
         el.addEventListener('click', (e) => {
+          window.scrollTo(0,0);
           removeActiveBtn();
           e.target.classList.add('active-nav-btn');
           currentContent.innerHTML = contents[el.id];
           closeDrawer();
+          addNextChapterBtnListener();
+          window.localStorage.setItem(LS_CURRENT_CHAPTER, el.id);
         });
       });
+
+      addNextChapterBtnListener();
+      document.addEventListener('scroll', (e) => {
+        const scrollPercentage = window.pageYOffset / window.document.getElementById('main').scrollHeight;
+        window.localStorage.setItem(LS_CHAPTER_SCROLLED, scrollPercentage);
+      })
 
       window.document.getElementById('menu-icon').addEventListener('click', toggleDrawer);
 
