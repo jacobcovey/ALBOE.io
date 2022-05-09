@@ -147,11 +147,10 @@
 
       .featured-content h2 {
         text-align: center;
-        font-size: 2rem;
+        font-size: 2.5rem;
         padding: 12px 0;
-        border-top: 4px solid var(--color-text);
-        border-bottom: 4px solid var(--color-text);
         width: 100%;
+        margin-bottom: 0;
       }
 
       #featured-content-list {
@@ -164,7 +163,7 @@
       }
 
       .featured-content li {
-        margin: 12px 0;
+        margin: 48px 0;
       }
 
       .featured-content li::marker {
@@ -189,6 +188,10 @@
         align-items: center;
         margin-left: calc( var(--padding-inline) * -1);
         margin-top: 24px;
+      }
+
+      .featured-content .li-content .info-container {
+        text-align: center;
       }
 
       .featured-content figure svg {
@@ -234,18 +237,13 @@
           max-height: 343px;
         }
 
-        .featured-content h2 {
-          font-size: 2.5rem;
-          border: none;
-          width: 100%;
-        }
-
         .featured-content .li-content {
           flex-direction: row;
           justify-content: center;
         }
 
         .featured-content .li-content .info-container {
+          text-align: start;
           min-width: 400px;
         }
       }
