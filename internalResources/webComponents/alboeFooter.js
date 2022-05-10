@@ -204,7 +204,7 @@ class AlboeFooter extends HTMLElement {
           menu.appendChild(liEl);
           const aEl = document.createElement('a');
           aEl.innerText = dir.slug;
-          aEl.setAttribute('href', dir.slug);
+          aEl.setAttribute('href', window.location.href + dir.slug.substring(1));
           aEl.setAttribute('title', dir.title);
           liEl.appendChild(aEl);
           if (dir.subs) {
@@ -236,7 +236,7 @@ class AlboeFooter extends HTMLElement {
               const subAel = document.createElement('a');
               const slugParts = sub.slug.split('/');
               subAel.innerText = '/' + slugParts[slugParts.length - 1];
-              subAel.setAttribute('href', sub.slug);
+              subAel.setAttribute('href', window.location.href + sub.slug.substring(1));
               subAel.setAttribute('title', sub.title);
               subLiEl.appendChild(subAel);
               subMenuEl.appendChild(subLiEl);

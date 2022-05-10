@@ -314,7 +314,7 @@
 
             const linkEl = document.createElement('a');
 
-            linkEl.setAttribute('href', window.location.href.substring(0, window.location.href.length - 1) + content.slug);
+            linkEl.setAttribute('href', window.location.href + content.slug.substring(1));
             linkEl.innerText = content.slug;
             liEl.appendChild(linkEl);
 
