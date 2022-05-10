@@ -313,7 +313,8 @@
             olEl.appendChild(liEl);
 
             const linkEl = document.createElement('a');
-            linkEl.setAttribute('href', content.slug);
+
+            linkEl.setAttribute('href', window.location.origin + content.slug);
             linkEl.innerText = content.slug;
             liEl.appendChild(linkEl);
 
