@@ -6946,7 +6946,7 @@
         const lsScrollPercentage = window.localStorage.getItem(LS_CHAPTER_SCROLLED);
         if (lsScrollPercentage) {
           const scrollTo = window.document.getElementById('main').scrollHeight * lsScrollPercentage;
-          window.scrollTo(scrollTo, 0);
+          window.scrollTo(0, scrollTo);
         }
       } else {
         currentContent.innerHTML = contents.title;
@@ -7003,9 +7003,19 @@
       });
 
       addNextChapterBtnListener();
+
+      let timeOutId = null;
       document.addEventListener('scroll', (e) => {
-        const scrollPercentage = window.pageYOffset / window.document.getElementById('main').scrollHeight;
-        window.localStorage.setItem(LS_CHAPTER_SCROLLED, scrollPercentage);
+        if (timeOutId) {
+          return;
+        }
+
+        timeOutId = setTimeout( () => {
+          console.log('scrollTimeout');
+          const scrollPercentage = window.pageYOffset / window.document.getElementById('main').scrollHeight;
+          window.localStorage.setItem(LS_CHAPTER_SCROLLED, scrollPercentage);
+          timeOutId = null;
+        }, 1000)
       })
 
       window.document.getElementById('menu-icon').addEventListener('click', toggleDrawer);
