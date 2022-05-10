@@ -40,7 +40,12 @@
       </blockquote>
       </div>
 
-      <button class="next-chapter-btn" data-next="i">
+      <div class="font-size-input-container">
+        <label for="font-size">Text Size:</label>
+        <input type="range" id="font-size-input" name="font-size" min="0" max="8">
+      </div>
+
+      <button class="next-chapter-btn first" data-next="i">
         Chapter I
       </button>
       `;
@@ -3116,7 +3121,7 @@
       </p>
 
       <p>
-      He took out a pile of shirts and began throwing them, one by one, before us, shirts of sheer linen and thick silk and fine flannel, which lost their folds as they fell and covered the table in many-coloured disarray. While we admired he brought more and the soft rich heap mounted higher—shirts with stripes and scrolls and plaids in coral and apple-green and lavender and faint orange, with monograms of indian blue. Suddenly, with a strained sound, Daisy bent her head into the shirts and began to cry stormily.
+      He took out a pile of shirts and began throwing them, one by one, before us, shirts of sheer linen and thick silk and fine flannel, which lost their folds as they fell and covered the table in many-coloured disarray. While we admired he brought more and the soft rich heap mounted higher—shirts with stripes and scrolls and plaids in <span class="coral">coral</span> and <span class="apple-green">apple-green</span> and <span class="lavender">lavender</span> and <span class="faint-orange">faint orange</span>, with monograms of <span class="indian-blue">indian blue</span>. Suddenly, with a strained sound, Daisy bent her head into the shirts and began to cry stormily.
       </p>
 
       <p>
@@ -6702,11 +6707,12 @@
         --color-white: #ffff;
         --drawer-width: 300px;
         --drawer-transition: left 0.25s ease-in-out;
-        --body-font-size: 1.1rem;
+        --body-font-size: 18px;
 
         --color-background: var(--color-white);
         --color-accent: var(--gold);
         --color-text: var(--color-black);
+        font-size: var(--body-font-size);
       }
 
       @media (prefers-color-scheme: dark) {
@@ -6725,16 +6731,15 @@
 
       h2 {
         text-align: center;
-        font-size: 3rem;
+        font-size: 48px;
         position: sticky;
         top: 0;
         background-color: var(--color-background);
       }
 
       p {
-        letter-spacing: 0.15px;
+        letter-spacing: 0.02rem;
         line-height: 1.5rem;
-        font-size: var(--body-font-size);
         text-align: justify;
       }
 
@@ -6743,6 +6748,26 @@
         border-style: double;
         border-width: 12px;
         height: 4px;
+      }
+
+      .font-size-input-container {
+        position: fixed;
+        bottom: 6px;
+        left: 12px;
+        right: 12px;
+        background: var(--color-background);
+        border-radius: 6px;
+        border: 2px solid var(--color-text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 6px;
+      }
+
+      #font-size-input {
+        width: 200px;
+        height: 32px;
       }
 
       #main {
@@ -6767,7 +6792,7 @@
       .dedication p {
         text-align: center;
         text-transform: uppercase;
-        margin: 20vh 0;
+        margin: 64px 0;
       }
 
       blockquote.verse {
@@ -6778,7 +6803,8 @@
       .next-chapter-btn {
         cursor: pointer;
         font-family: Georgia, Garamond, serif;
-        font-size: 2rem;
+        font-size: 32px;
+        letter-spacing: 2px;
         font-weight: bold;
         border-radius: 6px;
         border: 2px solid var(--color-text);
@@ -6787,6 +6813,10 @@
         padding: 12px 24px;
         margin: 24px 0;
         text-transform: uppercase;
+      }
+
+      .next-chapter-btn.first {
+        margin-bottom: 120px;
       }
 
       .next-chapter-btn:hover {
@@ -6860,8 +6890,8 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 32px;
-        padding: 16px 32px;
+        padding: 12px 24px;
+        margin: 0;
       }
 
       #table-of-contents li {
@@ -6870,14 +6900,17 @@
         align-items: center;
         list-style-type: none;
         cursor: pointer;
-        height: 60px;
-        width: 60px;
+        height: 10vh;
+        width: 10vh;
+        max-height: 82px;
+        max-width: 82px;
         border-radius: 50%;
         background: var(--color-text);
         border: 6px solid var(--color-background);
         color: var(--color-background);
         font-weight: bold;
-        font-size: 18px;
+        font-size: 3vh;
+        margin: 1.5vh 12px;
       }
       
       #table-of-contents li.active-nav-btn {
@@ -6886,10 +6919,37 @@
         border: 6px solid var(--color-accent);
       }
 
+      span.coral {
+        color: #f88379;
+      }
+
+      span.apple-green {
+        color: #8db600;
+      }
+
+      span.lavender {
+        color: #9669c2;
+      }
+
+      span.faint-orange {
+        color: #ffbb74;
+      }
+
+      span.indian-blue {
+        color: #00D9FF;
+      }
+
       @media only screen and (min-width: 600px) {
         #main.drawer-open {
           width: calc(100vw - 300px);
         }
+
+        #table-of-contents li {
+          height: 8vh;
+          width: 8vh;
+          font-size: 2.5vh;
+          margin: 2vh 12px;
+      }
       }
     </style>
 
@@ -6925,11 +6985,45 @@
     </div>
 
     <script defer>
+      const TEXT_SIZES_ARR = [
+        12,
+        14,
+        16,
+        17,
+        18,
+        20,
+        22,
+        26,
+        32
+      ];
+      const LS_FONT_SIZE_PX = 'font-size-px';
       const LS_CURRENT_CHAPTER = 'current-chapter';
       const LS_CHAPTER_SCROLLED = 'current-chapter-scroll-percent';
       const currentContent = window.document.getElementById('current-content');
 
       const lsCurrentChapter = window.localStorage.getItem(LS_CURRENT_CHAPTER);
+
+      const lsFontSize = window.localStorage.getItem(LS_FONT_SIZE_PX);
+      if (lsFontSize) {
+        document.documentElement.style.setProperty('--body-font-size', lsFontSize+'px');
+      }
+
+      const setUpFontSizeInput = () => {
+        const fontSizeInput = document.getElementById('font-size-input');
+
+        if (fontSizeInput) {
+          const valFromLs = Number(window.localStorage.getItem(LS_FONT_SIZE_PX));
+          if (Number.isFinite(valFromLs)) {
+            fontSizeInput.value = TEXT_SIZES_ARR.indexOf(valFromLs);
+          }
+  
+          fontSizeInput.addEventListener('input', (e) => {
+            const newVal = TEXT_SIZES_ARR[Number(e.target.value)];
+            window.localStorage.setItem(LS_FONT_SIZE_PX, newVal);
+            document.documentElement.style.setProperty('--body-font-size', newVal+'px');
+          });
+        }
+      };
       
       const setMenuBtnActive = (id) => {
         const currentMenuBtn = document.getElementsByClassName('active-nav-btn')[0];
@@ -6951,6 +7045,7 @@
       } else {
         currentContent.innerHTML = contents.title;
       }
+      setUpFontSizeInput();
 
       const tableOfContentsUL = window.document.querySelectorAll('#table-of-contents li');
 
@@ -6999,6 +7094,7 @@
           closeDrawer();
           addNextChapterBtnListener();
           window.localStorage.setItem(LS_CURRENT_CHAPTER, el.id);
+          setUpFontSizeInput();
         });
       });
 
