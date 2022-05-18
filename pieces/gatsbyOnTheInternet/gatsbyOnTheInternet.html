@@ -89,9 +89,47 @@
       #passage-search {
         width: 80vw;
         font-size: 1rem;
-        padding: 6px;
+        padding: 12px 6px;
         margin-top: 12px;
         max-width: 488px;
+        border-color: var(--color-text);
+        border-radius: 2px;
+      }
+
+      #passage-search-results {
+        width: 80vw;
+        max-width: 488px;
+        margin-top: -1px;
+        padding-inline-start: 0;
+      }
+
+      #passage-search-results li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--color-background);
+        background: var(--color-text);
+        padding: 12px;
+        cursor: pointer;
+        border-top: 1px solid var(--color-background);
+      }
+
+      #passage-search-results li:hover {
+        color: var(--color-accent);
+      }
+
+      #passage-search-results li:last-of-type {
+        border-radius: 0 0 2px 2px;
+      }
+
+      #passage-search-results li:first-of-type {
+        border-top: none;
+      }
+
+      .match-text {
+        font-weight: bold;
+        color: var(--color-accent);
+        text-decoration: underline;
       }
 
       .font-size-input-container {
@@ -431,6 +469,8 @@
             </g>
         </svg>
         <input type='search' id='passage-search' name='search' placeholder='Find passage'>
+        <ul id='passage-search-results'>
+        </ul>
         <p class='dedication'>
           Once again<br>
           to<br>
@@ -5422,6 +5462,7 @@
     <script>
 			// 
       // CONSTANTS
+      const MIN_SEARCH_CHARS = 5;
       const TEXT_SIZES_ARR = [ 12, 16, 18, 22, 32 ];
       const LS_FONT_SIZE_PX = 'al1_font-size-px';
       const LS_CURRENT_CHAPTER = 'al1_current-chapter';
@@ -5440,7 +5481,6 @@
 			setUpDrawerToggle();
 			addListenersToNavBtns();
       setUpSettingsModal();
-			setUpPassageSearch();
 			watchScrollToUpdateLS();
 
 			// 
@@ -5455,7 +5495,7 @@
 				}
 			}
 
-			function loadChapter(chapter) {
+			function loadChapter(chapter, matchIndecies, matchText) {
 				updateNextChapterBtn(Number(chapter) + 1);
 				setMenuBtnActive(chapter);
 
@@ -5480,8 +5520,24 @@
             window.scrollTo(0, 0);
             currentContent.style.opacity = 1;
             initialLoad = true;
-          }, timeOutMS);
 
+            if (chapter == 0) {
+              setUpPassageSearch();
+            }
+
+            if (matchIndecies) {
+              console.log('highlight and scroll to matchIndecies: ', matchIndecies);
+              let newChapterContentHTML = newChapterContent.innerHTML;
+              matchIndecies.slice(0).reverse().map(index => {
+                newChapterContentHTML = newChapterContentHTML.substring(0, index) + '<span class=\'match-text\'>' + matchText + '</span>' + newChapterContentHTML.substring(index + matchText.length);
+              });
+              newChapterContent.innerHTML = newChapterContentHTML;
+              const firstMatch = newChapterContent.querySelector('.match-text');
+              // firstMatch.scrollIntoView({behavior: "smooth"});
+              const y = firstMatch.getBoundingClientRect().top + window.pageYOffset - 70;
+              window.scrollTo({top: y, behavior: 'smooth'});
+            }
+          }, timeOutMS);
         }, timeOutMS)
 
         window.localStorage.setItem(LS_CURRENT_CHAPTER, chapter);
@@ -5568,8 +5624,70 @@
       }
 
 			function setUpPassageSearch() {
-
+        const passageSearchInput = window.document.getElementById('passage-search');
+        passageSearchInput.addEventListener('keyup', (e) => {
+          displayPassageSearchResults(passageSearchInput.value);
+        });
 			}
+
+      function displayPassageSearchResults(searchText) {
+        const resultsList = window.document.getElementById('passage-search-results');
+        removeAllChildNodes(resultsList);
+        const searchTextLength = searchText.length;
+        if (searchTextLength >= MIN_SEARCH_CHARS) {
+          const searchResults = getChapterSearchResults(searchText);
+
+          if (searchResults && searchResults.length) {
+            searchResults.map(result => {
+              const resultListItem = window.document.createElement('li');
+              resultListItem.innerHTML = `<span>Chapter ${result.chapter}</span><span>${result.count} result${result.count > 1 ? 's' : ''} ➞</span>`;
+              resultsList.appendChild(resultListItem);
+
+              resultListItem.addEventListener('click', (e) => {
+                loadChapter(result.chapter, result.indices, searchText);
+              });
+            })
+          } else {
+            const noResultsListItem = window.document.createElement('li');
+            noResultsListItem.innerHTML = 'No matches';
+            resultsList.appendChild(noResultsListItem);
+          }
+        } else if (searchTextLength > 0) {
+          const promptListItem = window.document.createElement('li');
+          const charsLeft = MIN_SEARCH_CHARS - searchTextLength;
+          promptListItem.innerHTML = `Keep typing for results... (${charsLeft})`;
+          resultsList.appendChild(promptListItem);
+        }
+      }
+
+      function removeAllChildNodes(parent) {
+        while (parent.firstChild) {
+          parent.removeChild(parent.firstChild);
+        }
+      }
+
+      function getChapterSearchResults(searchText) {
+        const searchRegEx = new RegExp(searchText, 'gi')
+        let resultsArr = [];
+
+        for (let chapter=1; chapter < 10; chapter++) {
+          const chapterTemplate = window.document.getElementById(`chapter-template-${chapter}`);
+          const chapterTemplateClone =  chapterTemplate.content.cloneNode(true);
+				  const chapterContent = chapterTemplateClone.querySelector(`#chapter-content-${chapter}`);
+          const results =  [...chapterContent.innerHTML.matchAll(searchRegEx)];
+          if (results && results.length) {
+            let indices = [];
+            results.map(result => indices.push(result.index));
+            resultsArr.push({ 
+              chapter: chapter,
+              count: results.length,
+              indices: indices
+            });
+          }
+        }
+
+        return resultsArr;
+      }
 
 			function watchScrollToUpdateLS() {
 				document.addEventListener('scroll', (e) => {
