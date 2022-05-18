@@ -4,7 +4,7 @@
     <title>The Great Gatsby Web-book</title>
     <meta
       name='description'
-      content='A free, lightweight HTML version of the Great Gatsby by F. Scott Fitzgerald (Public Domain)'
+      content='A free, lightweight HTML version of the Great Gatsby by F. Scott Fitzgerald (Public Domain). PDF alternative'
     >
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
@@ -40,14 +40,18 @@
       h1.transparent {
         color: transparent;
         margin: 0;
+        font-size: initial;
+        line-height: 54px;
       }
 
-      h2 {
+      h1 {
         text-align: center;
         font-size: 48px;
         position: sticky;
         top: 0;
         background-color: var(--color-background);
+        white-space: nowrap;
+        /* max-width: calc(90vw); */
       }
 
       p {
@@ -87,6 +91,7 @@
         font-size: 1rem;
         padding: 6px;
         margin-top: 12px;
+        max-width: 488px;
       }
 
       .font-size-input-container {
@@ -117,6 +122,9 @@
         width: 100%;
         left: 0;
         transition: var(--drawer-transition);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       #main.drawer-open {
@@ -130,10 +138,14 @@
         align-items: center;
         text-align: center;
         opacity: 1;
-        transition: opacity .25s ease-in-out;
+        transition: opacity 300ms;
+        max-width: 1000px;
       }
 
-      .current-chapter {
+      #chapter-content-0 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         min-height: 100vh;
       }
 
@@ -146,6 +158,9 @@
       blockquote.verse {
         margin-left: 0;
         margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       blockquote.verse p {
@@ -153,18 +168,20 @@
       }
 
       #next-chapter-btn {
+        font-family: Verdana, sans-serif;
         cursor: pointer;
-        font-family: Georgia, Garamond, serif;
-        font-size: 32px;
-        letter-spacing: 2px;
+        height: 10vh;
+        width: 10vh;
+        max-height: 82px;
+        max-width: 82px;
+        border-radius: 50%;
+        border: 6px solid var(--color-text);
         font-weight: bold;
-        border-radius: 6px;
-        border: 2px solid var(--color-text);
-        color: var(--color-text);
-        background: var(--color-background);
-        padding: 12px 24px;
-        margin: 24px 0;
-        text-transform: uppercase;
+        font-size: 3vh;
+        margin: 24px 12px 12px 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       #next-chapter-btn:hover {
@@ -211,12 +228,19 @@
 
       #menu-icon {
         position: fixed;
+        left: 0;
+        top: 0;
+        transition: var(--drawer-transition);
         padding: 16px;
         background: var(--color-text);
         border-radius: 0 16px 16px 0;
         cursor: pointer;
         margin-left: -1px;
         z-index: 1;
+      }
+
+      #main.drawer-open #menu-icon {
+        left: var(--drawer-width);
       }
 
       #menu-icon g {
@@ -261,6 +285,11 @@
         margin: 1.5vh 12px;
       }
 
+      #table-of-contents li:hover {
+        border: 6px solid var(--color-accent);
+        color: var(--color-accent);
+      }
+
       #table-of-contents li.active-nav-btn {
         color: var(--color-black);
         background: var(--color-accent);
@@ -290,7 +319,7 @@
       @media only screen and (min-width: 600px) {
         #title-svg {
           width: 60vw;
-          max-width: 800px;
+          max-width: 600px;
           height: auto;
         }
 
@@ -326,9 +355,7 @@
         <div class='current-chapter'>
           <!-- chapter content will be inserted here -->
         </div>
-				<button id='next-chapter-btn'>
-					Chapter I
-				</button>
+				<div id='next-chapter-btn'></div>
       </div>
     </main>
 
@@ -424,7 +451,7 @@
 
     <template id='chapter-template-1'>
       <div class='current-chapter' id='chapter-content-1'>
-        <h2>I</h2>
+        <h1>I</h1>
         <p>
           In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since.
         </p>
@@ -888,7 +915,7 @@
 
     <template id='chapter-template-2'>
       <div class='current-chapter' id='chapter-content-2'>
-        <h2>II</h2>
+        <h1>II</h1>
         <p>
           About halfway between West Egg and New York the motor road hastily joins the railroad and runs beside it for a quarter of a mile, so as to shrink away from a certain desolate area of land. This is a valley of ashes—a fantastic farm where ashes grow like wheat into ridges and hills and grotesque gardens; where ashes take the forms of houses and chimneys and rising smoke and, finally, with a transcendent effort, of ash-grey men, who move dimly and already crumbling through the powdery air. Occasionally a line of grey cars crawls along an invisible track, gives out a ghastly creak, and comes to rest, and immediately the ash-grey men swarm up with leaden spades and stir up an impenetrable cloud, which screens their obscure operations from your sight.
         </p>
@@ -1305,7 +1332,7 @@
 
     <template id='chapter-template-3'>
       <div class='current-chapter' id='chapter-content-3'>
-        <h2>III</h2>
+        <h1>III</h1>
         <p>
           There was music from my neighbour’s house through the summer nights. In his blue gardens men and girls came and went like moths among the whisperings and the champagne and the stars. At high tide in the afternoon I watched his guests diving from the tower of his raft, or taking the sun on the hot sand of his beach while his two motorboats slit the waters of the Sound, drawing aquaplanes over cataracts of foam. On weekends his Rolls-Royce became an omnibus, bearing parties to and from the city between nine in the morning and long past midnight, while his station wagon scampered like a brisk yellow bug to meet all trains. And on Mondays eight servants, including an extra gardener, toiled all day with mops and scrubbing-brushes and hammers and garden-shears, repairing the ravages of the night before.
         </p>
@@ -1825,7 +1852,7 @@
 
     <template id='chapter-template-4'>
       <div class='current-chapter' id='chapter-content-4'>
-        <h2>IV</h2>
+        <h1>IV</h1>
         <p>
           On Sunday morning while church bells rang in the villages alongshore, the world and its mistress returned to Gatsby’s house and twinkled hilariously on his lawn.
         </p>
@@ -2353,7 +2380,7 @@
 
     <template id='chapter-template-5'>
       <div class='current-chapter' id='chapter-content-5'>
-        <h2>V</h2>
+        <h1>V</h1>
         <p>
           When I came home to West Egg that night I was afraid for a moment that my house was on fire. Two o’clock and the whole corner of the peninsula was blazing with light, which fell unreal on the shrubbery and made thin elongating glints upon the roadside wires. Turning a corner, I saw that it was Gatsby’s house, lit from tower to cellar.
         </p>
@@ -2833,7 +2860,7 @@
 
     <template id='chapter-template-6'>
       <div class='current-chapter' id='chapter-content-6'>
-        <h2>VI</h2>
+        <h1>VI</h1>
         <p>
           About this time an ambitious young reporter from New York arrived one morning at Gatsby’s door and asked him if he had anything to say.
         </p>
@@ -3245,7 +3272,7 @@
 
     <template id='chapter-template-7'>
       <div class='current-chapter' id='chapter-content-7'>
-        <h2>VII</h2>
+        <h1>VII</h1>
         <p>
           It was when curiosity about Gatsby was at its highest that the lights in his house failed to go on one Saturday night—and, as obscurely as it had begun, his career as Trimalchio was over. Only gradually did I become aware that the automobiles which turned expectantly into his drive stayed for just a minute and then drove sulkily away. Wondering if he were sick I went over to find out—an unfamiliar butler with a villainous face squinted at me suspiciously from the door.
         </p>
@@ -4500,7 +4527,7 @@
 
     <template id='chapter-template-8'>
       <div class='current-chapter' id='chapter-content-8'>
-        <h2>VIII</h2>
+        <h1>VIII</h1>
         <p>
           I couldn’t sleep all night; a foghorn was groaning incessantly on the Sound, and I tossed half-sick between grotesque reality and savage, frightening dreams. Toward dawn I heard a taxi go up Gatsby’s drive, and immediately I jumped out of bed and began to dress—I felt that I had something to tell him, something to warn him about, and morning would be too late.
         </p>
@@ -4852,7 +4879,7 @@
 
     <template id='chapter-template-9'>
       <div class='current-chapter' id='chapter-content-9'>
-        <h2>IX</h2>
+        <h1>IX</h1>
         <p>
           After two years I remember the rest of that day, and that night and the next day, only as an endless drill of police and photographers and newspaper men in and out of Gatsby’s front door. A rope stretched across the main gate and a policeman by it kept out the curious, but little boys soon discovered that they could enter through my yard, and there were always a few of them clustered open-mouthed about the pool. Someone with a positive manner, perhaps a detective, used the expression “madman” as he bent over Wilson’s body that afternoon, and the adventitious authority of his voice set the key for the newspaper reports next morning.
         </p>
@@ -5404,6 +5431,7 @@
 			// GLOBAL VARIABLES
 			let btnListenr = null;
 			let timeOutId = null;
+			let initialLoad = false;
 			
 			// 
       // SCRIPT
@@ -5438,8 +5466,9 @@
         const newChapterTemplateClone =  newChapterTemplate.content.cloneNode(true);
 				const newChapterContent = newChapterTemplateClone.querySelector(`#chapter-content-${chapter}`);
 
-        const btn = window.document.getElementById('next-chapter-btn'); 
-
+        const btn = window.document.getElementById('next-chapter-btn');
+        
+        const timeOutMS = initialLoad ? 250 : 1;
         currentContent.style.opacity = 0;
         setTimeout(() => {
           currentContent.removeChild(previousChapter);
@@ -5450,12 +5479,11 @@
             currentContent.appendChild(btn);
             window.scrollTo(0, 0);
             currentContent.style.opacity = 1;
-          }, 250);
+            initialLoad = true;
+          }, timeOutMS);
 
-        }, 250)
+        }, timeOutMS)
 
-
-				// currentContent.replaceChild(newChapterContent, previousChapter);
         window.localStorage.setItem(LS_CURRENT_CHAPTER, chapter);
       }
 			
@@ -5464,7 +5492,7 @@
         if (btnListenr) {
           btn.removeEventListener('click', btnListenr);
         }
-				btn.innerHTML = `Chapter ${chapter}`;
+        setTimeout(() => btn.innerHTML = chapter, 400);
         btnListenr = (el) => loadChapter(chapter);
 				btn.addEventListener('click', btnListenr);
 			}
@@ -5548,9 +5576,7 @@
 					if (timeOutId) {
 						return;
 					}
-
 					timeOutId = setTimeout( () => {
-						console.log('scrollTimeout');
 						const scrollPercentage = window.pageYOffset / window.document.getElementById('main').scrollHeight;
 						window.localStorage.setItem(LS_CHAPTER_SCROLLED, scrollPercentage);
 						timeOutId = null;
