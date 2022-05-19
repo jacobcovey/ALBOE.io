@@ -198,6 +198,7 @@
         display: flex;
         margin: 0 12px 12px 12px;
         line-height: 32px;
+        align-items: center;
       }
 
       #settings-modal .settings-label {
@@ -216,6 +217,7 @@
         justify-content: center;
         align-items: center;
         min-width: 24px;
+        max-height: 32px;
       }
 
       #text-options-container .text-option-btn.selected {
@@ -5572,6 +5574,7 @@
 			// 
       // SCRIPT
 			loadCurrentChapterFromLS();
+      setUpbackBtnWatch();
 			loadFontSizeFromLS();
 			setUpDrawerToggle();
 			addListenersToNavBtns();
@@ -5581,13 +5584,23 @@
 			// 
 			// FUNCTIONS
 			function loadCurrentChapterFromLS() {
+        const url = new URL(window.location);
+        const urlChapter = url.searchParams.get('chapter');
 				const lsCurrentChapter = window.localStorage.getItem(LS_CURRENT_CHAPTER);
-				if (Number(lsCurrentChapter)) {
+				if (Number(urlChapter)) {
+          loadChapter(urlChapter);
+        } else if (Number(lsCurrentChapter)) {
 					loadChapter(lsCurrentChapter);
 				} else {
 					loadChapter(0);
 				}
 			}
+
+      function setUpbackBtnWatch() {
+        window.addEventListener('popstate', (e) => {
+          loadCurrentChapterFromLS();
+        }, false);
+      }
 
 			function loadChapter(chapter, matchIndecies, matchText) {
 				updateNextChapterBtn(Number(chapter) + 1);
@@ -5619,6 +5632,10 @@
             }
             currentContent.style.opacity = 1;
             initiallyLoaded = true;
+
+            const url = new URL(window.location);
+            url.searchParams.set('chapter', chapter);
+            window.history.pushState({}, '', url);
 
             if (chapter == 0) {
               setUpPassageSearch();
