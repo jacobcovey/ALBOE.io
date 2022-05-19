@@ -52,7 +52,6 @@
         top: 0;
         background-color: var(--color-background);
         white-space: nowrap;
-        /* max-width: calc(90vw); */
       }
 
       p {
@@ -92,14 +91,14 @@
         font-size: 1rem;
         padding: 12px 6px;
         margin-top: 12px;
-        max-width: 488px;
+        max-width: 420px;
         border-color: var(--color-text);
         border-radius: 2px;
       }
 
       #passage-search-results {
         width: 80vw;
-        max-width: 488px;
+        max-width: 420px;
         margin-top: -1px;
         padding-inline-start: 0;
       }
@@ -135,32 +134,34 @@
 
       #settings-modal {
         position: fixed;
-        bottom: 6px;
-        left: 12px;
-        right: 12px;
-        background: var(--color-background);
+        top: 360px;
+        background: var(--color-text);
+        color: var(--color-background);
         border-radius: 6px;
-        border: 2px solid var(--color-text);
         display: flex;
         flex-direction: column;
         justify-content: center;
         z-index: 1;
-        transition: all .4s;
-        font-size: 1rem;
-        padding: 12px;
+        width: 95vw;
+        max-width: 464px;
+        padding-bottom: 24px;
       }
 
       #settings-modal.collapsed {
+        position: absolute;
+        align-items: center;
         cursor: pointer;
-        top: 4px;
-        right: 4px;
+        top: 0;
+        right: 0;
         bottom: unset;
         left: unset;
-        font-size: 46px;
-        height: 46px;
-        width: 46px;
-        border-color: var(--color-background);
+        height: 52px;
+        width: 52px;
+        transform: translateX(0);
         padding: 0;
+
+        background: var(--color-background);
+        color: var(--color-text);
       }
 
       #settings-modal.collapsed .expanded-content {
@@ -173,13 +174,20 @@
 
       #settings-modal.collapsed #expand-icon {
         display: initial;
+
+        /* HACK to center the unicode gear character */
+        margin-top: -3px;
       } 
 
+      #expand-icon {
+        font-size: 52px;
+      }
+
       #settings-modal #collapse-icon {
-        width: 100%;
         cursor: pointer;
-        transform: rotate(180deg);
         font-size: 24px;
+        text-align: end;
+        padding: 12px;
       }
 
       #settings-modal.collapsed .setting-line {
@@ -188,7 +196,8 @@
 
       #settings-modal .setting-line {
         display: flex;
-        margin: 6px 0;
+        margin: 0 12px 12px 12px;
+        line-height: 32px;
       }
 
       #settings-modal .settings-label {
@@ -201,7 +210,7 @@
         cursor: pointer;
         padding: 0 4px;
         border-radius: 6px;
-        border: 1px solid var(--color-text);
+        border: 1px solid var(--color-background);
         margin: 0 6px;
         display: flex;
         justify-content: center;
@@ -225,6 +234,7 @@
       }
 
       #settings-modal #dark-mode-cb {
+        cursor: pointer;
         height: 20px;
         width: 20px;
         margin: 6px;
@@ -432,12 +442,16 @@
       @media only screen and (min-width: 600px) {
         #title-svg {
           width: 60vw;
-          max-width: 600px;
+          max-width: 520px;
           height: auto;
         }
 
+        #current-content {
+          padding: 32px;
+        }
+
         #main.drawer-open {
-          width: calc(100vw - 300px);
+          width: calc(100vw - var(--drawer-width));
         }
 
         #table-of-contents li {
@@ -445,6 +459,17 @@
           width: 8vh;
           font-size: 2.5vh;
           margin: 2vh 12px;
+        }
+
+        #settings-modal {
+          top: 412px;
+        }
+      }
+
+      @media only screen and (min-width: 1620px) {
+        #main.drawer-open {
+          width: 100%;
+          left: 0;
         }
       }
     </style>
@@ -460,8 +485,8 @@
           </g>
       </svg>
       <div id='settings-modal' class='collapsed'>
-        <span id='expand-icon'>⚙</span>
-        <span id='collapse-icon' class='expanded-content'>▾</span>
+        <span id='expand-icon'>&#x2699;&#xFE0E;</span>
+        <span id='collapse-icon' class='expanded-content'>✕</span>
         <div id='settings-text-size' class='setting-line'>
           <span class='settings-label'>Text Size:</span>
           <div id='text-options-container'>
@@ -5553,6 +5578,7 @@
       // CONSTANTS
       const MIN_SEARCH_CHARS = 5;
       const TEXT_SIZES_ARR = [ 12, 16, 18, 22, 32 ];
+      const LS_DARK_MODE = 'al1_dark-mode';
       const LS_FONT_SIZE_PX = 'al1_font-size-px';
       const LS_CURRENT_CHAPTER = 'al1_current-chapter';
       const LS_CHAPTER_SCROLLED = 'al1_current-chapter-scroll-percent';
@@ -5702,7 +5728,17 @@
         expandIcon.addEventListener('click', (e) => {
           settingsModal.classList.remove('collapsed');
         });
+
+        const collapseIcon = document.getElementById('collapse-icon');
+        collapseIcon.addEventListener('click', (e) => {
+          settingsModal.classList.add('collapsed');
+        });
         
+        setUpTextSizeSetting();
+        setUpDarkModeSetting();
+      }
+
+      function setUpTextSizeSetting() {
         let currentFontSize = TEXT_SIZES_ARR[2];
         const textSizeFromLs = Number(window.localStorage.getItem(LS_FONT_SIZE_PX));
         currentFontSize = textSizeFromLs ? textSizeFromLs : currentFontSize;
@@ -5728,6 +5764,40 @@
             
             clickedEl.classList.add('selected');
 					});
+        });
+      }
+
+      function setUpDarkModeSetting() {
+        const setDark = () => {
+          document.documentElement.style.setProperty('--color-background', 'var(--color-black)');
+          document.documentElement.style.setProperty('--color-text', 'var(--color-white)');
+        }
+        const setLight = () => {
+          document.documentElement.style.setProperty('--color-background', 'var(--color-white)');
+          document.documentElement.style.setProperty('--color-text', 'var(--color-black)');
+        }
+
+        const darkModeSettingFromLs = window.localStorage.getItem(LS_DARK_MODE);
+        const darkModeCb = document.getElementById('dark-mode-cb');
+
+        if (darkModeSettingFromLs !== null) {
+           if (darkModeSettingFromLs === 'true') {
+            setDark();
+            darkModeCb.checked = true;
+           } else {
+            setLight();
+           }
+        } else {
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            darkModeCb.checked = true;
+          }
+        }
+
+        darkModeCb.addEventListener('click', (e) => {
+          const checked = e.target.checked;
+          checked ? setDark() : setLight();
+
+          window.localStorage.setItem(LS_DARK_MODE, checked);
         });
       }
 
