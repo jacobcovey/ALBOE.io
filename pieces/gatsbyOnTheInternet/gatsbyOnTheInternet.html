@@ -419,26 +419,6 @@
         border: 6px solid var(--color-accent);
       }
 
-      span.coral {
-        color: #f88379;
-      }
-
-      span.apple-green {
-        color: #8db600;
-      }
-
-      span.lavender {
-        color: #9669c2;
-      }
-
-      span.faint-orange {
-        color: #ffbb74;
-      }
-
-      span.indian-blue {
-        color: #00D9FF;
-      }
-
       @media only screen and (min-width: 600px) {
         #title-svg {
           width: 60vw;
@@ -2884,7 +2864,7 @@
           “I’ve got a man in England who buys me clothes. He sends over a selection of things at the beginning of each season, spring and fall.”
         </p>
         <p>
-          He took out a pile of shirts and began throwing them, one by one, before us, shirts of sheer linen and thick silk and fine flannel, which lost their folds as they fell and covered the table in many-coloured disarray. While we admired he brought more and the soft rich heap mounted higher—shirts with stripes and scrolls and plaids in <span class='coral'>coral</span> and <span class='apple-green'>apple-green</span> and <span class='lavender'>lavender</span> and <span class='faint-orange'>faint orange</span>, with monograms of <span class='indian-blue'>indian blue</span>. Suddenly, with a strained sound, Daisy bent her head into the shirts and began to cry stormily.
+          He took out a pile of shirts and began throwing them, one by one, before us, shirts of sheer linen and thick silk and fine flannel, which lost their folds as they fell and covered the table in many-coloured disarray. While we admired he brought more and the soft rich heap mounted higher—shirts with stripes and scrolls and plaids in <span style='color: #f88379'>coral</span> and <span style='color: #8db600'>apple-green</span> and <span style='color: #9669c2'>lavender</span> and <span style='color: #ffbb74'>faint orange</span>, with monograms of <span style='color: #00D9FF'>indian blue</span>. Suddenly, with a strained sound, Daisy bent her head into the shirts and began to cry stormily.
         </p>
         <p>
           “They’re such beautiful shirts,” she sobbed, her voice muffled in the thick folds. “It makes me sad because I’ve never seen such—such beautiful shirts before.”
@@ -5587,7 +5567,7 @@
 			// GLOBAL VARIABLES
 			let btnListenr = null;
 			let timeOutId = null;
-			let initialLoad = false;
+			let initiallyLoaded = false;
 			
 			// 
       // SCRIPT
@@ -5604,7 +5584,6 @@
 				const lsCurrentChapter = window.localStorage.getItem(LS_CURRENT_CHAPTER);
 				if (Number(lsCurrentChapter)) {
 					loadChapter(lsCurrentChapter);
-					scrollFromLS();
 				} else {
 					loadChapter(0);
 				}
@@ -5623,7 +5602,7 @@
 
         const btn = window.document.getElementById('next-chapter-btn');
         
-        const timeOutMS = initialLoad ? 250 : 1;
+        const timeOutMS = initiallyLoaded ? 250 : 1;
         currentContent.style.opacity = 0;
         setTimeout(() => {
           currentContent.removeChild(previousChapter);
@@ -5632,23 +5611,26 @@
           setTimeout(() => {
             currentContent.appendChild(newChapterContent);
             currentContent.appendChild(btn);
-            window.scrollTo(0, 0);
+
+            if (initiallyLoaded) {
+              window.scrollTo(0, 0);
+            } else {
+              scrollFromLS();
+            }
             currentContent.style.opacity = 1;
-            initialLoad = true;
+            initiallyLoaded = true;
 
             if (chapter == 0) {
               setUpPassageSearch();
             }
 
             if (matchIndecies) {
-              console.log('highlight and scroll to matchIndecies: ', matchIndecies);
               let newChapterContentHTML = newChapterContent.innerHTML;
               matchIndecies.slice(0).reverse().map(index => {
                 newChapterContentHTML = newChapterContentHTML.substring(0, index) + '<span class=\'match-text\'>' + matchText + '</span>' + newChapterContentHTML.substring(index + matchText.length);
               });
               newChapterContent.innerHTML = newChapterContentHTML;
               const firstMatch = newChapterContent.querySelector('.match-text');
-              // firstMatch.scrollIntoView({behavior: "smooth"});
               const y = firstMatch.getBoundingClientRect().top + window.pageYOffset - 70;
               window.scrollTo({top: y, behavior: 'smooth'});
             }
@@ -5679,8 +5661,8 @@
 			function scrollFromLS() {
 				const lsScrollPercentage = window.localStorage.getItem(LS_CHAPTER_SCROLLED);
 				if (lsScrollPercentage) {
-					const scrollTo = window.document.getElementById('main').scrollHeight * lsScrollPercentage;
-					window.scrollTo(0, scrollTo);
+          const y = window.document.getElementById('main').scrollHeight * lsScrollPercentage;
+          window.scrollTo({top: y});
 				}
 			}
 			
