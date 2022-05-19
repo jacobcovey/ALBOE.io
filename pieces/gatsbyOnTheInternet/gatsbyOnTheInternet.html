@@ -5630,15 +5630,14 @@
 
             if (initiallyLoaded) {
               window.scrollTo(0, 0);
+              const url = new URL(window.location);
+              url.searchParams.set('chapter', chapter);
+              window.history.pushState({}, '', url);
             } else {
               scrollFromLS();
             }
             currentContent.style.opacity = 1;
             initiallyLoaded = true;
-
-            const url = new URL(window.location);
-            url.searchParams.set('chapter', chapter);
-            window.history.pushState({}, '', url);
 
             if (chapter == 0) {
               setUpPassageSearch();
