@@ -42,6 +42,7 @@
         margin: 0;
         font-size: initial;
         line-height: 54px;
+        width: 100%;
       }
 
       h1 {
@@ -132,7 +133,7 @@
         text-decoration: underline;
       }
 
-      .font-size-input-container {
+      #settings-modal {
         position: fixed;
         bottom: 6px;
         left: 12px;
@@ -141,18 +142,92 @@
         border-radius: 6px;
         border: 2px solid var(--color-text);
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        gap: 8px;
-        padding: 6px;
-
-        /* Temporary */
-        opacity: 0;
+        z-index: 1;
+        transition: all .4s;
+        font-size: 1rem;
+        padding: 12px;
       }
 
-      #font-size-input {
-        width: 200px;
-        height: 32px;
+      #settings-modal.collapsed {
+        cursor: pointer;
+        top: 4px;
+        right: 4px;
+        bottom: unset;
+        left: unset;
+        font-size: 46px;
+        height: 46px;
+        width: 46px;
+        border-color: var(--color-background);
+        padding: 0;
+      }
+
+      #settings-modal.collapsed .expanded-content {
+        display: none;
+      } 
+
+      #settings-modal #expand-icon {
+        display: none;
+      } 
+
+      #settings-modal.collapsed #expand-icon {
+        display: initial;
+      } 
+
+      #settings-modal #collapse-icon {
+        width: 100%;
+        cursor: pointer;
+        transform: rotate(180deg);
+        font-size: 24px;
+      }
+
+      #settings-modal.collapsed .setting-line {
+        display: none;
+      }
+
+      #settings-modal .setting-line {
+        display: flex;
+        margin: 6px 0;
+      }
+
+      #settings-modal .settings-label {
+        display: flex;
+        align-items: center;
+        width: 120px;
+      }
+
+      #text-options-container .text-option-btn {
+        cursor: pointer;
+        padding: 0 4px;
+        border-radius: 6px;
+        border: 1px solid var(--color-text);
+        margin: 0 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 24px;
+      }
+
+      #text-options-container .text-option-btn.selected {
+        background: var(--color-accent);
+        color: var(--color-black) !important;
+        border-color: var(--color-accent);
+      }
+
+      #text-options-container {
+        display: flex;
+      }
+
+      #text-options-container .text-option-btn:hover {
+        color: var(--color-accent);
+        border-color: var(--color-accent);
+      }
+
+      #settings-modal #dark-mode-cb {
+        height: 20px;
+        width: 20px;
+        margin: 6px;
       }
 
       #main {
@@ -384,9 +459,23 @@
             <polygon id='Path' points='20 0 -5.81132364e-15 0 2.00261801 4 17.9973822 3.95555556'></polygon>
           </g>
       </svg>
-      <div class='font-size-input-container'>
-        <label for='font-size'>Text Size:</label>
-        <input type='range' id='font-size-input' name='font-size' min='0' max='8'>
+      <div id='settings-modal' class='collapsed'>
+        <span id='expand-icon'>⚙</span>
+        <span id='collapse-icon' class='expanded-content'>▾</span>
+        <div id='settings-text-size' class='setting-line'>
+          <span class='settings-label'>Text Size:</span>
+          <div id='text-options-container'>
+            <span class='text-option-btn' data-text-scale='0'>A</span>
+            <span class='text-option-btn' data-text-scale='1'>A</span>
+            <span class='text-option-btn' data-text-scale='2'>A</span>
+            <span class='text-option-btn' data-text-scale='3'>A</span>
+            <span class='text-option-btn' data-text-scale='4'>A</span>
+          </div>
+        </div>
+        <div id='settings-dark-mode' class='setting-line'>
+          <span class='settings-label'>Dark Mode:</span>
+          <input id='dark-mode-cb' type='checkbox'>
+        </div>
       </div>
 
       <div id='current-content'>
@@ -5607,26 +5696,51 @@
 			}
 
 			function setUpSettingsModal() {
-        const fontSizeInput = document.getElementById('font-size-input');
+        const settingsModal = document.getElementById('settings-modal');
 
-        if (fontSizeInput) {
-          const valFromLs = Number(window.localStorage.getItem(LS_FONT_SIZE_PX));
-          if (Number.isFinite(valFromLs)) {
-            fontSizeInput.value = TEXT_SIZES_ARR.indexOf(valFromLs);
+        const expandIcon = document.getElementById('expand-icon');
+        expandIcon.addEventListener('click', (e) => {
+          settingsModal.classList.remove('collapsed');
+        });
+        
+        let currentFontSize = TEXT_SIZES_ARR[2];
+        const textSizeFromLs = Number(window.localStorage.getItem(LS_FONT_SIZE_PX));
+        currentFontSize = textSizeFromLs ? textSizeFromLs : currentFontSize;
+
+        const textOptionBtns = document.querySelectorAll('.text-option-btn');
+        textOptionBtns.forEach((el) => {
+          const fontSize = TEXT_SIZES_ARR[Number(el.getAttribute('data-text-scale'))];
+          el.style.fontSize = fontSize + 'px';
+
+          if (fontSize == currentFontSize) {
+            el.classList.add('selected');
           }
 
-          fontSizeInput.addEventListener('input', (e) => {
-            const newVal = TEXT_SIZES_ARR[Number(e.target.value)];
-            window.localStorage.setItem(LS_FONT_SIZE_PX, newVal);
-            document.documentElement.style.setProperty('--body-font-size', newVal+'px');
-          });
-        }
+          el.addEventListener('click', (e) => {
+            const clickedEl = e.target;
+
+            const newTextSize = TEXT_SIZES_ARR[clickedEl.getAttribute('data-text-scale')];
+            window.localStorage.setItem(LS_FONT_SIZE_PX, newTextSize);
+            document.documentElement.style.setProperty('--body-font-size', newTextSize+'px');
+
+            const currentSelected = document.querySelector('.text-option-btn.selected');
+            currentSelected && currentSelected.classList.remove('selected');
+            
+            clickedEl.classList.add('selected');
+					});
+        });
       }
 
 			function setUpPassageSearch() {
         const passageSearchInput = window.document.getElementById('passage-search');
         passageSearchInput.addEventListener('keyup', (e) => {
           displayPassageSearchResults(passageSearchInput.value);
+        });
+
+        passageSearchInput.addEventListener('search', (e) => {
+          if (!passageSearchInput.value) {
+            displayPassageSearchResults(passageSearchInput.value);
+          }
         });
 			}
 
