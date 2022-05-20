@@ -1,10 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
+    <!-- TODO: add functionality to header component to get title and description from site structure -->
+    <title>dotHTML Project</title>
+    <meta
+      name='description'
+      content='For the ❤️ of HTML'
+    >
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
+
+    <link rel="icon" type="image/x-icon" href='/internalResources/assets/white-sheep.svg'>
+    <script src='/internalResources/webComponents/alboeHeader.js' defer></script>
+    <script src='/internalResources/webComponents/alboeFooter.js' defer></script>
+    <script src='/internalResources/webComponents/sheepHeadLogo.js' defer></script>
+
+    <link rel='stylesheet' href='/internalResources/styleSheets/alboe.css'>
+
+    <style>
+
+      .svg-container svg {
+        width: 120px;
+        height: auto;
+      }
+
+      .main-content h2 {
+        padding: 0 24px;
+      }
+
+      .main-content h3 {
+        margin: 30px 24px 24px 24px;
+        text-align: center;
+      }
+
+      p {
+        font-size: 18px;
+        padding: 0 24px;
+        max-width: 800px;
+      }
+
+      @media only screen and (min-width: 600px) {
+        dl div dt {
+          min-width: 148px;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <h1>dotHTML Project</h1>
+  <body >
+    <alboe-header></alboe-header>
+    <main class='main-content'>
+      <h1>dotHTML Project</h1>
+
+      <figure id='svg_0-prj' class='svg-container'></figure>
+
+      <div class='alboe-info'>
+        <dl>
+          <div>
+            <dt>Status</dt>
+            <dd>Coming soon</dd>
+          </div>
+          <div>
+            <dt>Related</dt>
+            <dd><a href='/pieces/gatsbyOnTheInternet/'>/pieces/gatsbyOnTheInternet/</a></dd>
+          </div>
+          <div>
+            <dt>Related</dt>
+            <dd><a href='/posts/HTMLplusNFT/'>/posts/HTMLplusNFT/</a></dd>
+          </div>
+        </dl>
+      </div>
+
+    </main>
+    <alboe-footer></alboe-footer>
   </body>
+
+  <script>
+    const svgContainer = document.getElementById('svg_0-prj');
+
+    fetch('dotHTML.svg')
+      .then(r => r.text())
+      .then(inner => {
+        svgContainer.innerHTML = inner;
+      })
+      .catch(console.error.bind(console));
+  </script>
 </html>
