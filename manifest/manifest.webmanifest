@@ -3,7 +3,7 @@
     "background_color": "#ffff",
     "display": "fullscreen",
     "scope": "/",
-    "start_url": "../index.html",
+    "start_url": "https://alboe.io/",
     "name": "ALBOE.IO",
     "short_name": "ALBOE",
     "icons": [
