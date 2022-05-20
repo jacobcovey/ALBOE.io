@@ -140,6 +140,16 @@ class AlboeHeader extends HTMLElement {
     logoLink.setAttribute('href', '/');
     logoLink.setAttribute('class', 'logo-link');
 
+    // 
+    // REMOVE AFTER BETA
+    const betaText = document.createElement('span');
+    betaText.innerText = 'beta';
+    betaText.style.fontSize = '12px';
+    betaText.style.marginLeft = '4px';
+    logoLink.appendChild(betaText);
+    // 
+    // 
+
     headerInner.appendChild(logoLink);
 
     const rightContent = document.createElement('div');
