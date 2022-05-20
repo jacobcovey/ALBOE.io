@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
+    <title>ALBOE Project</title>
+    <meta
+      name='description'
+      content='What ALBOE is making'
+    >
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
+
+    <link rel="icon" type="image/x-icon" href='/internalResources/assets/white-sheep.svg'>
+    <script src='/internalResources/webComponents/alboeHeader.js' defer></script>
+    <script src='/internalResources/webComponents/alboeFooter.js' defer></script>
+    <script src='/internalResources/webComponents/sheepHeadLogo.js' defer></script>
+
+    <link rel='stylesheet' href='/internalResources/styleSheets/alboe.css'>
+
+    <style>
+      .under-construction {
+        height: 750px;
+        width: 100vw;
+        background: white;
+      }
+
+      .under-construction #at-expanding-share-button {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <h1>Projects</h1>
+    <alboe-header></alboe-header>
+    <main class='main-content'>
+      <h1>ALBOE Projects Page</h1>
+      <iframe 
+        class="under-construction"
+        title="Dunder Mifflin Under Construction Page"
+        width="100%"
+        height="100%"
+        src="https://maxxcrawford.github.io/dundermifflin.com/"
+      ></iframe>
+    </main>
+    <alboe-footer></alboe-footer>
   </body>
 </html>

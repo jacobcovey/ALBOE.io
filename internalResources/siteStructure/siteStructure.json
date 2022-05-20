@@ -57,32 +57,6 @@
           "featured": 3
         }
       ]
-    },
-    {
-      "id": "3-dir",
-      "title": "Internal Resources",
-      "subtitle": "Things we feed the website (e.g. stylesheets, WebComponents, etc.)",
-      "slug": "/internalResources",
-      "subs": [
-        {
-          "id": "0-ir",
-          "slug": "/internalResources/siteStructure",
-          "title": "Site Structure",
-          "subtitle": "Where I am typing this right now."        
-        },
-        {
-          "id": "1-ir",
-          "slug": "/internalResources/styleSheets",
-          "title": "Style Sheets",
-          "subtitle": "The .css files that style this website"        
-        },
-        {
-          "id": "2-ir",
-          "slug": "/internalResources/webComponents",
-          "title": "Web Components",
-          "subtitle": "Vanilla WebComponents in .js files"        
-        }
-      ]
     }
   ]
 }
