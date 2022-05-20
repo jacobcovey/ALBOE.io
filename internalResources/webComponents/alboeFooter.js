@@ -267,7 +267,7 @@ class AlboeFooter extends HTMLElement {
 
     const detailList = document.createElement('dl');
     addDetailListItem(detailList, 'Est.', '2022');
-    addDetailListItem(detailList, 'Made in', 'Clallam County WA USA');
+    addDetailListItem(detailList, 'Made in', '<a href="https://jamestowntribe.org/" target="_blank" style="text-decoration: none;">Clallam</a> County WA USA');
     addDetailListItem(detailList, 'License', 'MIT');
     const iconDiv = document.createElement('div');
     iconDiv.classList.add('icon-container');
@@ -319,7 +319,7 @@ function addDetailListItem(dlEl, key, value) {
   const dtEl = document.createElement('dt');
   dtEl.innerText = key;
   const ddEl = document.createElement('dd');
-  ddEl.innerText = value;
+  ddEl.innerHTML = value;
 
   divEl.appendChild(dtEl);
   divEl.appendChild(ddEl);

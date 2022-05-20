@@ -9,10 +9,10 @@
         {
           "id": "0-prj",
           "slug": "/projects/dotHTML",
-          "title": "dotHTML",
+          "title": "dotHTML (alpha)",
           "subtitle": "For the ❤️ of HTML",
           "icon": "/dotHTML.svg",
-          "featured": 3
+          "featured": 2
         },
         {
           "id": "1-prj",
@@ -31,10 +31,10 @@
         {
           "id": "0-pe",
           "slug": "/pieces/gatsbyOnTheInternet",
-          "title": "Gatsby On The Internet",
-          "subtitle": "Web-book of The Great Gatsby by F S Fitzgerald (public domain)",
+          "title": "Gatsby On The Internet (beta)",
+          "subtitle": "Web-book of The Great Gatsby by F S Fitzgerald",
           "icon": "/gatsbyOnTheInternet.svg",
-          "featured": 2,
+          "featured": 1,
           "tags": [
             "public-domain",
             "book"
@@ -51,10 +51,10 @@
         {
           "id": "0-po",
           "slug": "/posts/HTMLplusNFT",
-          "title": "HTML + NFT = ?",
-          "subtitle": "",
+          "title": "HTML + NFT = ? (alpha)",
+          "subtitle": "Exploring the possibilities of minting HTML files",
           "icon": "/HTMLplusNFT.svg",
-          "featured": 1
+          "featured": 3
         }
       ]
     },
