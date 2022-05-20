@@ -95,7 +95,7 @@ class SheepHeadLogo extends HTMLElement {
     });
 
 
-    fetch('/internalResources/assets/alboe.svg')
+    fetch('../../internalResources/assets/alboe.svg')
       .then(r => r.text())
       .then(inner => {
         container.innerHTML = inner;
