@@ -4,8 +4,8 @@
     "display": "fullscreen",
     "scope": "/",
     "start_url": "https://alboe.io/",
-    "name": "ALBOE.IO",
-    "short_name": "ALBOE",
+    "name": "ALBOE.io",
+    "short_name": "ALBOE.io",
     "icons": [
         {
             "src": "./icon-192x192.png",
