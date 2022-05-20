@@ -167,14 +167,14 @@ class AlboeHeader extends HTMLElement {
     bsButton.setAttribute('class', 'svg-btn');
     bsButton.setAttribute('id', 'black-sheep-btn');
 
-    fetch('../../internalResources/assets/white-sheep.svg')
+    fetch('/internalResources/assets/white-sheep.svg')
       .then(r => r.text())
       .then(inner => {
         wsButton.innerHTML = inner;
       })
       .catch(console.error.bind(console));
 
-    fetch('../../internalResources/assets/black-sheep.svg')
+    fetch('/internalResources/assets/black-sheep.svg')
       .then(r => r.text())
       .then(inner => {
         bsButton.innerHTML = inner;
