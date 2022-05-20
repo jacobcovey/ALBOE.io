@@ -194,7 +194,7 @@ class AlboeFooter extends HTMLElement {
       window.localStorage.setItem(LS_DIRECTORIES_EXPANDED, JSON.stringify(['0-dir']));
     }
 
-    fetch('internalResources/siteStructure/siteStructure.json')
+    fetch('/internalResources/siteStructure/siteStructure.json')
       .then(r => r.json())
       .then(j => {
         let expandedDirs = JSON.parse(window.localStorage.getItem(LS_DIRECTORIES_EXPANDED));
@@ -278,14 +278,14 @@ class AlboeFooter extends HTMLElement {
     aMusicA.setAttribute('target', '_blank');
     aMusicA.setAttribute('href', 'https://music.apple.com/us/playlist/alboe-americana/pl.u-DdANNBetayekXJ');
     
-    fetch('internalResources/assets/github.svg')
+    fetch('/internalResources/assets/github.svg')
       .then(r => r.text())
       .then(inner => {
         gitHubA.innerHTML = inner;
       })
       .catch(console.error.bind(console));
 
-    fetch('internalResources/assets/apple-music.svg')
+    fetch('/internalResources/assets/apple-music.svg')
       .then(r => r.text())
       .then(inner => {
         aMusicA.innerHTML = inner;

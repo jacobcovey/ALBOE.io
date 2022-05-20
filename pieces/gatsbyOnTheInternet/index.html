@@ -1,39 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
+
+    <script src='/internalResources/webComponents/alboeHeader.js' defer></script>
+    <script src='/internalResources/webComponents/alboeFooter.js' defer></script>
+    <script src='/internalResources/webComponents/sheepHeadLogo.js' defer></script>
+
+    <link rel='stylesheet' href='/internalResources/styleSheets/alboe.css'>
+
     <style>
-      html {
-        overflow: auto;
+      #gatsby-svg-container svg {
+        width: 200px;
+        height: auto;
       }
-      
-      html, body, div, iframe {
-        margin: 0px; 
-        padding: 0px; 
-        height: 100%; 
-        border: none;
+
+      .main-content h2 {
+        margin-bottom: 48px;
+      }
+
+      .main-content h2.message-header {
+        margin-bottom: 24px;
+      }
+
+      p {
+        font-size: 18px;
+        padding: 0 24px;
+        max-width: 800px;
       }
 
       iframe {
-        display: block; 
-        width: 100%; 
-        border: none; 
-        overflow-y: auto; 
-        overflow-x: hidden;
+        height: 85vh;
+        border: 16px double var(--color-text);
+        width: calc(100% - 80px);
+        margin-bottom: 24px;
+      }
+
+      @media only screen and (min-width: 600px) {
+        dl div dt {
+          min-width: 148px;
+        }
       }
     </style>
   </head>
   <body style="margin: 0">
-    <iframe id="inline-frame-gatsby"
-      title="Gatsby On The Internet"
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0" 
-      width="100%" 
-      height="100%" 
-      scrolling="auto"
-      src="./gatsbyOnTheInternet.html">
-    </iframe>
+    <alboe-header></alboe-header>
+    <main class='main-content black-sheep'>
+      <h1>Gatsby On The Internet</h1>
+
+      <figure id='gatsby-svg-container'></figure>
+
+      <div class='alboe-info'>
+        <dl>
+          <div>
+            <dt>Piece ID</dt>
+            <dd>alb1</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>beta</dd>
+          </div>
+          <div>
+            <dt>Genre</dt>
+            <dd>Public Domain Art</dd>
+          </div>
+          <div>
+            <dt>Custom URL</dt>
+            <dd><a class='hover-link' href='/pieces/gatsbyOnTheInternet/gatsbyOnTheInternet.html' target="_blank">GatsbyOnTheInternet.com</a></dd>
+          </div>
+        </dl>
+      </div>
+
+      <h2 class='message-header'>Message</h2>
+
+      <p>
+        When I was assigned to read The Great Gatsby, as a high school student, I figured I would just read a summary online (I have great regret for not reading many of the classics that were assigned to me in public school). Maybe there were a couple chapters teenage me skipped<span class='bs-mode'> (wouldn’t put it by the bastard)</span>, but I remember being enthralled by the book and the characters. It was an important step for me realizing how much I undervalued classic novels, and literature in general.
+      </p>
+
+      <p>
+        In late 2021 I decided a book in the <a href='https://en.wikipedia.org/wiki/Public_domain' target='_blank' id >public domain</a> would be the perfect project for a native HTML CSS JS project. For several reasons The Great Gatsby was the obvious choice, but in the end I picked it because I was excited to read it again. It didn’t disappoint.
+      </p>
+
+      <p>
+        Gatsby on The Internet is a single .html file containing all the templating (HTML) styling (CSS) and scripting (Javascript) required for a complete web-book experience including automatic place keeping, passage search, light/dark themes, adjustable text size, and more. It's responsive and designed to look good on all screen sizes. The title and author name graphics are embedded SVG’s I made to match the typography on the first edition cover. Everything is native HTML/CSS/JS no third party frameworks or libraries. The file size comes in at less than .5 MB (a plain .mobi version of the book comes in at .64 MB).
+      </p>
+
+      <p>
+        In a way I consider this is my love letter to the modern web tools/technologies. Thanks to all the hard working humans involved in the excruciating process of creating and updating <a href='https://en.wikipedia.org/wiki/Web_standards' target='_blank' id >web standards</a>. Also thanks to The Gutenberg Project. I started project with their plain HTML version of the Great Gatsby. They have over 60,000 public domain books they share on their website <a href='https://www.gutenberg.org/' target='_blank' id >gutenberg.org</a>.
+      </p>
+
+      <p>
+        I’m writing this after just finishing the beta version. I plan to re-read the entire book again on <a href='/pieces/gatsbyOnTheInternet/gatsbyOnTheInternet.html' target="_blank">GatsbyOnTheInternet.com</a> as a final QA pass. I also will spend time refactoring the code. Once it’s deemed “complete” I plan on minting it as NFT. More on that later.
+        <br>
+        <br>
+        -Jacob
+      </p>
+
+      <h2>
+        Preview (iframe) ☟
+      </h2>
+      <iframe id="inline-frame-gatsby"
+        title="Gatsby On The Internet"
+        scrolling="auto"
+        loading="lazy"
+        src="./gatsbyOnTheInternet.html">
+      </iframe>
+      <h2>
+        For the best viewing (and reading) experience visit <a href='/pieces/gatsbyOnTheInternet/gatsbyOnTheInternet.html' target="_blank">GatsbyOnTheInternet.com</a>
+      </h2>
+    </main>
+    <alboe-footer></alboe-footer>
   </body>
+
+  <script>
+    const svgContainer = document.getElementById('gatsby-svg-container');
+
+    fetch('gatsbyOnTheInternet.svg')
+      .then(r => r.text())
+      .then(inner => {
+        svgContainer.innerHTML = inner;
+      })
+      .catch(console.error.bind(console));
+  </script>
 </html>
