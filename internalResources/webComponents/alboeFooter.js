@@ -269,7 +269,6 @@ class AlboeFooter extends HTMLElement {
     addDetailListItem(detailList, 'Est.', '2022');
     addDetailListItem(detailList, 'Made in', '<a href="https://jamestowntribe.org/" target="_blank" style="text-decoration: none;">Clallam</a> County WA USA');
     addDetailListItem(detailList, 'WA UBI #', '604-919-319');
-    addDetailListItem(detailList, 'License', 'MIT');
     const iconDiv = document.createElement('div');
     iconDiv.classList.add('icon-container');
     const gitHubA = document.createElement('a');
