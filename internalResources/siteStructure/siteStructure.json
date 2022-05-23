@@ -13,12 +13,6 @@
           "subtitle": "For the ❤️ of HTML",
           "icon": "/dotHTML.svg",
           "featured": 2
-        },
-        {
-          "id": "1-prj",
-          "slug": "/projects/codeHTML",
-          "title": "codeHTML.app",
-          "subtitle": "A MacOs/iOS native text editor for building web pages"     
         }
       ]
     },
