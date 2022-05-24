@@ -5821,9 +5821,18 @@
         });
 
         passageSearchInput.addEventListener('search', (e) => {
+          // For clear button
           if (!passageSearchInput.value) {
             displayPassageSearchResults(passageSearchInput.value);
           }
+        });
+
+        passageSearchInput.addEventListener('paste', (e) => {
+          setTimeout(() => {
+            if (passageSearchInput.value) {
+              displayPassageSearchResults(passageSearchInput.value);
+            }
+          }, 10);
         });
 			}
 
