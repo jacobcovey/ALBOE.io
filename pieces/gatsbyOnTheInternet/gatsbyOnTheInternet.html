@@ -56,8 +56,8 @@
       }
 
       p {
-        letter-spacing: 0.02rem;
-        line-height: 1.5rem;
+        letter-spacing: 0.015rem;
+        line-height: 1.25rem;
         text-align: justify;
       }
 
@@ -130,7 +130,6 @@
       .match-text {
         font-weight: bold;
         color: var(--color-accent);
-        text-decoration: underline;
       }
 
       #settings-modal {
@@ -149,7 +148,7 @@
       }
 
       #settings-modal.collapsed {
-        position: absolute;
+        position: fixed;
         align-items: center;
         cursor: pointer;
         top: 0;
@@ -5567,7 +5566,7 @@
 			// 
       // CONSTANTS
       const MIN_SEARCH_CHARS = 5;
-      const TEXT_SIZES_ARR = [ 12, 16, 18, 22, 32 ];
+      const TEXT_SIZES_ARR = [ 14, 17, 21, 24, 32 ];
       const LS_DARK_MODE = 'al1_dark-mode';
       const LS_FONT_SIZE_PX = 'al1_font-size-px';
       const LS_CURRENT_CHAPTER = 'al1_current-chapter';
@@ -5775,10 +5774,12 @@
 
       function setUpDarkModeSetting() {
         const setDark = () => {
+          setThemeColorMeta('black');
           document.documentElement.style.setProperty('--color-background', 'var(--color-black)');
           document.documentElement.style.setProperty('--color-text', 'var(--color-white)');
         }
         const setLight = () => {
+          setThemeColorMeta('default');
           document.documentElement.style.setProperty('--color-background', 'var(--color-white)');
           document.documentElement.style.setProperty('--color-text', 'var(--color-black)');
         }
@@ -5805,6 +5806,12 @@
 
           window.localStorage.setItem(LS_DARK_MODE, checked);
         });
+      }
+
+      function setThemeColorMeta(color) {
+        // EXPERIENMENTAL delete if not working
+        const barColorMetaTag = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+        barColorMetaTag && barColorMetaTag.setAttribute("content", color);
       }
 
 			function setUpPassageSearch() {
