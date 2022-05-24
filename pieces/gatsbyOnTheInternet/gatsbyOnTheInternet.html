@@ -147,6 +147,10 @@
         padding-bottom: 24px;
       }
 
+      #settings-modal.hide {
+        left: 100vw;
+      }
+
       #settings-modal.collapsed {
         position: fixed;
         align-items: center;
@@ -154,7 +158,6 @@
         top: 0;
         right: 0;
         bottom: unset;
-        left: unset;
         height: 52px;
         width: 52px;
         transform: translateX(0);
@@ -5707,12 +5710,14 @@
         window.document.getElementById('drawer').classList.add('open');
         window.document.getElementById('main').classList.add('drawer-open');
         window.document.getElementById('menu-icon').classList.add('drawer-open');
+        window.document.getElementById('settings-modal').classList.add('hide');
       };
 
 			function closeDrawer() {
 				window.document.getElementById('drawer').classList.remove('open');
         window.document.getElementById('main').classList.remove('drawer-open');
         window.document.getElementById('menu-icon').classList.remove('drawer-open');
+        window.document.getElementById('settings-modal').classList.remove('hide');
 			}
 
 			function addListenersToNavBtns() {
