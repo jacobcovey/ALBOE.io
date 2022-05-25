@@ -14,7 +14,9 @@
         --color-black: #000000;
         --color-white: #ffff;
         --drawer-width: 300px;
-        --drawer-transition: left 0.25s ease-in-out;
+        --transition-time: 300ms;
+        
+        --drawer-transition: left var(--transition-time) ease-in-out, width var(--transition-time) ease-in-out;
         --body-font-size: 18px;
         --content-padding: 16px;
 
@@ -28,6 +30,12 @@
         :root {
           --color-background: var(--color-black);
           --color-text: var(--color-white);
+        }
+      }
+
+      @media (prefers-reduced-motion) {
+        :root {
+          --transition-time: 0;
         }
       }
 
@@ -143,7 +151,7 @@
         color: var(--color-text);
         z-index: 1;
         opacity: 1;
-        transition: all 0.3s;
+        transition: all var(--transition-time);
       }
 
       #settings-icon.active {
@@ -166,7 +174,7 @@
         color: var(--color-background);
         padding: 0 12px;
         overflow: hidden;
-        transition: height .30s;
+        transition: height var(--transition-time);
         height: 0;
       }
 
@@ -250,7 +258,7 @@
         align-items: center;
         text-align: center;
         opacity: 1;
-        transition: opacity 300ms;
+        transition: opacity var(--transition-time);
         max-width: 1000px;
       }
 
@@ -364,7 +372,6 @@
 
       #menu-icon g {
         fill: var(--color-background);
-        transition: fill 0.15s ease-out;
       }
 
       #table-of-contents {
@@ -425,6 +432,7 @@
 
         #main.drawer-open {
           width: calc(100vw - var(--drawer-width));
+          left: var(--drawer-width);
         }
 
         #table-of-contents li {
@@ -5693,6 +5701,8 @@
         document.getElementById('menu-icon').classList.add('drawer-open');
         document.getElementById('settings-icon').classList.add('hide');
         closeSettingsDrawer();
+
+        document.getElementById('current-content').addEventListener('touchstart', closeNavDrawer, {once : true});
       };
 
 			function closeNavDrawer() {
