@@ -16,6 +16,7 @@
         --drawer-width: 300px;
         --drawer-transition: left 0.25s ease-in-out;
         --body-font-size: 18px;
+        --content-padding: 16px;
 
         --color-background: var(--color-white);
         --color-accent: var(--gold);
@@ -39,7 +40,6 @@
 
       h1.transparent {
         color: transparent;
-        background: transparent;
         margin: 0;
         font-size: initial;
         line-height: 54px;
@@ -47,12 +47,13 @@
       }
 
       h1 {
+        position: sticky;
         text-align: center;
         font-size: 48px;
-        position: sticky;
         top: 0;
         background-color: var(--color-background);
         white-space: nowrap;
+        margin: 0 calc(var(--content-padding) * -1); /* HACK to make sticky title bar full screen */
       }
 
       p {
@@ -132,79 +133,62 @@
         color: var(--color-accent);
       }
 
-      #settings-modal {
+      #settings-icon {
         position: fixed;
-        bottom: 12px;
-        background: var(--color-text);
-        color: var(--color-background);
-        border-radius: 6px;
+        top: -7px;
+        right: 0;
+        padding: 0 var(--content-padding);
+        cursor: pointer;
+        font-size: 52px;
+        color: var(--color-text);
+        z-index: 1;
+        opacity: 1;
+        transition: all 0.3s;
+      }
+
+      #settings-icon.active {
+        color: var(--color-accent);
+      }
+
+      #settings-icon.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #bottom-drawer {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        z-index: 1;
-        width: 95vw;
-        max-width: 464px;
-        padding-bottom: 24px;
-      }
-
-      #settings-modal.hide {
-        left: 100vw;
-      }
-
-      #settings-modal.collapsed {
         position: fixed;
-        align-items: center;
-        cursor: pointer;
-        top: 0;
+        left: 0;
         right: 0;
-        bottom: unset;
-        height: 52px;
-        width: 52px;
-        transform: translateX(0);
-        padding: 0;
-
-        background: var(--color-background);
-        color: var(--color-text);
+        bottom: 0;
+        background: var(--color-text);
+        color: var(--color-background);
+        padding: 0 12px;
+        overflow: hidden;
+        transition: height .30s;
+        height: 0;
       }
 
-      #settings-modal.collapsed .expanded-content {
-        display: none;
-      } 
-
-      #settings-modal #expand-icon {
-        display: none;
-      } 
-
-      #settings-modal.collapsed #expand-icon {
-        display: initial;
-
-        /* HACK to center the unicode gear character */
-        margin-top: -3px;
-      } 
-
-      #expand-icon {
-        font-size: 52px;
+      #bottom-drawer.open {
+        height: 165px;
       }
 
-      #settings-modal #collapse-icon {
+      #collapse-icon {
         cursor: pointer;
         font-size: 24px;
         text-align: end;
         padding: 12px;
       }
 
-      #settings-modal.collapsed .setting-line {
-        display: none;
-      }
-
-      #settings-modal .setting-line {
+      .setting-line {
         display: flex;
         margin: 0 12px 12px 12px;
         line-height: 32px;
         align-items: center;
       }
 
-      #settings-modal .settings-label {
+      .settings-label {
         display: flex;
         align-items: center;
         width: 120px;
@@ -238,7 +222,7 @@
         border-color: var(--color-accent);
       }
 
-      #settings-modal #dark-mode-cb {
+      #dark-mode-cb {
         cursor: pointer;
         height: 20px;
         width: 20px;
@@ -255,12 +239,12 @@
         align-items: center;
       }
 
-      #main.drawer-open {
+      #main.side-drawer-open {
         left: var(--drawer-width);
       }
 
       #current-content {
-        padding: 32px 16px 10rem;
+        padding: 32px var(--content-padding);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -268,6 +252,10 @@
         opacity: 1;
         transition: opacity 300ms;
         max-width: 1000px;
+      }
+
+      #current-content.extra-padding-bottom {
+        padding-bottom: 10rem;
       }
 
       .current-chapter {
@@ -320,7 +308,7 @@
         color: var(--color-accent);
       }
 
-      #drawer {
+      #side-drawer {
         position: fixed;
         display: flex;
         flex-direction: column;
@@ -333,7 +321,7 @@
         transition: var(--drawer-transition);
       }
 
-      #drawer .title-logo-svg {
+      #side-drawer .title-logo-svg {
         width: 240px;
         stroke-width: 0;
         fill: var(--color-background);
@@ -349,11 +337,11 @@
         padding: 8px 0 4px 0;
       }
 
-      #drawer h3 {
+      #side-drawer h3 {
         margin-top: 32px;
       }
 
-      #drawer.open {
+      #side-drawer.open {
         left: 0;
       }
 
@@ -377,13 +365,6 @@
       #menu-icon g {
         fill: var(--color-background);
         transition: fill 0.15s ease-out;
-      }
-
-      #close-icon {
-        position: absolute;
-        right: 16px;
-        top: 16px;
-        cursor: pointer;
       }
 
       #table-of-contents {
@@ -439,7 +420,7 @@
         }
 
         #current-content {
-          padding: 32px;
+          --content-padding: 32px;
         }
 
         #main.drawer-open {
@@ -451,10 +432,6 @@
           width: 8vh;
           font-size: 2.5vh;
           margin: 2vh 12px;
-        }
-
-        #settings-modal {
-          top: 412px;
         }
       }
 
@@ -476,23 +453,9 @@
             <polygon id='Path' points='20 0 -5.81132364e-15 0 2.00261801 4 17.9973822 3.95555556'></polygon>
           </g>
       </svg>
-      <div id='settings-modal' class='collapsed'>
-        <span id='expand-icon'>&#x2699;&#xFE0E;</span>
-        <span id='collapse-icon' class='expanded-content'>✕</span>
-        <div id='settings-text-size' class='setting-line'>
-          <span class='settings-label'>Text Size:</span>
-          <div id='text-options-container'>
-            <span class='text-option-btn' data-text-scale='0'>A</span>
-            <span class='text-option-btn' data-text-scale='1'>A</span>
-            <span class='text-option-btn' data-text-scale='2'>A</span>
-            <span class='text-option-btn' data-text-scale='3'>A</span>
-            <span class='text-option-btn' data-text-scale='4'>A</span>
-          </div>
-        </div>
-        <div id='settings-dark-mode' class='setting-line'>
-          <span class='settings-label'>Dark Mode:</span>
-          <input id='dark-mode-cb' type='checkbox'>
-        </div>
+      <div id='settings-icon'>
+        <!-- ⚙︎ -->
+        &#x2699;&#xFE0E;
       </div>
 
       <div id='current-content'>
@@ -503,7 +466,7 @@
       </div>
     </main>
 
-    <nav id='drawer'>
+    <nav id='side-drawer'>
       <svg class='title-logo-svg' viewBox='0 0 241.3 18.802'> <title>The Great Gatsby</title>  <g id='svgGroup' stroke-linecap='round' fill-rule='evenodd' font-size='9pt'><path d='M 20.135 11.134 L 20.135 18.408 L 16.491 18.408 L 16.491 0.203 L 20.135 0.203 L 20.135 7.49 L 27.409 7.49 L 27.409 0.203 L 31.053 0.203 L 31.053 18.408 L 27.409 18.408 L 27.409 11.134 L 20.135 11.134 Z M 198.847 0.203 L 207.2 0.203 L 207.2 3.847 L 198.847 3.847 A 1.831 1.831 0 0 0 198.245 3.944 A 1.726 1.726 0 0 0 198.136 3.986 A 1.8 1.8 0 0 0 197.558 4.374 Q 197.311 4.621 197.171 4.951 A 1.793 1.793 0 0 0 197.032 5.615 A 2.052 2.052 0 0 0 197.031 5.662 A 1.852 1.852 0 0 0 197.171 6.379 Q 197.311 6.716 197.558 6.963 Q 197.806 7.211 198.136 7.351 A 1.793 1.793 0 0 0 198.799 7.49 A 2.052 2.052 0 0 0 198.847 7.49 L 202.49 7.49 Q 203.62 7.49 204.617 7.916 A 5.469 5.469 0 0 1 206.356 9.084 A 5.469 5.469 0 0 1 207.524 10.823 Q 207.949 11.819 207.949 12.949 A 5.315 5.315 0 0 1 207.524 15.069 A 5.488 5.488 0 0 1 206.356 16.802 Q 205.613 17.545 204.617 17.977 Q 203.62 18.408 202.49 18.408 L 194.403 18.408 L 194.403 14.765 L 202.49 14.765 A 1.831 1.831 0 0 0 203.091 14.667 A 1.726 1.726 0 0 0 203.201 14.625 A 1.8 1.8 0 0 0 203.779 14.238 Q 204.026 13.99 204.166 13.66 A 1.793 1.793 0 0 0 204.305 12.997 A 2.052 2.052 0 0 0 204.306 12.949 A 1.831 1.831 0 0 0 204.208 12.348 A 1.726 1.726 0 0 0 204.166 12.238 A 1.8 1.8 0 0 0 203.779 11.661 Q 203.531 11.413 203.201 11.273 A 1.793 1.793 0 0 0 202.538 11.134 A 2.052 2.052 0 0 0 202.49 11.134 L 198.847 11.134 Q 197.717 11.134 196.727 10.702 Q 195.736 10.271 194.994 9.528 Q 194.251 8.785 193.819 7.789 Q 193.388 6.792 193.388 5.662 Q 193.388 4.532 193.819 3.542 Q 194.251 2.552 194.994 1.809 Q 195.736 1.066 196.727 0.635 Q 197.717 0.203 198.847 0.203 Z M 46.909 14.765 L 46.909 18.408 L 34.43 18.408 L 34.43 0.203 L 46.909 0.203 L 46.909 3.847 L 38.073 3.847 L 38.073 7.49 L 44.053 7.49 L 44.053 11.134 L 38.073 11.134 L 38.073 14.765 L 46.909 14.765 Z M 103.454 14.765 L 103.454 18.408 L 90.975 18.408 L 90.975 0.203 L 103.454 0.203 L 103.454 3.847 L 94.618 3.847 L 94.618 7.49 L 100.598 7.49 L 100.598 11.134 L 94.618 11.134 L 94.618 14.765 L 103.454 14.765 Z M 71.221 9.382 L 71.221 16.567 A 9.344 9.344 0 0 1 68.39 18.224 A 9.293 9.293 0 0 1 65.14 18.802 Q 63.845 18.802 62.645 18.465 Q 61.445 18.129 60.404 17.513 Q 59.363 16.898 58.5 16.041 Q 57.637 15.184 57.027 14.136 A 9.576 9.576 0 0 1 56.082 11.883 A 9.264 9.264 0 0 1 55.745 9.382 A 9.127 9.127 0 0 1 56.082 6.894 A 9.634 9.634 0 0 1 57.027 4.653 A 9.17 9.17 0 0 1 58.5 2.749 A 9.521 9.521 0 0 1 60.404 1.282 A 9.483 9.483 0 0 1 62.645 0.336 Q 63.845 0 65.14 0 A 9.293 9.293 0 0 1 68.39 0.578 A 9.344 9.344 0 0 1 71.221 2.234 L 69.316 5.408 A 6.11 6.11 0 0 0 67.412 4.094 A 5.569 5.569 0 0 0 65.14 3.618 A 5.541 5.541 0 0 0 62.899 4.075 A 5.967 5.967 0 0 0 61.064 5.313 A 5.834 5.834 0 0 0 59.82 7.141 Q 59.363 8.189 59.363 9.382 A 5.617 5.617 0 0 0 59.82 11.642 A 5.891 5.891 0 0 0 61.064 13.482 Q 61.852 14.27 62.899 14.727 Q 63.946 15.184 65.14 15.184 A 5.375 5.375 0 0 0 66.473 15.019 A 6.131 6.131 0 0 0 67.704 14.562 L 67.704 9.382 L 71.221 9.382 Z M 159.771 9.382 L 159.771 16.567 A 9.344 9.344 0 0 1 156.939 18.224 A 9.293 9.293 0 0 1 153.689 18.802 Q 152.395 18.802 151.195 18.465 Q 149.995 18.129 148.954 17.513 Q 147.913 16.898 147.05 16.041 Q 146.187 15.184 145.577 14.136 A 9.576 9.576 0 0 1 144.631 11.883 A 9.264 9.264 0 0 1 144.295 9.382 A 9.127 9.127 0 0 1 144.631 6.894 A 9.634 9.634 0 0 1 145.577 4.653 A 9.17 9.17 0 0 1 147.05 2.749 A 9.521 9.521 0 0 1 148.954 1.282 A 9.483 9.483 0 0 1 151.195 0.336 Q 152.395 0 153.689 0 A 9.293 9.293 0 0 1 156.939 0.578 A 9.344 9.344 0 0 1 159.771 2.234 L 157.866 5.408 A 6.11 6.11 0 0 0 155.962 4.094 A 5.569 5.569 0 0 0 153.689 3.618 A 5.541 5.541 0 0 0 151.449 4.075 A 5.967 5.967 0 0 0 149.614 5.313 A 5.834 5.834 0 0 0 148.37 7.141 Q 147.913 8.189 147.913 9.382 A 5.617 5.617 0 0 0 148.37 11.642 A 5.891 5.891 0 0 0 149.614 13.482 Q 150.401 14.27 151.449 14.727 Q 152.496 15.184 153.689 15.184 A 5.375 5.375 0 0 0 155.022 15.019 A 6.131 6.131 0 0 0 156.254 14.562 L 156.254 9.382 L 159.771 9.382 Z M 235.841 12.708 L 235.841 18.408 L 232.21 18.408 L 232.21 12.708 A 7.094 7.094 0 0 1 229.995 11.731 A 7.296 7.296 0 0 1 228.262 10.125 Q 227.538 9.191 227.138 8.055 Q 226.738 6.919 226.738 5.662 L 226.738 0.203 L 230.382 0.203 L 230.382 5.662 Q 230.382 6.411 230.667 7.078 Q 230.953 7.744 231.448 8.239 A 3.668 3.668 0 0 0 232.61 9.02 A 3.555 3.555 0 0 0 234.025 9.306 Q 234.774 9.306 235.441 9.02 Q 236.107 8.734 236.603 8.239 A 3.668 3.668 0 0 0 237.383 7.078 A 3.555 3.555 0 0 0 237.669 5.662 L 237.669 0.203 L 241.3 0.203 L 241.3 5.662 Q 241.3 6.919 240.9 8.055 Q 240.5 9.191 239.776 10.125 A 7.348 7.348 0 0 1 238.05 11.731 A 7.017 7.017 0 0 1 235.841 12.708 Z M 77.67 14.765 L 77.67 18.408 L 74.026 18.408 L 74.026 0.203 L 81.313 0.203 A 7.104 7.104 0 0 1 83.243 0.463 Q 84.17 0.724 84.976 1.2 A 7.388 7.388 0 0 1 86.449 2.342 A 7.308 7.308 0 0 1 87.591 3.821 Q 88.067 4.634 88.328 5.561 A 7.104 7.104 0 0 1 88.588 7.49 A 7.124 7.124 0 0 1 88.353 9.318 A 7.482 7.482 0 0 1 87.68 11.007 A 7.128 7.128 0 0 1 86.607 12.48 A 7.263 7.263 0 0 1 85.186 13.648 L 87.204 18.408 L 83.332 18.408 L 81.745 14.739 L 77.67 14.765 Z M 120.364 7.49 L 120.364 18.408 L 116.721 18.408 L 116.721 14.765 L 109.434 14.765 L 109.434 18.408 L 105.803 18.408 L 105.803 7.49 A 7.097 7.097 0 0 1 106.374 4.653 A 7.41 7.41 0 0 1 107.929 2.336 Q 108.913 1.346 110.24 0.774 Q 111.566 0.203 113.077 0.203 A 7.097 7.097 0 0 1 115.915 0.774 Q 117.241 1.346 118.231 2.336 A 7.356 7.356 0 0 1 119.793 4.653 Q 120.364 5.98 120.364 7.49 Z M 176.935 7.49 L 176.935 18.408 L 173.291 18.408 L 173.291 14.765 L 166.004 14.765 L 166.004 18.408 L 162.373 18.408 L 162.373 7.49 A 7.097 7.097 0 0 1 162.944 4.653 A 7.41 7.41 0 0 1 164.5 2.336 Q 165.483 1.346 166.81 0.774 Q 168.137 0.203 169.647 0.203 A 7.097 7.097 0 0 1 172.485 0.774 Q 173.812 1.346 174.802 2.336 A 7.356 7.356 0 0 1 176.363 4.653 Q 176.935 5.98 176.935 7.49 Z M 9.103 3.847 L 9.103 18.408 L 5.472 18.408 L 5.472 3.847 L 0 3.847 L 0 0.203 L 14.562 0.203 L 14.562 3.847 L 9.103 3.847 Z M 130.622 3.847 L 130.622 18.408 L 126.991 18.408 L 126.991 3.847 L 121.52 3.847 L 121.52 0.203 L 136.081 0.203 L 136.081 3.847 L 130.622 3.847 Z M 187.192 3.847 L 187.192 18.408 L 183.562 18.408 L 183.562 3.847 L 178.09 3.847 L 178.09 0.203 L 192.651 0.203 L 192.651 3.847 L 187.192 3.847 Z M 219.438 18.408 L 210.336 18.408 L 210.336 0.203 L 219.438 0.203 Q 220.568 0.203 221.559 0.635 Q 222.549 1.066 223.292 1.809 Q 224.034 2.552 224.466 3.542 Q 224.897 4.532 224.897 5.662 A 4.004 4.004 0 0 1 224.805 6.504 A 4.583 4.583 0 0 1 224.758 6.703 Q 224.618 7.236 224.364 7.731 Q 224.11 8.227 223.755 8.633 A 3.502 3.502 0 0 1 223.074 9.237 A 3.253 3.253 0 0 1 222.968 9.306 A 2.803 2.803 0 0 1 223.677 9.859 A 3.232 3.232 0 0 1 223.768 9.96 A 4.602 4.602 0 0 1 224.377 10.867 A 4.764 4.764 0 0 1 224.764 11.902 A 4.531 4.531 0 0 1 224.887 12.661 A 3.981 3.981 0 0 1 224.897 12.949 Q 224.897 14.079 224.466 15.069 Q 224.034 16.06 223.292 16.802 Q 222.549 17.545 221.559 17.977 Q 220.568 18.408 219.438 18.408 Z M 109.434 11.134 L 116.721 11.134 L 116.721 7.49 Q 116.721 6.741 116.435 6.075 Q 116.149 5.408 115.654 4.913 A 3.668 3.668 0 0 0 114.493 4.132 A 3.555 3.555 0 0 0 113.077 3.847 Q 112.328 3.847 111.662 4.132 Q 110.995 4.418 110.5 4.913 A 3.668 3.668 0 0 0 109.719 6.075 A 3.555 3.555 0 0 0 109.434 7.49 L 109.434 11.134 Z M 166.004 11.134 L 173.291 11.134 L 173.291 7.49 Q 173.291 6.741 173.005 6.075 Q 172.72 5.408 172.225 4.913 A 3.668 3.668 0 0 0 171.063 4.132 A 3.555 3.555 0 0 0 169.647 3.847 Q 168.898 3.847 168.232 4.132 Q 167.565 4.418 167.07 4.913 A 3.668 3.668 0 0 0 166.29 6.075 A 3.555 3.555 0 0 0 166.004 7.49 L 166.004 11.134 Z M 81.313 3.847 L 77.67 3.847 L 77.67 11.134 L 81.313 11.134 A 3.51 3.51 0 0 0 82.723 10.848 A 3.688 3.688 0 0 0 83.878 10.067 A 3.668 3.668 0 0 0 84.659 8.906 A 3.555 3.555 0 0 0 84.944 7.49 Q 84.944 6.741 84.659 6.075 Q 84.373 5.408 83.878 4.913 A 3.688 3.688 0 0 0 82.723 4.132 A 3.51 3.51 0 0 0 81.313 3.847 Z M 213.979 3.847 L 213.979 7.49 L 219.438 7.49 A 1.831 1.831 0 0 0 220.04 7.393 A 1.726 1.726 0 0 0 220.149 7.351 A 1.8 1.8 0 0 0 220.727 6.963 Q 220.975 6.716 221.114 6.379 A 1.852 1.852 0 0 0 221.254 5.662 A 1.831 1.831 0 0 0 221.156 5.061 A 1.726 1.726 0 0 0 221.114 4.951 A 1.8 1.8 0 0 0 220.727 4.374 Q 220.479 4.126 220.149 3.986 A 1.793 1.793 0 0 0 219.486 3.847 A 2.052 2.052 0 0 0 219.438 3.847 L 213.979 3.847 Z M 213.979 11.134 L 213.979 14.765 L 219.438 14.765 A 1.831 1.831 0 0 0 220.04 14.667 A 1.726 1.726 0 0 0 220.149 14.625 A 1.8 1.8 0 0 0 220.727 14.238 Q 220.975 13.99 221.114 13.66 A 1.793 1.793 0 0 0 221.253 12.997 A 2.052 2.052 0 0 0 221.254 12.949 A 1.831 1.831 0 0 0 221.156 12.348 A 1.726 1.726 0 0 0 221.114 12.238 A 1.8 1.8 0 0 0 220.727 11.661 Q 220.479 11.413 220.149 11.273 A 1.793 1.793 0 0 0 219.486 11.134 A 2.052 2.052 0 0 0 219.438 11.134 L 213.979 11.134 Z' vector-effect='non-scaling-stroke'/></g></svg>
       <svg class='fitz-svg'  viewBox='0 0 147.57 18.802' > <title>F. Scott Fitzgerald</title>  <g id='svgGroup' stroke-linecap='round' fill-rule='evenodd' font-size='9pt'><path d='M 81.326 14.765 L 81.326 18.408 L 68.847 18.408 L 68.847 0.203 L 81.326 0.203 L 81.326 3.847 L 72.49 3.847 L 72.49 7.49 L 78.47 7.49 L 78.47 11.134 L 72.49 11.134 L 72.49 14.765 L 81.326 14.765 Z M 66.041 9.382 L 66.041 16.567 A 9.344 9.344 0 0 1 63.21 18.224 A 9.293 9.293 0 0 1 59.96 18.802 Q 58.665 18.802 57.465 18.465 Q 56.266 18.129 55.225 17.513 Q 54.184 16.898 53.32 16.041 Q 52.457 15.184 51.848 14.136 A 9.576 9.576 0 0 1 50.902 11.883 A 9.264 9.264 0 0 1 50.565 9.382 A 9.127 9.127 0 0 1 50.902 6.894 A 9.634 9.634 0 0 1 51.848 4.653 A 9.17 9.17 0 0 1 53.32 2.749 A 9.521 9.521 0 0 1 55.225 1.282 A 9.483 9.483 0 0 1 57.465 0.336 Q 58.665 0 59.96 0 A 9.293 9.293 0 0 1 63.21 0.578 A 9.344 9.344 0 0 1 66.041 2.234 L 64.137 5.408 A 6.11 6.11 0 0 0 62.232 4.094 A 5.569 5.569 0 0 0 59.96 3.618 A 5.541 5.541 0 0 0 57.719 4.075 A 5.967 5.967 0 0 0 55.885 5.313 A 5.834 5.834 0 0 0 54.641 7.141 Q 54.184 8.189 54.184 9.382 A 5.617 5.617 0 0 0 54.641 11.642 A 5.891 5.891 0 0 0 55.885 13.482 Q 56.672 14.27 57.719 14.727 Q 58.767 15.184 59.96 15.184 A 5.375 5.375 0 0 0 61.293 15.019 A 6.131 6.131 0 0 0 62.524 14.562 L 62.524 9.382 L 66.041 9.382 Z M 49.664 14.765 L 49.664 18.408 L 35.572 18.408 L 43.342 3.847 L 35.572 3.847 L 35.572 0.203 L 49.664 0.203 L 41.92 14.765 L 49.664 14.765 Z M 3.644 11.134 L 3.644 18.408 L 0 18.408 L 0 0.203 L 12.746 0.203 L 12.746 3.847 L 3.644 3.847 L 3.644 7.49 L 9.103 7.49 L 9.103 11.134 L 3.644 11.134 Z M 87.521 14.765 L 87.521 18.408 L 83.878 18.408 L 83.878 0.203 L 91.165 0.203 A 7.104 7.104 0 0 1 93.095 0.463 Q 94.021 0.724 94.828 1.2 A 7.388 7.388 0 0 1 96.3 2.342 A 7.308 7.308 0 0 1 97.443 3.821 Q 97.919 4.634 98.179 5.561 A 7.104 7.104 0 0 1 98.439 7.49 A 7.124 7.124 0 0 1 98.205 9.318 A 7.482 7.482 0 0 1 97.532 11.007 A 7.128 7.128 0 0 1 96.459 12.48 A 7.263 7.263 0 0 1 95.037 13.648 L 97.056 18.408 L 93.184 18.408 L 91.597 14.739 L 87.521 14.765 Z M 115.185 7.49 L 115.185 18.408 L 111.541 18.408 L 111.541 14.765 L 104.254 14.765 L 104.254 18.408 L 100.623 18.408 L 100.623 7.49 A 7.097 7.097 0 0 1 101.194 4.653 A 7.41 7.41 0 0 1 102.75 2.336 Q 103.733 1.346 105.06 0.774 Q 106.387 0.203 107.897 0.203 A 7.097 7.097 0 0 1 110.735 0.774 Q 112.062 1.346 113.052 2.336 A 7.356 7.356 0 0 1 114.613 4.653 Q 115.185 5.98 115.185 7.49 Z M 29.275 3.847 L 29.275 18.408 L 25.645 18.408 L 25.645 3.847 L 20.173 3.847 L 20.173 0.203 L 34.734 0.203 L 34.734 3.847 L 29.275 3.847 Z M 131.092 14.765 L 131.092 18.408 L 118.346 18.408 L 118.346 0.203 L 121.989 0.203 L 121.989 14.765 L 131.092 14.765 Z M 138.468 18.408 L 132.983 18.408 L 132.983 0.203 L 138.468 0.203 Q 139.725 0.203 140.886 0.527 A 9.101 9.101 0 0 1 143.063 1.447 Q 144.079 2.044 144.904 2.876 A 9.381 9.381 0 0 1 146.326 4.716 A 8.984 8.984 0 0 1 147.247 6.887 Q 147.57 8.049 147.57 9.306 Q 147.57 10.563 147.247 11.724 A 8.984 8.984 0 0 1 146.326 13.895 Q 145.729 14.904 144.904 15.736 Q 144.079 16.567 143.063 17.164 A 9.101 9.101 0 0 1 140.886 18.085 Q 139.725 18.408 138.468 18.408 Z M 18.256 0.203 L 18.256 18.408 L 14.612 18.408 L 14.612 0.203 L 18.256 0.203 Z M 138.468 3.847 L 136.652 3.847 L 136.652 14.765 L 138.468 14.765 Q 139.598 14.765 140.594 14.339 A 5.469 5.469 0 0 0 142.333 13.171 A 5.469 5.469 0 0 0 143.501 11.432 Q 143.927 10.436 143.927 9.306 A 5.315 5.315 0 0 0 143.501 7.186 A 5.488 5.488 0 0 0 142.333 5.453 Q 141.591 4.71 140.594 4.278 Q 139.598 3.847 138.468 3.847 Z M 104.254 11.134 L 111.541 11.134 L 111.541 7.49 Q 111.541 6.741 111.255 6.075 Q 110.97 5.408 110.475 4.913 A 3.668 3.668 0 0 0 109.313 4.132 A 3.555 3.555 0 0 0 107.897 3.847 Q 107.148 3.847 106.482 4.132 Q 105.815 4.418 105.32 4.913 A 3.668 3.668 0 0 0 104.54 6.075 A 3.555 3.555 0 0 0 104.254 7.49 L 104.254 11.134 Z M 91.165 3.847 L 87.521 3.847 L 87.521 11.134 L 91.165 11.134 A 3.51 3.51 0 0 0 92.574 10.848 A 3.688 3.688 0 0 0 93.729 10.067 A 3.668 3.668 0 0 0 94.51 8.906 A 3.555 3.555 0 0 0 94.796 7.49 Q 94.796 6.741 94.51 6.075 Q 94.225 5.408 93.729 4.913 A 3.688 3.688 0 0 0 92.574 4.132 A 3.51 3.51 0 0 0 91.165 3.847 Z' vector-effect='non-scaling-stroke'/></g></svg>
       <ul id='table-of-contents' >
@@ -519,6 +482,24 @@
         <li id='nav-item-9' data-chapter='9'>9</li>
       </ul>
     </nav>
+
+    <div id='bottom-drawer'>
+      <span id='collapse-icon'>✕</span>
+      <div id='settings-text-size' class='setting-line'>
+        <span class='settings-label'>Text Size:</span>
+        <div id='text-options-container'>
+          <span class='text-option-btn' data-text-scale='0'>A</span>
+          <span class='text-option-btn' data-text-scale='1'>A</span>
+          <span class='text-option-btn' data-text-scale='2'>A</span>
+          <span class='text-option-btn' data-text-scale='3'>A</span>
+          <span class='text-option-btn' data-text-scale='4'>A</span>
+        </div>
+      </div>
+      <div id='settings-dark-mode' class='setting-line'>
+        <span class='settings-label'>Dark Mode:</span>
+        <input id='dark-mode-cb' type='checkbox'>
+      </div>
+    </div>
 
     <template id='chapter-template-0'>
       <div class='current-chapter' id='chapter-content-0'>
@@ -5588,7 +5569,7 @@
 			loadFontSizeFromLS();
 			setUpDrawerToggle();
 			addListenersToNavBtns();
-      setUpSettingsModal();
+      setUpSettingsDrawer();
 			watchScrollToUpdateLS();
 
 			// 
@@ -5616,14 +5597,14 @@
 				updateNextChapterBtn(Number(chapter) + 1);
 				setMenuBtnActive(chapter);
 
-				const currentContent = window.document.getElementById('current-content');
+				const currentContent = document.getElementById('current-content');
 				const previousChapter = currentContent.querySelector('.current-chapter');
 
-        const newChapterTemplate = window.document.getElementById(`chapter-template-${chapter}`);
+        const newChapterTemplate = document.getElementById(`chapter-template-${chapter}`);
         const newChapterTemplateClone =  newChapterTemplate.content.cloneNode(true);
 				const newChapterContent = newChapterTemplateClone.querySelector(`#chapter-content-${chapter}`);
 
-        const btn = window.document.getElementById('next-chapter-btn');
+        const btn = document.getElementById('next-chapter-btn');
         
         const timeOutMS = initiallyLoaded ? 250 : 1;
         currentContent.style.opacity = 0;
@@ -5667,7 +5648,7 @@
       }
 			
 			function updateNextChapterBtn(chapter) {
-				const btn = window.document.getElementById('next-chapter-btn');
+				const btn = document.getElementById('next-chapter-btn');
         if (btnListenr) {
           btn.removeEventListener('click', btnListenr);
         }
@@ -5680,14 +5661,14 @@
 				const currentMenuBtn = document.getElementsByClassName('active-nav-btn')[0];
 				currentMenuBtn.classList.remove('active-nav-btn');
 
-				const nextMenuBtn = window.document.getElementById(`nav-item-${chapter}`);
+				const nextMenuBtn = document.getElementById(`nav-item-${chapter}`);
 				nextMenuBtn.classList.add('active-nav-btn');
 			}
 
 			function scrollFromLS() {
 				const lsScrollPercentage = window.localStorage.getItem(LS_CHAPTER_SCROLLED);
 				if (lsScrollPercentage) {
-          const y = window.document.getElementById('main').scrollHeight * lsScrollPercentage;
+          const y = document.getElementById('main').scrollHeight * lsScrollPercentage;
           window.scrollTo({top: y});
 				}
 			}
@@ -5701,51 +5682,66 @@
 
 			function setUpDrawerToggle() {
 				const toggleDrawer = () => {
-					window.document.getElementById('drawer').classList.contains('open') ?  closeDrawer() : openDrawer();
+					document.getElementById('side-drawer').classList.contains('open') ?  closeNavDrawer() : openNavDrawer();
 				};
-				window.document.getElementById('menu-icon').addEventListener('click', toggleDrawer);
+				document.getElementById('menu-icon').addEventListener('click', toggleDrawer);
 			}
 
-			function openDrawer () {
-        window.document.getElementById('drawer').classList.add('open');
-        window.document.getElementById('main').classList.add('drawer-open');
-        window.document.getElementById('menu-icon').classList.add('drawer-open');
-        window.document.getElementById('settings-modal').classList.add('hide');
+			function openNavDrawer() {
+        document.getElementById('side-drawer').classList.add('open');
+        document.getElementById('main').classList.add('drawer-open');
+        document.getElementById('menu-icon').classList.add('drawer-open');
+        document.getElementById('settings-icon').classList.add('hide');
+        closeSettingsDrawer();
       };
 
-			function closeDrawer() {
-				window.document.getElementById('drawer').classList.remove('open');
-        window.document.getElementById('main').classList.remove('drawer-open');
-        window.document.getElementById('menu-icon').classList.remove('drawer-open');
-        window.document.getElementById('settings-modal').classList.remove('hide');
+			function closeNavDrawer() {
+				document.getElementById('side-drawer').classList.remove('open');
+        document.getElementById('main').classList.remove('drawer-open');
+        document.getElementById('menu-icon').classList.remove('drawer-open');
+        document.getElementById('settings-icon').classList.remove('hide');
 			}
 
 			function addListenersToNavBtns() {
-				const tableOfContentsNavItems = window.document.querySelectorAll('#table-of-contents li');
+				const tableOfContentsNavItems = document.querySelectorAll('#table-of-contents li');
 
 				tableOfContentsNavItems.forEach((el) => {
 					el.addEventListener('click', (e) => {
-						closeDrawer();
+						closeNavDrawer();
 						loadChapter(e.currentTarget.getAttribute('data-chapter'));
 					});
 				});
 			}
 
-			function setUpSettingsModal() {
-        const settingsModal = document.getElementById('settings-modal');
+			function setUpSettingsDrawer() {
+        const settingsDrawer = document.getElementById('bottom-drawer');
 
-        const expandIcon = document.getElementById('expand-icon');
-        expandIcon.addEventListener('click', (e) => {
-          settingsModal.classList.remove('collapsed');
+        const settingsIcon = document.getElementById('settings-icon');
+        settingsIcon.addEventListener('click', (e) => {
+          if (settingsDrawer.classList.contains('open')) {
+            closeSettingsDrawer();
+          } else {
+            openSettingsDrawer();
+          }
         });
 
         const collapseIcon = document.getElementById('collapse-icon');
-        collapseIcon.addEventListener('click', (e) => {
-          settingsModal.classList.add('collapsed');
-        });
+        collapseIcon.addEventListener('click', closeSettingsDrawer);
         
         setUpTextSizeSetting();
         setUpDarkModeSetting();
+      }
+
+      function openSettingsDrawer() {
+        document.getElementById('bottom-drawer').classList.add('open');
+        document.getElementById('settings-icon').classList.add('active');
+        document.getElementById('current-content').classList.add('extra-padding-bottom');
+      }
+
+      function closeSettingsDrawer() {
+        document.getElementById('bottom-drawer').classList.remove('open');
+        document.getElementById('settings-icon').classList.remove('active');
+        document.getElementById('current-content').classList.remove('extra-padding-bottom');
       }
 
       function setUpTextSizeSetting() {
@@ -5779,12 +5775,10 @@
 
       function setUpDarkModeSetting() {
         const setDark = () => {
-          setThemeColorMeta('black');
           document.documentElement.style.setProperty('--color-background', 'var(--color-black)');
           document.documentElement.style.setProperty('--color-text', 'var(--color-white)');
         }
         const setLight = () => {
-          setThemeColorMeta('default');
           document.documentElement.style.setProperty('--color-background', 'var(--color-white)');
           document.documentElement.style.setProperty('--color-text', 'var(--color-black)');
         }
@@ -5813,14 +5807,8 @@
         });
       }
 
-      function setThemeColorMeta(color) {
-        // EXPERIENMENTAL delete if not working
-        const barColorMetaTag = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
-        barColorMetaTag && barColorMetaTag.setAttribute("content", color);
-      }
-
 			function setUpPassageSearch() {
-        const passageSearchInput = window.document.getElementById('passage-search');
+        const passageSearchInput = document.getElementById('passage-search');
         passageSearchInput.addEventListener('keyup', (e) => {
           displayPassageSearchResults(passageSearchInput.value);
         });
@@ -5842,7 +5830,7 @@
 			}
 
       function displayPassageSearchResults(searchText) {
-        const resultsList = window.document.getElementById('passage-search-results');
+        const resultsList = document.getElementById('passage-search-results');
         removeAllChildNodes(resultsList);
         const searchTextLength = searchText.length;
         if (searchTextLength >= MIN_SEARCH_CHARS) {
@@ -5850,7 +5838,7 @@
 
           if (searchResults && searchResults.length) {
             searchResults.map(result => {
-              const resultListItem = window.document.createElement('li');
+              const resultListItem = document.createElement('li');
               resultListItem.innerHTML = `<span>Chapter ${result.chapter}</span><span>${result.count} result${result.count > 1 ? 's' : ''} ➞</span>`;
               resultsList.appendChild(resultListItem);
 
@@ -5859,12 +5847,12 @@
               });
             })
           } else {
-            const noResultsListItem = window.document.createElement('li');
+            const noResultsListItem = document.createElement('li');
             noResultsListItem.innerHTML = 'No matches';
             resultsList.appendChild(noResultsListItem);
           }
         } else if (searchTextLength > 0) {
-          const promptListItem = window.document.createElement('li');
+          const promptListItem = document.createElement('li');
           const charsLeft = MIN_SEARCH_CHARS - searchTextLength;
           promptListItem.innerHTML = `Keep typing for results... (${charsLeft})`;
           resultsList.appendChild(promptListItem);
@@ -5882,7 +5870,7 @@
         let resultsArr = [];
 
         for (let chapter=1; chapter < 10; chapter++) {
-          const chapterTemplate = window.document.getElementById(`chapter-template-${chapter}`);
+          const chapterTemplate = document.getElementById(`chapter-template-${chapter}`);
           const chapterTemplateClone =  chapterTemplate.content.cloneNode(true);
 				  const chapterContent = chapterTemplateClone.querySelector(`#chapter-content-${chapter}`);
           const results =  [...chapterContent.innerHTML.matchAll(searchRegEx)];
@@ -5906,7 +5894,7 @@
 						return;
 					}
 					timeOutId = setTimeout( () => {
-						const scrollPercentage = window.pageYOffset / window.document.getElementById('main').scrollHeight;
+						const scrollPercentage = window.pageYOffset / document.getElementById('main').scrollHeight;
 						window.localStorage.setItem(LS_CHAPTER_SCROLLED, scrollPercentage);
 						timeOutId = null;
 					}, 1000)
