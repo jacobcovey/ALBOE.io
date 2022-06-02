@@ -1,2 +1,2 @@
 # ALBOE.io
-Source code for albio.io website. Made with HTML JS CSS.
+Source code for alboe.io website. Made with HTML JS CSS.
