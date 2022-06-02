@@ -45,9 +45,10 @@ p {
 }
 
 .main-content h1 {
-  margin: 24px 0;
+  margin: 36px 0;
   font-size: 3em;
   text-align: center;
+  line-height: 4rem;
 }
 
 .main-content h2 {
