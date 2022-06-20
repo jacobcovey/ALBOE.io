@@ -11,8 +11,7 @@
           "slug": "/projects/dotHTML",
           "title": "dotHTML (alpha)",
           "subtitle": "For the ❤️ of HTML",
-          "icon": "/dotHTML.svg",
-          "featured": 2
+          "icon": "/dotHTML.svg"
         }
       ]
     },
@@ -47,8 +46,7 @@
           "slug": "/posts/HTMLplusNFT",
           "title": "HTML + NFT = ? (alpha)",
           "subtitle": "Exploring the possibilities of minting HTML files",
-          "icon": "/HTMLplusNFT.svg",
-          "featured": 3
+          "icon": "/HTMLplusNFT.svg"
         }
       ]
     }
