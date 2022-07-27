@@ -1,22 +1,7 @@
 {
   "directories": [
     { 
-      "id": "0-dir",
-      "title": "Projects",
-      "subtitle": "What ALBOE is making",
-      "slug": "/projects",
-      "subs": [
-        {
-          "id": "0-prj",
-          "slug": "/projects/dotHTML",
-          "title": "dotHTML (alpha)",
-          "subtitle": "For the ❤️ of HTML",
-          "icon": "/dotHTML.svg"
-        }
-      ]
-    },
-    { 
-      "id" : "1-dir",
+      "id" : "0-dir",
       "title" : "dotHTML Pieces",
       "subtitle": "Perennial .html documents minted as NFTs",
       "slug": "/pieces",
@@ -32,21 +17,6 @@
             "public-domain",
             "book"
           ]
-        }
-      ]
-    },
-    { 
-      "id": "2-dir",
-      "title": "Posts",
-      "subtitle": "'\"The hell if I know\"",
-      "slug": "/posts",
-      "subs": [
-        {
-          "id": "0-po",
-          "slug": "/posts/HTMLplusNFT",
-          "title": "HTML + NFT = ? (alpha)",
-          "subtitle": "Exploring the possibilities of minting HTML files",
-          "icon": "/HTMLplusNFT.svg"
         }
       ]
     }
