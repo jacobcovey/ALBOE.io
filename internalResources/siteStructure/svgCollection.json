@@ -1,0 +1,53 @@
+{
+  "collection": [
+    { 
+      "title" : "Bald Eagle",
+      "shortTitle": "Eagle",
+      "slug": "/assets/svgCollection/bald-eagle.svg",
+      "size": "7 KB"
+    },
+    { 
+      "title" : "Steller's Jay",
+      "shortTitle": "Jay",
+      "slug": "/assets/svgCollection/stellers-jay.svg",
+      "size": "10 KB"
+    },
+    { 
+      "title" : "Western Red Cedar",
+      "shortTitle": "Cedar",
+      "slug": "/assets/svgCollection/western-red-cedar.svg",
+      "size": "39 KB"
+    },
+    { 
+      "title" : "Big Leaf Maple",
+      "shortTitle": "Maple",
+      "slug": "/assets/svgCollection/big-leaf-maple.svg",
+      "size": "15 KB"
+    },
+    { 
+      "title" : "Cedar Branch",
+      "shortTitle": "Branch",
+      "slug": "/assets/svgCollection/cedar-branch.svg",
+      "size": "1 KB"
+    },
+    { 
+      "title" : "Western Sword Fern",
+      "shortTitle": "Fern",
+      "slug": "/assets/svgCollection/western-sword-fern.svg",
+      "size": "21 KB"
+    },
+    { 
+      "title" : "ALBOE Logo",
+      "shortTitle": "Logo",
+      "slug": "/assets/svgCollection/alboe-logo.svg",
+      "size": "4 KB"
+    },
+    { 
+      "title" : "Ram Head Logo",
+      "shortTitle": "Original Logo",
+      "slug": "/assets/svgCollection/ram-head-logo.svg",
+      "size": "50 KB",
+      "contributor": "Abby Christensen"
+    }
+  ]
+}
