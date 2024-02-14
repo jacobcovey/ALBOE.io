@@ -53,6 +53,12 @@
                 height: 100vh;
             }
 
+            ul {
+              list-style-type: none; /* Remove bullets */
+              padding: 0; /* Remove padding */
+              margin: 0; /* Remove margins */
+            }
+
             h3 {
                 font-weight: 600;
                 text-transform: uppercase;
@@ -191,9 +197,58 @@
                 color: var(--inv-color);
             }
 
+            #individual-svg-section {
+              display: flex;
+              justify-content: center;
+              width: 1000px;
+              max-width: 90vw;
+              margin: 24px 0;
+            }
+
+            #individual-svg-section ul {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              max-width: 800px;
+            }
+
+            .individual-svg-li {
+              width: fit-content;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-end;
+              margin: 24px 0;
+            }
+
+            .individual-figure svg {
+              width: 240px;
+              max-width: 20vw;
+              height: fit-content;
+            }
+
+            .individual-title {
+              font-weight: 600;
+              text-transform: uppercase;
+              color: var(--inv-color);
+              font-size: 18px;
+              margin-bottom: 12px;
+            }
+
+            .size-label {
+              font-size: 12px;
+              text-align: center;
+              margin-top: -4px;
+              color: var(--inv-color);
+            }
+
             .download-collection-btn {
                 min-width: 300px;
                 margin-top: 24px;
+            }
+
+            .download-collection-btn button {
+              width: 100%;
             }
 
             button {
@@ -219,6 +274,7 @@
 
             .below-btn span {
                 padding: 0 4px;
+                color: var(--inv-color);
             }
 
             button:hover {
@@ -419,22 +475,24 @@
       
     </p>
     <div id='individual-svg-section'></div>
-    <button class='download-collection-btn'>
-        <div>Download SVG Collection
-        </div>
-        <svg class='download-icon' width="13px" height="16px" viewBox="0 0 13 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <title>download</title>
-            <g id="btn">
-                <g id="download">
-                    <path d="M4.5,0 L7.5,0 L7.5,9 L10.5,9 L6,14 L1.5,9 L4.5,9 L4.5,0 Z" id="Combined-Shape" fill="#FFFFFF"></path>
-                    <line x1="0" y1="15.5" x2="12" y2="15.5" id="Line-4" stroke="#FFFFFF" stroke-linecap="square"></line>
-                </g>
-            </g>
-        </svg>
-    </button>
-    <div class='below-btn'>
-        <span>SVG’s in Collection: 8</span>
-        <span>Unzipped Size: &lt;0.2 MB</span>
+    <div class='download-collection-btn'>
+      <button>
+          <div>Download SVG Collection
+          </div>
+          <svg class='download-icon' width="13px" height="16px" viewBox="0 0 13 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>download</title>
+              <g id="btn">
+                  <g id="download">
+                      <path d="M4.5,0 L7.5,0 L7.5,9 L10.5,9 L6,14 L1.5,9 L4.5,9 L4.5,0 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                      <line x1="0" y1="15.5" x2="12" y2="15.5" id="Line-4" stroke="#FFFFFF" stroke-linecap="square"></line>
+                  </g>
+              </g>
+          </svg>
+      </button>
+      <div class='below-btn'>
+          <span>SVG’s in Collection: 8</span>
+          <span>Unzipped Size: &lt;0.2 MB</span>
+      </div>
     </div>
     <!-- <div class='or-section'>
         <svg width="40px" height="2px" viewBox="0 0 40 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -677,11 +735,10 @@
         container.appendChild(list);
 
         // get download svg 
-        const downloadSvg = document.createElement('div');
+        const downloadSvgInner = document.createElement('div');
         fetch('/internalResources/assets/download-icon.svg').then(r=>r.text()).then(inner=>{
             downloadSvg.innerHTML = inner;
-        }
-        );
+        });
 
         j.collection.map((graphic)=>{
             console.log('graphic')
@@ -690,7 +747,6 @@
 
             liEl.classList.add('individual-svg-li');
 
-            // Add svg to li
             const figureEl = document.createElement('figure');
             liEl.appendChild(figureEl);
             figureEl.classList.add('individual-figure');
@@ -699,19 +755,28 @@
             }
             ).catch(console.error.bind(console));
 
-            // Add title to li
             const titleEl = document.createElement('div');
             liEl.appendChild(titleEl);
             titleEl.classList.add('individual-title');
             titleEl.innerText = graphic.title;
 
-            // Add download button to li
+            const desktopHover = document.createElement('div');
+            liEl.appendChild(desktopHover);
+            desktopHover.classList.add('desktop-hover');
+
             const downloadBtn = document.createElement('button');
-            liEl.appendChild(downloadBtn);
+            desktopHover.appendChild(downloadBtn);
             downloadBtn.classList.add('individual-download-btn');
-            downloadBtn.appendChild(downloadSvg)
-        }
-        );
+            fetch('/internalResources/assets/download-icon.svg').then(r=>r.text()).then(inner=>{
+              downloadBtn.innerHTML = inner;
+            });
+
+            const sizeLabel = document.createElement('div');
+            desktopHover.appendChild(sizeLabel);
+            sizeLabel.innerText = graphic.size
+            sizeLabel.classList.add('size-label');
+
+        });
     }
     ).catch(console.error.bind(console));
 </script>
