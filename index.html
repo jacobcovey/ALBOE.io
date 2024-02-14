@@ -331,6 +331,7 @@
 
             .individual-figure svg {
               max-width: 90vw;
+              max-height: 300px;
             }
           }
       </style>
@@ -749,12 +750,6 @@
 
         const list = document.createElement('ul');
         container.appendChild(list);
-
-        // get download svg 
-        const downloadSvgInner = document.createElement('div');
-        fetch('/internalResources/assets/download-icon.svg').then(r=>r.text()).then(inner=>{
-            downloadSvg.innerHTML = inner;
-        });
 
         j.collection.map((graphic)=>{
             console.log('graphic')
