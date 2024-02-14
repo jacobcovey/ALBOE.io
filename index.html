@@ -438,6 +438,10 @@
         copied, edited, animated, or used as is
       </p>
 
+      <div id='individual-svg-section'>
+
+      </div>
+
       <button class='download-collection-btn'>
         <div>
           Download SVG Collection
@@ -457,7 +461,7 @@
         <span>Unzipped Size: &lt;0.2 MB</span>
       </div>
 
-      <div class='or-section'>
+      <!-- <div class='or-section'>
         <svg width="40px" height="2px" viewBox="0 0 40 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <line x1="1" x2="40" stroke-width="4" stroke-linecap="round"></line>
         </svg>
@@ -469,7 +473,7 @@
 
       <div class='action-text'>
         Download individual SVG files below:
-      </div>
+      </div> -->
 
     </div>
     <div class='bottom-section'>
@@ -671,8 +675,6 @@
     </main>
 
 
-
-
     <script>
       const sunBtn = document.getElementById('eagle-card');
       const moonBtn = document.getElementById('jay-card');
@@ -692,6 +694,58 @@
       const moonBtnListenr = (el) => setDark();
       sunBtn.addEventListener('click', sunBtnListenr);
       moonBtn.addEventListener('click', moonBtnListenr);
+
+
+      // Setup individual SVG cards
+      // TODO: move this to a Web Component
+
+      fetch('/internalResources/siteStructure/svgCollection.json')
+      .then(r => r.json())
+      .then(j => {
+        const container = document.getElementById('individual-svg-section');
+
+        const list = document.createElement('ul');
+        container.appendChild(list);
+
+        // get download svg 
+        const downloadSvg = document.createElement('div');
+        fetch('download-icon.svg')
+        .then(r => r.text())
+        .then(inner => {
+          downloadSvg.innerHTML = inner;
+        });
+        
+        j.collection.map((graphic) => {
+          const liEl = document.createElement('li');
+          list.appendChild(liEl);
+
+          el.classList.add('individual-svg-li');
+
+          // Add svg to li
+          const figureEl = document.createElement('figure');
+          liEl.appendChild(figureEl);
+          figureEl.classList.add('individual-figure');
+          fetch(graphic.slug)
+          .then(r => r.text())
+          .then(inner => {
+            figureEl.innerHTML = inner;
+          })
+          .catch(console.error.bind(console));
+
+          // Add title to li
+          const titleEl = document.createElement('div');
+          liEl.appendChild(titleEl);
+          titleEl.classList.add('individual-title');
+          titleEl.innerText = graphic.title;
+
+          // Add download button to li
+          const downloadBtn = document.createElement('button');
+          liEl.appendChild(downloadBtn);
+          downloadBtn.classList.add('individual-download-btn');
+          downloadBtn.appendChild(downloadSvg)
+        });
+      })
+      .catch(console.error.bind(console));
     </script>
   </body>
 </html>
