@@ -709,7 +709,7 @@
 
         // get download svg 
         const downloadSvg = document.createElement('div');
-        fetch('download-icon.svg')
+        fetch('/internalResources/assets/download-icon.svg')
         .then(r => r.text())
         .then(inner => {
           downloadSvg.innerHTML = inner;
