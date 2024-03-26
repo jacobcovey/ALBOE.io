@@ -71,7 +71,7 @@
 
           h3 {
               font-weight: 600;
-              text-transform: uppercase;
+              /* text-transform: uppercase; */
               color: var(--inv-color);
           }
 
@@ -130,7 +130,7 @@
           .small-branch-svg {
               position: relative;
               left: 24px;
-              top: -22px;
+              top: -18px;
               margin-bottom: -22px;
           }
 
@@ -276,6 +276,13 @@
               font-size: 16px;
               font-weight: 800px;
               cursor: pointer;
+              background: none;
+          }
+
+          .svg-button {
+            border-color: transparent;
+            background: transparent;
+            margin-top: 24px;
           }
 
           .below-btn {
@@ -322,6 +329,68 @@
 
           .inv_bor {
               stroke: var(--inv-color);
+          }
+
+          #stream-svg-water {
+            transition: all 1s ease-in-out;
+          }
+
+          #very-bottom-content {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            max-width: 100vw;
+            left: 0;
+            /* top: 90px; */
+            height: 20px;
+            padding-bottom: 64px;
+          }
+
+          #very-bottom-content figure {
+            margin: 0;
+          }
+
+          #bottom-content-left {
+            display: flex;
+            align-items: flex-end;
+            padding-right: 180px;
+          }
+
+          #bottom-content-right {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: flex-end;
+            padding-left: 180px;
+          }
+
+          #bottom-content-left svg {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+          }
+
+          .shake figure svg {
+            animation: shake 0.42s cubic-bezier(.36,.07,.19,.97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            /* perspective: 1000px; */
+          }
+
+          @keyframes shake {
+            10%, 90% {
+              transform: rotate(-4deg);
+            }
+            
+            20%, 80% {
+              transform: rotate(8deg);
+            }
+
+            30%, 50%, 70% {
+              transform: rotate(-12deg);
+            }
+          
+            40%, 60% {
+              transform: rotate(12deg);
+            }
           }
 
           @media only screen and (max-width: 420px) {
@@ -490,6 +559,69 @@
         </div>
       </div>
       <div class='main-content'>
+        <h3>Stream Sounds</h3>
+        <svg class='small-branch-svg' width="160px" height="45px" viewBox="0 0 154 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="transform: scaleX(-1); left: -30px;">
+            <g id="branch" stroke-width="1" fill-rule="evenodd" stroke-linecap="round">
+                <path d="M0,6 C55.915029,11.1451129 90.3937863,11.2647245 103.436272,6.35883469" stroke="#4A2521" stroke-width="6"></path>
+                <path d="M105.703479,35.1942002 L143.703479,6.19420017 M137.703479,7.19420017 L132.703479,4.19420017 M131.703479,12.1942002 L126.703479,7.19420017 M126.703479,16.1942002 L120.703479,10.1942002 M121.703479,19.1942002 L115.703479,13.1942002 M116.703479,22.1942002 L111.703479,18.1942002 M112.703479,26.1942002 L107.703479,24.1942002 M120.703479,35.1942002 L117.703479,30.1942002 M127.703479,31.1942002 L121.703479,25.1942002 M136.703479,22.1942002 L131.703479,17.1942002 M132.703479,26.1942002 L127.703479,21.1942002 M144.703479,14.1942002 L142.703479,10.1942002 M140.703479,18.1942002 L135.703479,14.1942002" id="Combined-Shape" stroke="#195D21" stroke-width="5" transform="translate(125.203479, 19.694200) scale(1, -1) rotate(11.000000) translate(-125.203479, -19.694200) "></path>
+            </g>
+        </svg>
+        <p>
+            Natural, relaxing, ambient noise<br>endless & on-demand
+        </p>
+
+        <audio loop id='stream-sound-audio' src="/internalResources/assets/stream-sound.mp3"></audio>
+        <audio loop id='stream-sound-audio1' src="/internalResources/assets/stream-sound.mp3"></audio>
+
+        <button id='stream-play-btn' class='svg-button'>
+            <svg width="106px" height="150px" viewBox="0 0 106 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>drop-play</title>
+                <g id="TV" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Apple-TV-Copy-3" transform="translate(-901.000000, -276.000000)">
+                        <g id="UI" transform="translate(640.000000, 100.000000)">
+                            <g id="drop-play" transform="translate(264.000000, 176.000000)">
+                                <path d="M47.8461023,7.20726338 C32.1873311,32.5750761 23.4181175,47.6085524 21.5384615,52.3076923 C18.4615385,60 0,81.5384615 0,98.4615385 C0,115.384615 25.1103412,146.153846 50.7692308,146.153846 C76.4281204,146.153846 100,115.384615 100,98.4615385 C100,81.5384615 87.6923077,69.2307692 80,52.3076923 C75.4229915,42.2382736 67.5779379,27.2667873 56.4648393,7.39323338 L56.464832,7.39323744 C55.1170792,4.98305113 52.0706676,4.12177861 49.6604813,5.46953142 C48.9176493,5.88491589 48.2931427,6.48304067 47.8461023,7.20726338 Z" id="Path-51" stroke="#10357F" stroke-width="6" fill="#10357F"></path>
+                                <text id="Play" font-family="Avenir-Medium, Avenir" font-size="12" font-weight="400" letter-spacing="1.6900008" fill="#FFFFFF">
+                                    <tspan x="35.3999984" y="129">play</tspan>
+                                </text>
+                                <path d="M57.7055088,69.2845042 L78.6351677,103.455376 C79.2120977,104.397302 78.9162095,105.628579 77.974283,106.205509 C77.6598758,106.398083 77.298355,106.5 76.9296589,106.5 L35.0703411,106.5 C33.9657716,106.5 33.0703411,105.604569 33.0703411,104.5 C33.0703411,104.131304 33.1722579,103.769783 33.3648323,103.455376 L54.2944912,69.2845042 C54.8714212,68.3425777 56.1026976,68.0466895 57.0446242,68.6236195 C57.3140233,68.7886265 57.5405018,69.015105 57.7055088,69.2845042 Z" id="Triangle" fill="#FFFFFF" transform="translate(56.000000, 86.500000) rotate(90.000000) translate(-56.000000, -86.500000) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </button>
+
+        <button id='stream-pause-btn' class='svg-button' style='display: none;'>
+            <svg width="106px" height="149px" viewBox="0 0 106 149" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="TV" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Apple-TV-Copy-4" transform="translate(-907.000000, -277.000000)">
+                        <g id="UI" transform="translate(640.000000, 100.000000)">
+                            <g id="drop-play" transform="translate(270.000000, 176.000000)">
+                                <path d="M47.8461023,7.20726338 C32.1873311,32.5750761 23.4181175,47.6085524 21.5384615,52.3076923 C18.4615385,60 0,81.5384615 0,98.4615385 C0,115.384615 25.1103412,146.153846 50.7692308,146.153846 C76.4281204,146.153846 100,115.384615 100,98.4615385 C100,81.5384615 87.6923077,69.2307692 80,52.3076923 C75.4229915,42.2382736 67.5779379,27.2667873 56.4648393,7.39323338 L56.464832,7.39323744 C55.1170792,4.98305113 52.0706676,4.12177861 49.6604813,5.46953142 C48.9176493,5.88491589 48.2931427,6.48304067 47.8461023,7.20726338 Z" id="Path-51" stroke="#10357F" stroke-width="6"></path>
+                                <text id="pause" font-family="Avenir-Medium, Avenir" font-size="12" font-weight="400" letter-spacing="1.6900008" fill="#10357F">
+                                    <tspan x="29.658998" y="127">pause</tspan>
+                                </text>
+                                <path d="M65,68 C66.1045695,68 67,68.8954305 67,70 L67,106 C67,107.104569 66.1045695,108 65,108 L59,108 C57.8954305,108 57,107.104569 57,106 L57,70 C57,68.8954305 57.8954305,68 59,68 L65,68 Z M40,68 C41.1045695,68 42,68.8954305 42,70 L42,106 C42,107.104569 41.1045695,108 40,108 L34,108 C32.8954305,108 32,107.104569 32,106 L32,70 C32,68.8954305 32.8954305,68 34,68 L40,68 Z" id="Combined-Shape" fill="#10357F"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </button>
+
+        <svg width="2050px" height="692px" viewBox="0 0 2050 692" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style='margin-top: -180px; margin-bottom: -220px; pointer-events: none;'>
+            <title>stream</title>
+            <g id="TV" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+                <g id="Desktop" transform="translate(-46.000000, -292.000000)">
+                    <g id="stream" transform="translate(82.000000, 327.416875)">
+                        <path id='stream-svg-bed' d="M0,0.583124641 C158,9.24979131 253.333333,22.2497913 286,39.5831246 C335,65.5831246 422.438927,149.210926 451,166.583125 C548,225.583125 619.500688,235.857385 658,239.583125 C689,242.583125 1022,242.583125 1166,254.583125 C1310,266.583125 1426,294.583125 1472,305.583125 C1518,316.583125 1663,357.583125 1778,429.583125 C1854.66667,477.583125 1921.33333,541.249791 1978,620.583125" id="stream-bed" stroke="#979797" stroke-width="72"></path>
+                        <path id='stream-svg-water' d="M0,0.583124641 C158,9.24979131 253.333333,22.2497913 286,39.5831246 C335,65.5831246 422.438927,149.210926 451,166.583125 C548,225.583125 619.500688,235.857385 658,239.583125 C689,242.583125 1022,242.583125 1166,254.583125 C1310,266.583125 1426,294.583125 1472,305.583125 C1518,316.583125 1663,357.583125 1778,429.583125 C1854.66667,477.583125 1921.33333,541.249791 1978,620.583125" id="stream-water" stroke-opacity="0.55" stroke="#10357F" stroke-width="48"></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+
           <h3>SVG Art</h3>
           <svg class='small-branch-svg' width="160px" height="45px" viewBox="0 0 154 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g id="branch" stroke-width="1" fill-rule="evenodd" stroke-linecap="round">
@@ -499,7 +631,6 @@
           </svg>
           <p>
               Open-source SVG assets ready to be<br>copied, edited, animated, or used as is
-            
           </p>
           <div id='individual-svg-section'></div>
           <div class='download-collection-btn'>
@@ -526,8 +657,6 @@
       </div>
       <div class='bottom-section'>
           <!-- SVG TREE -->
-          <?xml
-          version="1.0" encoding="UTF-8"?>
           <svg width="450px" height="1253px" id='bottom-section-svg' viewBox="0 0 450 1253" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <title>bottom-section</title>
               <g id="Cedar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -720,6 +849,10 @@
               </g>
           </svg>
           <!-- END OF TREE SVG -->
+          <!-- <div id='very-bottom-content'>
+            <div id='bottom-content-left'></div>
+            <div id='bottom-content-right'></div>
+          </div> -->
       </div>
     </main>
 <script>
@@ -742,6 +875,68 @@
     sunBtn.addEventListener('click', sunBtnListenr);
     moonBtn.addEventListener('click', moonBtnListenr);
 
+    // Setup stream audio
+    // TODO: move this to a Web Component
+    let streamFlowing = false;
+    let intervalId = null;
+
+    const streamPlay = document.getElementById('stream-play-btn');
+    const streamPause = document.getElementById('stream-pause-btn');
+
+    const audio = document.getElementById('stream-sound-audio');
+    const audio1= document.getElementById('stream-sound-audio1');
+    const streamSvgWater = document.getElementById('stream-svg-water');
+
+    const setStreamStyleFlowing = () => {
+        streamSvgWater.style.setProperty('stroke-opacity', '.78');
+        streamSvgWater.style.setProperty('stroke-width', '58');
+    }
+
+    const setStreamStyleFlowing1 = () => {
+        streamSvgWater.style.setProperty('stroke-opacity', '.88');
+        streamSvgWater.style.setProperty('stroke-width', '52');
+    }
+
+    const setStreamStyleStill = () => {
+        streamSvgWater.style.setProperty('stroke-opacity', '.55');
+        streamSvgWater.style.setProperty('stroke-width', '48');
+    }
+
+    const startStream = () => {
+        streamFlowing = true;
+        streamPlay.style.setProperty('display', 'none');
+        streamPause.style.setProperty('display', 'flex');
+        audio.play();
+
+        setStreamStyleFlowing();
+
+        intervalId = window.setInterval(function(){
+            setStreamStyleFlowing1();
+            setTimeout( () => {
+                intervalId && streamFlowing && setStreamStyleFlowing();
+            }, 1000)
+        }, 2000);
+
+        setTimeout( () => {
+            streamFlowing && audio1.play();
+        }, 5000)
+    }
+
+    const stopStream = () => {
+        streamFlowing = false;
+        streamPlay.style.setProperty('display', 'flex');
+        streamPause.style.setProperty('display', 'none');
+        audio.pause();
+        audio1.pause();
+        intervalId && clearInterval(intervalId)
+        setStreamStyleStill();
+    }
+
+    const startBtnListenr = (el)=>startStream();
+    const pauseBtnListenr = (el)=>stopStream();
+    streamPlay.addEventListener('click', startBtnListenr);
+    streamPause.addEventListener('click', pauseBtnListenr);
+
     // Setup individual SVG cards
     // TODO: move this to a Web Component
 
@@ -752,7 +947,6 @@
         container.appendChild(list);
 
         j.collection.map((graphic)=>{
-            console.log('graphic')
             const liEl = document.createElement('li');
             list.appendChild(liEl);
 
@@ -788,12 +982,43 @@
 
             const sizeLabel = document.createElement('div');
             desktopHover.appendChild(sizeLabel);
-            sizeLabel.innerText = graphic.size
+            sizeLabel.innerText = graphic.size;
             sizeLabel.classList.add('size-label');
-
         });
-    }
-    ).catch(console.error.bind(console));
+    })
+    // .then(() => {
+    //   if (document.body.offsetWidth > 800) {
+    //     const leftContent = document.getElementById('bottom-content-left');
+    //     const rightContent = document.getElementById('bottom-content-right');
+    //     const bottomContent = document.getElementById('very-bottom-content');
+
+    //     const fernFigure = document.createElement('figure');
+    //     fetch('/internalResources/assets/svgCollection/western-sword-fern.svg').then(r=>r.text()).then(inner=>{
+    //       fernFigure.innerHTML = inner;
+    //     }).then(() => {
+    //       leftContent.appendChild(fernFigure.cloneNode(true));
+    //       leftContent.appendChild(fernFigure.cloneNode(true));
+    //       rightContent.appendChild(fernFigure.cloneNode(true));
+    //       rightContent.appendChild(fernFigure.cloneNode(true));
+
+    //       // bottomContent.style.marginTop = fernFigure.offsetHeight * -1
+    //     });
+
+    //     if (document.body.offsetWidth > 1200) {
+    //       const mapleFigure = document.createElement('figure');
+    //       fetch('/internalResources/assets/svgCollection/big-leaf-maple.svg').then(r=>r.text()).then(inner=>{
+    //         mapleFigure.innerHTML = inner;
+    //       }).then(() => {
+    //         leftContent.appendChild(mapleFigure.cloneNode(true));
+    //         rightContent.appendChild(mapleFigure.cloneNode(true));
+
+    //         // bottomContent.style.marginTop = mapleFigure.offsetHeight * -1
+    //       });
+    //     }
+
+    //   }
+    // })
+    .catch(console.error.bind(console));
 </script>
   </body>
 </html>
