@@ -1,0 +1,293 @@
+state_name,species_code,common_name,scientific_name,percent_pop_breeding,percent_pop_postbreeding_migration,percent_pop_nonbreeding,percent_pop_prebreeding_migration,max_week_season,max_week,max_week_percent_pop,state_rank_breeding,breeding_habitat_primary,breeding_habitat_secondary
+Washington,ameavo,American Avocet,Recurvirostra americana,0.04,0,0,0.01,breeding,05-24,0.07515,19 of 22,Wetlands:  Freshwater Marsh,NA
+Washington,amebit,American Bittern,Botaurus lentiginosus,0.06,0.13,0.29,0.07,prebreeding_migration,04-12,0.8516,16 of 26,Wetlands:  Freshwater Marsh,NA
+Washington,amecro,American Crow,Corvus brachyrhynchos,1.17,1.54,1.49,1.15,postbreeding_migration,11-01,2.258,27 of 49,Open Country:  Habitat Mosaic,Open Country:  Developed/Disturbed
+Washington,amedip,American Dipper,Cinclus mexicanus,7.4,7.4,7.4,7.4,resident,year round resident,NA,4 of 13,Wetlands:  Lakes and Rivers,NA
+Washington,amegfi,American Goldfinch,Spinus tristis,1.62,1.59,1.21,1.52,postbreeding_migration,10-18,2.271,19 of 45,Open Country:  Habitat Mosaic,NA
+Washington,amekes,American Kestrel,Falco sparverius,0.72,0.68,0.63,0.53,breeding,08-02,0.9849,13 of 44,Open Country:  Habitat Mosaic,NA
+Washington,amepip,American Pipit,Anthus rubescens,0.12,0.62,0.08,0.19,prebreeding_migration,04-19,4.273,6 of 9,Tundra:  Alpine,Tundra:  Arctic
+Washington,amered,American Redstart,Setophaga ruticilla,0.08,0.01,0,0.03,breeding,06-21,0.09675,31 of 36,Forests:  Temperate Generalist,NA
+Washington,amerob,American Robin,Turdus migratorius,2.17,1.91,1.16,2.81,prebreeding_migration,03-22,5.423,5 of 48,Forests:  Temperate Generalist,NA
+Washington,amewig,American Wigeon,Mareca americana,0.11,4.9,10.67,3.18,postbreeding_migration,12-06,12.57,10 of 16,Wetlands:  Seasonally Wet Grasslands,Wetlands:  Freshwater Marsh
+Washington,amtspa,American Tree Sparrow,Spizelloides arborea,0,0.07,0.19,0.05,nonbreeding,01-11,0.2653,NA,Tundra:  Arctic,Forests:  Boreal
+Washington,amwpel,American White Pelican,Pelecanus erythrorhynchos,0.99,0.33,0.02,0.34,breeding,08-02,1.203,14 of 32,Wetlands:  Lakes and Rivers,NA
+Washington,annhum,Anna's Hummingbird,Calypte anna,4.88,4.14,3.52,4.8,prebreeding_migration,01-18,6.177,3 of 6,Aridlands:  Chaparral,Forests:  Temperate Western
+Washington,arcter,Arctic Tern,Sterna paradisaea,0,0.02,0,0,postbreeding_migration,09-20,0.3771,NA,Wetlands:  Tundra,Forests:  Boreal
+Washington,astfly,Ash-throated Flycatcher,Myiarchus cinerascens,0.08,0.05,0,0.02,postbreeding_migration,07-26,0.1518,11 of 12,Aridlands:  Desert Scrub,Forests:  Temperate Western
+Washington,attwoo1,American Three-toed Woodpecker,Picoides dorsalis,0.63,0.63,0.63,0.63,resident,year round resident,NA,8 of 13,Forests:  Boreal,Forests:  Temperate Western
+Washington,baisan,Baird's Sandpiper,Calidris bairdii,0,0.03,0,0,postbreeding_migration,08-23,0.4155,NA,Tundra:  Arctic,NA
+Washington,baleag,Bald Eagle,Haliaeetus leucocephalus,1.09,0.68,2.32,1.35,nonbreeding,01-11,2.738,3 of 47,Wetlands:  Generalist,Coasts:  Beach and Estuary
+Washington,banswa,Bank Swallow,Riparia riparia,0.68,0.18,0,0.15,postbreeding_migration,06-28,1.423,3 of 28,Wetlands Aerial:  Lakes and Rivers,Open Country Aerial:  Habitat Mosaic
+Washington,bargol,Barrow's Goldeneye,Bucephala islandica,0.5,1.13,1.69,0.79,postbreeding_migration,11-29,3.598,4 of 7,Wetlands:  Forested,Wetlands:  Lakes and Rivers
+Washington,barswa,Barn Swallow,Hirundo rustica,0.16,0.07,0,0.02,breeding,06-14,0.1846,28 of 49,Open Country Aerial:  Habitat Mosaic,NA
+Washington,batpig1,Band-tailed Pigeon,Patagioenas fasciata,5.45,4.02,0.04,2.34,postbreeding_migration,09-06,9.963,3 of 9,Forests:  Temperate Western,Forests:  Mesoamerican Highland
+Washington,bcnher,Black-crowned Night Heron,Nycticorax nycticorax,0.01,0,0,0.01,breeding,07-12,0.01704,33 of 33,Wetlands:  Generalist,Coasts:  Saltmarsh
+Washington,belkin1,Belted Kingfisher,Megaceryle alcyon,0.89,1.14,1.33,0.91,postbreeding_migration,11-22,1.707,15 of 48,Wetlands:  Generalist,NA
+Washington,bewwre,Bewick's Wren,Thryomanes bewickii,1.41,0,2.09,0,unidentified,09-06,2.716,7 of 13,Aridlands:  Desert Scrub,Forests:  Temperate Western
+Washington,bkbmag1,Black-billed Magpie,Pica hudsonia,3.1,3.1,3.1,3.1,resident,year round resident,NA,9 of 17,Open Country:  Habitat Mosaic,NA
+Washington,bkbplo,Black-bellied Plover,Pluvialis squatarola,0.06,0.53,0.64,0.27,nonbreeding,12-27,1.429,13 of 17,Wetlands:  Tundra,Tundra:  Arctic
+Washington,bkbwoo,Black-backed Woodpecker,Picoides arcticus,0.39,0.39,0.39,0.39,resident,year round resident,NA,5 of 15,Forests:  Boreal,Forests:  Temperate Western
+Washington,bkcchi,Black-capped Chickadee,Poecile atricapillus,0.85,0.85,0.85,0.85,resident,year round resident,NA,15 of 35,Forests:  Temperate Generalist,NA
+Washington,bkchum,Black-chinned Hummingbird,Archilochus alexandri,0.53,0.09,0,0.11,breeding,06-21,0.6336,8 of 13,Forests:  Temperate Western,Aridlands:  Desert Riparian
+Washington,bkhgro,Black-headed Grosbeak,Pheucticus melanocephalus,9.36,5.25,0,5.15,prebreeding_migration,06-07,9.692,3 of 15,Forests:  Temperate Western,Forests:  Mesoamerican Pine-Oak
+Washington,bknsti,Black-necked Stilt,Himantopus mexicanus,0.03,0.01,0,0.05,prebreeding_migration,04-26,0.1347,18 of 25,Wetlands:  Freshwater Marsh,NA
+Washington,blkoys,Black Oystercatcher,Haematopus bachmani,3.89,3.89,3.89,3.89,resident,year round resident,NA,2 of 4,Coasts:  Rocky Intertidal,NA
+Washington,blkpho,Black Phoebe,Sayornis nigricans,0,0,0.01,0,nonbreeding,01-18,0.01247,NA,Wetlands:  Generalist,NA
+Washington,blksco2,Black Scoter,Melanitta americana,0,0.05,0.06,0.02,nonbreeding,01-04,0.1194,NA,Wetlands:  Tundra,NA
+Washington,blkswi,Black Swift,Cypseloides niger,14.55,8.26,0,7.79,postbreeding_migration,09-06,37.17,1 of 8,Forest Aerial:  Temperate Western,Forests Aerial:  Mesoamerican Highland
+Washington,blkter,Black Tern,Chlidonias niger,0.03,0.01,0,0.01,breeding,06-14,0.03612,18 of 23,Wetlands:  Freshwater Marsh,NA
+Washington,blktur,Black Turnstone,Arenaria melanocephala,0,2.71,4.86,1.99,nonbreeding,03-01,9.344,NA,Coasts:  Tundra,Tundra:  Arctic
+Washington,bnhcow,Brown-headed Cowbird,Molothrus ater,1.2,0.16,0.01,0.28,breeding,06-14,1.262,26 of 48,Open Country:  Habitat Mosaic,NA
+Washington,boboli,Bobolink,Dolichonyx oryzivorus,0.02,0,0,0.01,breeding,06-07,0.03158,31 of 32,Grasslands:  Temperate,NA
+Washington,bohwax,Bohemian Waxwing,Bombycilla garrulus,0,0.08,0.32,0.06,nonbreeding,01-25,1.116,NA,Forests:  Boreal,NA
+Washington,bongul,Bonaparte's Gull,Chroicocephalus philadelphia,0.02,2.6,1.9,1.65,prebreeding_migration,04-12,10.16,7 of 11,Wetlands:  Boreal,NA
+Washington,borchi2,Boreal Chickadee,Poecile hudsonicus,0.01,0.01,0.01,0.01,resident,year round resident,NA,8 of 8,Forests:  Boreal,NA
+Washington,brant,Brant,Branta bernicla,0,0.25,3.37,2.54,prebreeding_migration,04-19,11.81,NA,Coasts:  Saltmarsh,Coasts:  Tundra
+Washington,brdowl,Barred Owl,Strix varia,0.83,0.83,0.83,0.83,resident,year round resident,NA,26 of 42,Forests:  Temperate Eastern,Forests:  Temperate Western
+Washington,brebla,Brewer's Blackbird,Euphagus cyanocephalus,5.06,1.79,1.49,2,breeding,07-19,6.969,8 of 19,Open Country:  Habitat Mosaic,NA
+Washington,brespa,Brewer's Sparrow,Spizella breweri,1.63,0.56,0,0.99,prebreeding_migration,05-31,2.081,9 of 14,Aridlands:  Sagebrush,NA
+Washington,brncre,Brown Creeper,Certhia americana,4.99,4.16,5.26,4.28,nonbreeding,02-01,6.619,3 of 30,Forests:  Temperate Generalist,NA
+Washington,brnpel,Brown Pelican,Pelecanus occidentalis,0.21,1.12,0,0.01,postbreeding_migration,08-09,2.293,13 of 15,Coasts:  Beach and Estuary,Coasts:  Marine Waters
+Washington,btywar,Black-throated Gray Warbler,Setophaga nigrescens,8.92,2.45,0,5.46,breeding,07-05,11.58,5 of 11,Forests:  Temperate Western,Forests:  Mesoamerican Pine-Oak
+Washington,buffle,Bufflehead,Bucephala albeola,0.04,2.39,7.19,2.9,nonbreeding,01-25,8.022,7 of 10,Wetlands:  Forested,Wetlands:  Lakes and Rivers
+Washington,bulori,Bullock's Oriole,Icterus bullockii,4.52,2.43,0,1.95,breeding,06-14,4.837,8 of 17,Forests:  Temperate Western,NA
+Washington,burowl,Burrowing Owl,Athene cunicularia,0.06,0.01,0,0.01,breeding,07-05,0.1092,17 of 18,Grasslands:  Temperate,Aridlands:  Desert Scrub
+Washington,bushti,Bushtit,Psaltriparus minimus,0.81,0.81,0.81,0.81,resident,year round resident,NA,8 of 12,Forests:  Temperate Western,Forests:  Mesoamerican Pine-Oak
+Washington,buwtea,Blue-winged Teal,Spatula discors,0.14,0.02,0,0.02,breeding,06-14,0.1784,11 of 28,Wetlands:  Seasonally Wet Grasslands,Wetlands:  Freshwater Marsh
+Washington,cacgoo1,Cackling Goose,Branta hutchinsii,0,3.55,3.58,1.32,prebreeding_migration,04-26,15.69,NA,Wetlands:  Tundra,Coasts:  Tundra
+Washington,calgul,California Gull,Larus californicus,2.52,7.15,0.45,1.78,postbreeding_migration,09-13,12.36,3 of 14,Coasts:  Beach and Estuary,Wetlands:  Lakes and Rivers
+Washington,calhum,Calliope Hummingbird,Selasphorus calliope,27.99,14.7,0,36.72,prebreeding_migration,05-03,49.21,1 of 8,Forests:  Temperate Western,NA
+Washington,calqua,California Quail,Callipepla californica,7.2,7.2,7.2,7.2,resident,year round resident,NA,3 of 7,Aridlands:  Chaparral,NA
+Washington,cangoo,Canada Goose,Branta canadensis,0.44,0.34,1.27,0.57,prebreeding_migration,02-01,1.727,26 of 49,Wetlands:  Generalist,NA
+Washington,canvas,Canvasback,Aythya valisineria,0,0.25,0.88,0.18,nonbreeding,01-04,1.006,NA,Wetlands:  Seasonally Wet Grasslands,Wetlands:  Freshwater Marsh
+Washington,canwre,Canyon Wren,Catherpes mexicanus,0.32,0.32,0.32,0.32,resident,year round resident,NA,10 of 14,Aridlands:  Desert Scrub,NA
+Washington,casfin,Cassin's Finch,Haemorhous cassinii,7.84,4.53,0.67,6.8,breeding,08-30,10.84,6 of 12,Forests:  Temperate Western,NA
+Washington,caster1,Caspian Tern,Hydroprogne caspia,6.16,2.68,0,4.86,prebreeding_migration,05-03,15.93,1 of 33,Wetlands:  Lakes and Rivers,NA
+Washington,casvir,Cassin's Vireo,Vireo cassinii,8.5,3.97,0,6.57,prebreeding_migration,05-03,10.07,5 of 6,Forests:  Temperate Western,NA
+Washington,cedwax,Cedar Waxwing,Bombycilla cedrorum,2.64,1.39,0.11,1.17,postbreeding_migration,09-20,2.977,4 of 41,Forests:  Temperate Generalist,NA
+Washington,chbchi,Chestnut-backed Chickadee,Poecile rufescens,18.16,18.16,18.16,18.16,resident,year round resident,NA,1 of 6,Forests:  Temperate Western,NA
+Washington,chispa,Chipping Sparrow,Spizella passerina,1.54,0.96,0,0.67,postbreeding_migration,08-09,2.454,12 of 48,Forests:  Temperate Generalist,NA
+Washington,chukar,Chukar,Alectoris chukar,0.09,0.09,0.09,0.09,resident,year round resident,NA,6 of 7,Aridlands:  Desert Scrub,NA
+Washington,cintea,Cinnamon Teal,Spatula cyanoptera,1.9,0.4,0,0.65,breeding,05-24,2.847,7 of 14,Wetlands:  Freshwater Marsh,NA
+Washington,clagre,Clark's Grebe,Aechmophorus clarkii,0.62,0.2,0.01,0.11,breeding,05-17,0.8416,11 of 15,Wetlands:  Freshwater Marsh,NA
+Washington,clanut,Clark's Nutcracker,Nucifraga columbiana,2.44,2.44,2.44,2.44,resident,year round resident,NA,9 of 12,Forests:  Temperate Western,NA
+Washington,clcspa,Clay-colored Sparrow,Spizella pallida,0.01,0,0,0,breeding,07-05,0.01146,9 of 9,Grasslands:  Temperate,Open Country:  Habitat Mosaic
+Washington,cliswa,Cliff Swallow,Petrochelidon pyrrhonota,1.62,0.38,0,0.92,prebreeding_migration,04-26,2.145,20 of 42,Open Country Aerial:  Habitat Mosaic,NA
+Washington,comgol,Common Goldeneye,Bucephala clangula,0.01,0.47,1.23,0.43,postbreeding_migration,12-13,1.843,8 of 8,Wetlands:  Forested,Wetlands:  Lakes and Rivers
+Washington,comloo,Common Loon,Gavia immer,0.05,0.78,2.55,0.5,unidentified,01-25,2.907,11 of 13,Wetlands:  Lakes and Rivers,NA
+Washington,commer,Common Merganser,Mergus merganser,0.31,0.83,0.89,0.47,postbreeding_migration,11-01,1.434,10 of 26,Wetlands:  Forested,Wetlands:  Lakes and Rivers
+Washington,comnig,Common Nighthawk,Chordeiles minor,2.45,0.86,0,1.23,breeding,06-28,2.756,13 of 38,Open Country Aerial:  Habitat Mosaic,NA
+Washington,compoo,Common Poorwill,Phalaenoptilus nuttallii,2.09,0.55,0,0.66,breeding,07-05,2.794,11 of 17,Aridlands:  Desert Scrub,Aridlands:  Sagebrush
+Washington,comrav,Common Raven,Corvus corax,0.42,0.42,0.42,0.42,resident,year round resident,NA,12 of 29,Open Country:  Habitat Mosaic,NA
+Washington,comred,Common Redpoll,Acanthis flammea,0,0.03,0.13,0.02,nonbreeding,01-04,0.2419,NA,Tundra:  Arctic,Forests:  Boreal
+Washington,comter,Common Tern,Sterna hirundo,0,0,0,0.04,prebreeding_migration,05-10,0.2435,NA,Coasts:  Beach and Estuary,Wetlands:  Lakes and Rivers
+Washington,comyel,Common Yellowthroat,Geothlypis trichas,0.62,0.65,0,0.8,prebreeding_migration,04-19,2.235,28 of 49,Open Country:  Habitat Mosaic,Wetlands:  Freshwater Marsh
+Washington,coohaw,Cooper's Hawk,Accipiter cooperii,1.77,2.22,1.58,1.4,postbreeding_migration,09-06,3.533,10 of 49,Forests:  Temperate Generalist,NA
+Washington,cowscj1,California Scrub-Jay,Aphelocoma californica,1.01,1.01,1.01,1.01,resident,year round resident,NA,3 of 4,Forests:  Temperate Western,Aridlands:  Chaparral
+Washington,daejun,Dark-eyed Junco,Junco hyemalis,2.28,2.98,3.25,2.55,prebreeding_migration,03-15,4.672,4 of 26,Forests:  Temperate Generalist,NA
+Washington,doccor,Double-crested Cormorant,Nannopterum auritum,1.2,0.9,0.75,0.93,postbreeding_migration,09-13,1.675,12 of 48,Wetlands:  Generalist,Coasts:  Beach and Estuary
+Washington,dowwoo,Downy Woodpecker,Dryobates pubescens,0.55,0.55,0.55,0.55,resident,year round resident,NA,34 of 50,Forests:  Temperate Generalist,NA
+Washington,dunlin,Dunlin,Calidris alpina,0,1.81,4.67,1.68,nonbreeding,01-04,7.214,NA,Wetlands:  Tundra,Coasts:  Tundra
+Washington,dusfly,Dusky Flycatcher,Empidonax oberholseri,3.28,2.74,0,3.66,prebreeding_migration,05-03,7.152,9 of 12,Forests:  Temperate Western,NA
+Washington,dusgro,Dusky Grouse,Dendragapus obscurus,3.59,3.59,3.59,3.59,resident,year round resident,NA,6 of 10,Forests:  Temperate Western,NA
+Washington,eargre,Eared Grebe,Podiceps nigricollis,0.05,0.05,0.05,0.02,postbreeding_migration,11-08,0.1456,14 of 16,Wetlands:  Freshwater Marsh,NA
+Washington,easkin,Eastern Kingbird,Tyrannus tyrannus,1.15,0.59,0,0.21,postbreeding_migration,08-09,1.436,27 of 45,Open Country:  Habitat Mosaic,Grasslands:  Temperate
+Washington,eucdov,Eurasian Collared-Dove,Streptopelia decaocto,0.12,0.12,0.12,0.12,resident,year round resident,NA,8 of 25,Open Country:  Developed/Disturbed,NA
+Washington,eursta,European Starling,Sturnus vulgaris,0.4,0.45,0.54,0.59,nonbreeding,12-20,0.8065,8 of 48,Open Country:  Developed/Disturbed,NA
+Washington,eurwig,Eurasian Wigeon,Mareca penelope,0,NA,0.01,NA,nonbreeding,01-04,0.01046,NA,Wetlands:  Freshwater Marsh,NA
+Washington,evegro,Evening Grosbeak,Coccothraustes vespertinus,10.53,4.28,0.65,6.62,postbreeding_migration,09-13,17.46,1 of 17,Forests:  Boreal,Forests:  Temperate Western
+Washington,ferhaw,Ferruginous Hawk,Buteo regalis,0.84,0,0.03,0.46,breeding,06-14,1.759,11 of 16,Grasslands:  Temperate,NA
+Washington,flaowl,Flammulated Owl,Psiloscops flammeolus,5.46,0,0,10.37,prebreeding_migration,05-24,16.24,6 of 12,Forests:  Temperate Western,Forests:  Mesoamerican Pine-Oak
+Washington,forter,Forster's Tern,Sterna forsteri,0.7,0.12,0,0.18,breeding,07-05,0.8952,19 of 36,Wetlands:  Freshwater Marsh,NA
+Washington,foxspa,Fox Sparrow,Passerella iliaca,0.19,2.53,4.48,0.57,postbreeding_migration,09-20,9.429,8 of 11,Forests:  Boreal,Forests:  Temperate Western
+Washington,gadwal,Gadwall,Mareca strepera,0.44,0.11,0.15,0.22,postbreeding_migration,08-16,0.7114,8 of 19,Wetlands:  Seasonally Wet Grasslands,Wetlands:  Freshwater Marsh
+Washington,gcrfin,Gray-crowned Rosy-Finch,Leucosticte tephrocotis,0.56,3.39,3.74,1.45,nonbreeding,12-13,8.261,3 of 5,Tundra:  Alpine,NA
+Washington,glwgul,Glaucous-winged Gull,Larus glaucescens,2.97,1.59,2.38,1.27,postbreeding_migration,07-05,3.859,2 of 4,Coasts:  Cliffs and Islands,Coasts:  Marine Waters
+Washington,gnttow,Green-tailed Towhee,Pipilo chlorurus,0.02,0,0,0,breeding,07-12,0.02414,11 of 11,Aridlands:  Sagebrush,NA
+Washington,gnwtea,Green-winged Teal,Anas crecca,0.07,0.12,0.12,0.19,prebreeding_migration,03-29,0.653,7 of 18,Wetlands:  Generalist,NA
+Washington,gockin,Golden-crowned Kinglet,Regulus satrapa,3.43,5.42,8.42,4.92,nonbreeding,02-22,9.504,2 of 27,Forests:  Boreal,Forests:  Temperate Western
+Washington,gocspa,Golden-crowned Sparrow,Zonotrichia atricapilla,0,9.82,6.8,2.3,postbreeding_migration,09-20,24.68,NA,Tundra:  Alpine,Forests:  Temperate Western
+Washington,goleag,Golden Eagle,Aquila chrysaetos,0.15,0.27,0.39,0.19,nonbreeding,01-18,0.6056,13 of 16,Open Country:  Habitat Mosaic,NA
+Washington,graspa,Grasshopper Sparrow,Ammodramus savannarum,0.64,0.29,0,0.77,prebreeding_migration,05-10,1.661,14 of 40,Grasslands:  Temperate,NA
+Washington,grbher3,Great Blue Heron,Ardea herodias,1.13,1.11,1.12,1.05,prebreeding_migration,03-01,1.411,27 of 49,Wetlands:  Generalist,Coasts:  Saltmarsh
+Washington,greegr,Great Egret,Ardea alba,0.01,0.01,0,0,breeding,06-21,0.01848,38 of 38,Wetlands:  Generalist,Coasts:  Saltmarsh
+Washington,gresca,Greater Scaup,Aythya marila,0.01,3,3.33,0.99,postbreeding_migration,11-22,4.797,3 of 3,Wetlands:  Tundra,NA
+Washington,greyel,Greater Yellowlegs,Tringa melanoleuca,0,0.1,0.08,0.19,prebreeding_migration,04-12,0.8145,NA,Wetlands:  Boreal,NA
+Washington,grhowl,Great Horned Owl,Bubo virginianus,1.65,1.65,1.65,1.65,resident,year round resident,NA,16 of 49,Open Country:  Habitat Mosaic,NA
+Washington,grnher,Green Heron,Butorides virescens,0.01,0.01,0,0.01,breeding,08-23,0.02195,42 of 42,Wetlands:  Freshwater Marsh,NA
+Washington,grycat,Gray Catbird,Dumetella carolinensis,0.84,0.3,0,0.17,breeding,07-05,0.9095,26 of 46,Forests:  Temperate Eastern,Forests:  Temperate Western
+Washington,gryfly,Gray Flycatcher,Empidonax wrightii,1.03,0.65,0,0.85,postbreeding_migration,07-26,2.498,10 of 12,Forests:  Temperate Western,NA
+Washington,gryjay,Canada Jay,Perisoreus canadensis,0.75,0.75,0.75,0.75,resident,year round resident,NA,2 of 17,Forests:  Boreal,Forests:  Temperate Western
+Washington,grypar,Gray Partridge,Perdix perdix,0.63,0.63,0.63,0.63,resident,year round resident,NA,4 of 11,Open Country:  Developed/Disturbed,NA
+Washington,gwfgoo,Greater White-fronted Goose,Anser albifrons,0,0.01,0,0.02,postbreeding_migration,09-27,0.242,NA,Wetlands:  Tundra,NA
+Washington,haiwoo,Hairy Woodpecker,Dryobates villosus,1.67,1.67,1.67,1.67,resident,year round resident,NA,11 of 49,Forests:  Generalist,NA
+Washington,hamfly,Hammond's Flycatcher,Empidonax hammondii,7.98,6.37,0,7.61,postbreeding_migration,08-23,18.97,3 of 11,Forests:  Temperate Western,NA
+Washington,harduc,Harlequin Duck,Histrionicus histrionicus,0.24,1.24,0.5,1.22,postbreeding_migration,11-15,2.772,2 of 2,Wetlands:  Lakes and Rivers,Coasts:  Beach and Estuary
+Washington,heegul,Heermann's Gull,Larus heermanni,0,21.7,20.34,0.88,postbreeding_migration,08-09,39.02,NA,Coasts:  Beach and Estuary,Coasts:  Marine Waters
+Washington,hergul,Herring Gull,Larus argentatus,0,0.01,0.05,0,nonbreeding,02-01,0.06392,NA,Coasts:  Beach and Estuary,Wetlands:  Lakes and Rivers
+Washington,herthr,Hermit Thrush,Catharus guttatus,1.19,1.36,0.28,0.73,postbreeding_migration,09-20,3.656,3 of 27,Forests:  Temperate Generalist,NA
+Washington,herwar,Hermit Warbler,Setophaga occidentalis,9.78,1.54,0,5.34,breeding,07-05,11.6,3 of 4,Forests:  Temperate Western,NA
+Washington,hoomer,Hooded Merganser,Lophodytes cucullatus,0.54,1.39,3.46,1.64,postbreeding_migration,12-13,3.75,8 of 29,Wetlands:  Forested,Wetlands:  Lakes and Rivers
+Washington,horgre,Horned Grebe,Podiceps auritus,0,7.47,10.9,2.51,nonbreeding,02-01,15.22,NA,Wetlands:  Freshwater Marsh,NA
+Washington,horlar,Horned Lark,Eremophila alpestris,0.56,0.49,1.49,1.22,prebreeding_migration,02-22,3.09,17 of 37,Grasslands:  Temperate,Tundra:  Arctic
+Washington,houfin,House Finch,Haemorhous mexicanus,1.94,1.94,1.94,1.94,resident,year round resident,NA,6 of 49,Open Country:  Habitat Mosaic,Aridlands:  Desert Scrub
+Washington,houspa,House Sparrow,Passer domesticus,0.06,0.06,0.06,0.06,resident,year round resident,NA,18 of 39,Open Country:  Developed/Disturbed,NA
+Washington,houwre,House Wren,Troglodytes aedon,0.74,0.12,0,0.31,breeding,07-05,0.843,15 of 42,Forests:  Generalist,Open Country:  Developed/Disturbed
+Washington,hutvir,Hutton's Vireo,Vireo huttoni,3.61,3.61,3.61,3.61,resident,year round resident,NA,4 of 6,Forests:  Temperate Western,Forests:  Mesoamerican Highland
+Washington,killde,Killdeer,Charadrius vociferus,0.93,0.55,0.2,0.8,prebreeding_migration,03-22,1.059,28 of 48,Open Country:  Habitat Mosaic,Wetlands:  Generalist
+Washington,larspa,Lark Sparrow,Chondestes grammacus,0.75,0.28,0,0.14,breeding,07-12,0.9457,17 of 29,Open Country:  Habitat Mosaic,NA
+Washington,lazbun,Lazuli Bunting,Passerina amoena,9.08,3.38,0,4.05,postbreeding_migration,07-26,9.925,6 of 15,Forests:  Temperate Western,NA
+Washington,leafly,Least Flycatcher,Empidonax minimus,0.01,0,0,0.01,prebreeding_migration,06-14,0.02881,22 of 22,Forests:  Temperate Eastern,Forests:  Temperate Western
+Washington,leasan,Least Sandpiper,Calidris minutilla,0,0.24,0.19,0.29,prebreeding_migration,04-26,1.993,NA,Wetlands:  Tundra,NA
+Washington,lesgol,Lesser Goldfinch,Spinus psaltria,0.52,0.46,0.5,0.38,nonbreeding,12-27,0.8201,9 of 13,Forests:  Temperate Western,Forests:  Mesoamerican Pine-Oak
+Washington,lessca,Lesser Scaup,Aythya affinis,0.08,0.78,1.95,0.79,nonbreeding,01-11,2.446,8 of 14,Wetlands:  Lakes and Rivers,Wetlands:  Freshwater Marsh
+Washington,lesyel,Lesser Yellowlegs,Tringa flavipes,0,0.02,0,0.01,postbreeding_migration,08-16,0.1213,NA,Wetlands:  Boreal,NA
+Washington,lewwoo,Lewis's Woodpecker,Melanerpes lewis,12.2,9.16,19.32,10.22,nonbreeding,01-04,33.61,4 of 13,Forests:  Temperate Western,NA
+Washington,linspa,Lincoln's Sparrow,Melospiza lincolnii,0.07,0.84,0.15,0.13,postbreeding_migration,09-06,3.829,14 of 16,Wetlands:  Boreal,Forests:  Temperate Western
+Washington,lobcur,Long-billed Curlew,Numenius americanus,0.99,0,0,0.57,breeding,05-31,1.318,12 of 17,Grasslands:  Temperate,NA
+Washington,lobdow,Long-billed Dowitcher,Limnodromus scolopaceus,0,0.13,0.03,0.06,postbreeding_migration,07-12,0.8768,NA,Wetlands:  Tundra,NA
+Washington,loeowl,Long-eared Owl,Asio otus,0,0.28,0.22,0.08,postbreeding_migration,11-29,6.426,NA,Forests:  Temperate Generalist,NA
+Washington,logshr,Loggerhead Shrike,Lanius ludovicianus,0.44,0.11,0,0.21,postbreeding_migration,07-26,0.6983,22 of 31,Grasslands:  Temperate,Aridlands:  Desert Scrub
+Washington,lotduc,Long-tailed Duck,Clangula hyemalis,0,0.05,0.29,0.06,unidentified,01-25,0.4755,NA,Wetlands:  Tundra,NA
+Washington,macwar,MacGillivray's Warbler,Geothlypis tolmiei,6.94,2.82,0,5.48,postbreeding_migration,08-09,10.68,5 of 13,Forests:  Temperate Western,NA
+Washington,mallar3,Mallard,Anas platyrhynchos,0.4,0.36,0.61,0.55,prebreeding_migration,03-29,0.8888,10 of 48,Wetlands:  Generalist,NA
+Washington,margod,Marbled Godwit,Limosa fedoa,0,0.27,0.31,0.44,prebreeding_migration,04-12,1.685,NA,Wetlands:  Seasonally Wet Grasslands,Wetlands:  Tundra
+Washington,marmur,Marbled Murrelet,Brachyramphus marmoratus,1.19,1.19,1.19,1.19,resident,year round resident,NA,2 of 4,Forests:  Temperate Western,Coasts:  Marine Waters
+Washington,marwre,Marsh Wren,Cistothorus palustris,1.32,1.95,5.56,3.78,nonbreeding,03-08,7.863,7 of 38,Wetlands:  Freshwater Marsh,NA
+Washington,merlin,Merlin,Falco columbarius,0.03,0.27,0.7,0.13,postbreeding_migration,10-11,1.487,9 of 11,Forests:  Boreal,Open Country:  Habitat Mosaic
+Washington,mewgul2,Short-billed Gull,Larus brachyrhynchus,0,2.04,3.17,0.89,unidentified,11-22,6.802,NA,Wetlands:  Generalist,NA
+Washington,moublu,Mountain Bluebird,Sialia currucoides,2.02,1.34,0,1.36,postbreeding_migration,09-20,2.965,10 of 14,Open Country:  Habitat Mosaic,Tundra:  Alpine
+Washington,mouchi,Mountain Chickadee,Poecile gambeli,3.29,0,3.48,0,breeding,05-03,3.774,10 of 12,Forests:  Temperate Western,NA
+Washington,moudov,Mourning Dove,Zenaida macroura,0.68,0.4,0.41,0.42,breeding,08-09,0.7524,37 of 48,Open Country:  Habitat Mosaic,Open Country:  Developed/Disturbed
+Washington,mouqua,Mountain Quail,Oreortyx pictus,0.14,0.14,0.14,0.14,resident,year round resident,NA,4 of 5,Forests:  Temperate Western,Aridlands:  Chaparral
+Washington,naswar,Nashville Warbler,Leiothlypis ruficapilla,0.96,0.52,0,1.79,prebreeding_migration,05-03,5.185,6 of 14,Forests:  Boreal,Forests:  Temperate Western
+Washington,nopowl,Northern Pygmy-Owl,Glaucidium gnoma,10.02,10.02,10.02,10.02,resident,year round resident,NA,3 of 12,Forests:  Temperate Western,Forests:  Mesoamerican Pine-Oak
+Washington,norfli,Northern Flicker,Colaptes auratus,2.27,2.85,3.26,3.17,prebreeding_migration,03-22,4.63,7 of 49,Forests:  Generalist,NA
+Washington,norgos,American Goshawk,Accipiter atricapillus,0.37,0.35,0.52,0.19,nonbreeding,01-18,1.026,12 of 18,Forests:  Boreal,Forests:  Boreal
+Washington,norhar2,Northern Harrier,Circus hudsonius,1.64,1.28,1.55,1.15,postbreeding_migration,09-27,1.982,11 of 24,Grasslands:  Temperate,Wetlands:  Freshwater Marsh
+Washington,norpin,Northern Pintail,Anas acuta,0,0.78,0.73,0.67,prebreeding_migration,03-08,3.423,NA,Wetlands:  Seasonally Wet Grasslands,Wetlands:  Tundra
+Washington,norsho,Northern Shoveler,Spatula clypeata,0.07,0.08,0.05,0.12,prebreeding_migration,04-26,0.5997,14 of 19,Wetlands:  Seasonally Wet Grasslands,Wetlands:  Freshwater Marsh
+Washington,norshr4,Northern Shrike,Lanius borealis,0,1.51,4.28,2.33,prebreeding_migration,02-15,5.255,NA,Forests:  Boreal,Tundra:  Arctic
+Washington,norwat,Northern Waterthrush,Parkesia noveboracensis,0.05,0.01,0,0.03,prebreeding_migration,05-24,0.1004,10 of 17,Forests:  Boreal,Forests:  Temperate Eastern
+Washington,nrwswa,Northern Rough-winged Swallow,Stelgidopteryx serripennis,2.47,0.49,0,0.93,breeding,05-31,2.944,8 of 48,Open Country Aerial:  Habitat Mosaic,Wetlands Aerial:  Lakes and Rivers
+Washington,nswowl,Northern Saw-whet Owl,Aegolius acadicus,0.05,2.69,15.17,0.06,unidentified,02-01,25.2,14 of 19,Forests:  Boreal,Forests:  Temperate Western
+Washington,olsfly,Olive-sided Flycatcher,Contopus cooperi,3.33,2.2,0,1.79,postbreeding_migration,07-26,5.863,4 of 19,Forests:  Boreal,Forests:  Temperate Western
+Washington,orcwar,Orange-crowned Warbler,Leiothlypis celata,1.55,1.22,0.01,1.19,prebreeding_migration,04-26,5.613,4 of 12,Forests:  Temperate Western,Forests:  Boreal
+Washington,osprey,Osprey,Pandion haliaetus,1.35,0.49,0,0.58,postbreeding_migration,08-09,1.689,11 of 46,Wetlands:  Lakes and Rivers,Coasts:  Saltmarsh
+Washington,pacloo,Pacific Loon,Gavia pacifica,0.1,1.73,4.48,3.01,prebreeding_migration,04-26,10.99,2 of 4,Wetlands:  Tundra,NA
+Washington,pacwre1,Pacific Wren,Troglodytes pacificus,11.99,19.78,30.69,24.77,prebreeding_migration,03-01,33.37,2 of 6,Forests:  Temperate Western,NA
+Washington,parjae,Parasitic Jaeger,Stercorarius parasiticus,0,0.28,0,0.01,postbreeding_migration,10-18,4.196,NA,Wetlands:  Tundra,Tundra:  Arctic
+Washington,pecsan,Pectoral Sandpiper,Calidris melanotos,0,0.01,0,0,postbreeding_migration,09-27,0.06943,NA,Wetlands:  Tundra,NA
+Washington,pelcor,Pelagic Cormorant,Urile pelagicus,2.45,2.45,2.45,2.45,resident,year round resident,NA,2 of 4,Coasts:  Cliffs and Islands,Coasts:  Marine Waters
+Washington,perfal,Peregrine Falcon,Falco peregrinus,0.05,0.11,0.24,0.09,nonbreeding,01-04,0.4706,11 of 24,Open Country:  Habitat Mosaic,Open Country:  Developed/Disturbed
+Washington,pibgre,Pied-billed Grebe,Podilymbus podiceps,1.34,1.41,1.12,0.88,postbreeding_migration,08-23,2.15,7 of 37,Wetlands:  Freshwater Marsh,NA
+Washington,piggui,Pigeon Guillemot,Cepphus columba,5.05,12.16,21.27,10.16,nonbreeding,11-22,59.54,2 of 4,Coasts:  Cliffs and Islands,Coasts:  Marine Waters
+Washington,pilwoo,Pileated Woodpecker,Dryocopus pileatus,0.98,0.98,0.98,0.98,resident,year round resident,NA,26 of 40,Forests:  Temperate Generalist,NA
+Washington,pingro,Pine Grosbeak,Pinicola enucleator,0.26,0.16,0.12,0.04,breeding,08-30,1.254,8 of 11,Forests:  Boreal,NA
+Washington,pinsis,Pine Siskin,Spinus pinus,3.05,3.95,6.72,3.71,nonbreeding,02-01,8.463,4 of 19,Forests:  Boreal,Forests:  Temperate Western
+Washington,pomjae,Pomarine Jaeger,Stercorarius pomarinus,0,0.03,0,0,postbreeding_migration,10-11,0.7405,NA,Wetlands:  Tundra,NA
+Washington,prafal,Prairie Falcon,Falco mexicanus,0.85,0.86,1.51,1.03,nonbreeding,01-25,2.491,12 of 16,Open Country:  Habitat Mosaic,Aridlands:  Desert Scrub
+Washington,purfin,Purple Finch,Haemorhous purpureus,2.46,1.82,1.44,1.65,postbreeding_migration,09-20,5.534,6 of 16,Forests:  Boreal,Forests:  Temperate Western
+Washington,purmar,Purple Martin,Progne subis,0.11,0.01,0,0,prebreeding_migration,05-10,0.1979,35 of 40,Open Country Aerial:  Habitat Mosaic,Wetlands Aerial:  Lakes and Rivers
+Washington,pygnut,Pygmy Nuthatch,Sitta pygmaea,3.12,3.12,3.12,3.12,resident,year round resident,NA,6 of 14,Forests:  Temperate Western,Forests:  Mesoamerican Highland
+Washington,rebmer,Red-breasted Merganser,Mergus serrator,0,0.9,1.83,0.88,nonbreeding,12-27,2.437,NA,Wetlands:  Tundra,Wetlands:  Boreal
+Washington,rebnut,Red-breasted Nuthatch,Sitta canadensis,3.95,4.31,4.05,4.37,prebreeding_migration,04-19,5.07,5 of 30,Forests:  Boreal,Forests:  Temperate Western
+Washington,rebsap,Red-breasted Sapsucker,Sphyrapicus ruber,9.23,13.6,17.28,16.58,prebreeding_migration,03-01,26.47,4 of 5,Forests:  Temperate Western,NA
+Washington,redcro,Red Crossbill,Loxia curvirostra,2.72,3.51,5.76,6.09,prebreeding_migration,04-19,8.283,2 of 26,Forests:  Temperate Generalist,NA
+Washington,redhea,Redhead,Aythya americana,1.35,0.27,0.85,0.74,breeding,08-23,1.825,8 of 22,Wetlands:  Seasonally Wet Grasslands,Wetlands:  Freshwater Marsh
+Washington,redkno,Red Knot,Calidris canutus,0,0,0,4.01,prebreeding_migration,05-03,14.37,NA,Tundra:  Arctic,NA
+Washington,reevir1,Red-eyed Vireo,Vireo olivaceus,0.06,0.02,0,0.02,breeding,06-21,0.07572,37 of 42,Forests:  Temperate Generalist,NA
+Washington,rengre,Red-necked Grebe,Podiceps grisegena,0.03,1.41,7.73,1.03,nonbreeding,01-25,13.88,7 of 7,Wetlands:  Lakes and Rivers,NA
+Washington,rensap,Red-naped Sapsucker,Sphyrapicus nuchalis,5.43,1,0,4.98,prebreeding_migration,04-05,8.653,5 of 12,Forests:  Temperate Western,NA
+Washington,rethaw,Red-tailed Hawk,Buteo jamaicensis,2.01,2.12,2.33,2.25,prebreeding_migration,03-15,2.886,11 of 49,Open Country:  Habitat Mosaic,NA
+Washington,retloo,Red-throated Loon,Gavia stellata,0.01,0.39,6.01,0.47,nonbreeding,01-25,8.702,2 of 2,Wetlands:  Tundra,Wetlands:  Boreal
+Washington,rewbla,Red-winged Blackbird,Agelaius phoeniceus,0.83,0.28,0.22,0.51,postbreeding_migration,08-30,0.9815,28 of 48,Open Country:  Habitat Mosaic,Wetlands:  Freshwater Marsh
+Washington,ribgul,Ring-billed Gull,Larus delawarensis,0.64,0.41,0.17,0.4,breeding,07-05,1.084,12 of 42,Wetlands:  Generalist,NA
+Washington,rinduc,Ring-necked Duck,Aythya collaris,0.33,2.25,3.54,1.38,postbreeding_migration,11-29,4.829,5 of 18,Wetlands:  Boreal,NA
+Washington,rinphe,Ring-necked/Green Pheasant,Phasianus colchicus/versicolor,0.44,0.44,0.44,0.44,resident,year round resident,NA,9 of 22,Wetlands:  Generalist,Wetlands:  Generalist
+Washington,rinphe1,Ring-necked Pheasant,Phasianus colchicus,0.45,0.45,0.45,0.45,resident,year round resident,NA,8 of 22,Grasslands:  Temperate,NA
+Washington,rocpig,Rock Pigeon,Columba livia,0.09,0.09,0.09,0.09,resident,year round resident,NA,9 of 40,Open Country:  Developed/Disturbed,NA
+Washington,rocwre,Rock Wren,Salpinctes obsoletus,1.4,0.45,0.07,0.54,breeding,07-19,1.817,12 of 17,Aridlands:  Desert Scrub,NA
+Washington,rolhaw,Rough-legged Hawk,Buteo lagopus,0,0.48,1.53,0.37,nonbreeding,11-29,1.97,NA,Tundra:  Arctic,NA
+Washington,ruckin,Ruby-crowned Kinglet,Corthylio calendula,0.22,1.54,0.79,1.1,prebreeding_migration,04-05,3.9,10 of 20,Forests:  Boreal,Forests:  Temperate Western
+Washington,rudduc,Ruddy Duck,Oxyura jamaicensis,2.11,0.71,0.43,0.9,breeding,09-06,2.882,4 of 25,Wetlands:  Seasonally Wet Grasslands,Wetlands:  Freshwater Marsh
+Washington,rudtur,Ruddy Turnstone,Arenaria interpres,0,0,0,0.09,prebreeding_migration,05-10,0.4188,NA,Coasts:  Tundra,Wetlands:  Tundra
+Washington,rufgro,Ruffed Grouse,Bonasa umbellus,0.56,0.56,0.56,0.56,resident,year round resident,NA,9 of 23,Forests:  Temperate Generalist,NA
+Washington,rufhum,Rufous Hummingbird,Selasphorus rufus,15.07,5.94,0,15.36,prebreeding_migration,04-05,31.98,1 of 6,Forests:  Temperate Western,NA
+Washington,sabgul,Sabine's Gull,Xema sabini,0,0.25,0,0.23,prebreeding_migration,05-10,21.82,NA,Wetlands:  Tundra,NA
+Washington,saggro,Greater Sage-Grouse,Centrocercus urophasianus,0.04,0.04,0.04,0.04,resident,year round resident,NA,11 of 11,Aridlands:  Sagebrush,NA
+Washington,sagspa1,Sagebrush Sparrow,Artemisiospiza nevadensis,1.27,0.1,0,1.47,breeding,04-19,3.092,8 of 11,Aridlands:  Sagebrush,NA
+Washington,sagthr,Sage Thrasher,Oreoscoptes montanus,1.89,0.71,0,1.4,prebreeding_migration,05-10,4.111,9 of 12,Aridlands:  Sagebrush,NA
+Washington,sancra,Sandhill Crane,Antigone canadensis,0,0.07,0.02,0.37,prebreeding_migration,04-19,2.816,NA,Wetlands:  Generalist,NA
+Washington,sander,Sanderling,Calidris alba,0.03,1.41,1.77,1.11,nonbreeding,12-27,3.06,14 of 17,Tundra:  Arctic,Wetlands:  Tundra
+Washington,savspa,Savannah Sparrow,Passerculus sandwichensis,0.61,1.09,0.03,0.67,postbreeding_migration,09-20,5.103,6 of 25,Grasslands:  Temperate,Tundra:  Arctic
+Washington,saypho,Say's Phoebe,Sayornis saya,2.27,1.46,0.06,2.61,prebreeding_migration,03-22,4.064,10 of 18,Aridlands:  Desert Scrub,Forests:  Temperate Western
+Washington,semplo,Semipalmated Plover,Charadrius semipalmatus,0,0.26,0.11,0.46,prebreeding_migration,05-03,4.715,NA,Coasts:  Beach and Estuary,Tundra:  Arctic
+Washington,shbdow,Short-billed Dowitcher,Limnodromus griseus,0.01,0.14,0,10.5,prebreeding_migration,05-03,35.08,20 of 20,Wetlands:  Boreal,NA
+Washington,sheowl,Short-eared Owl,Asio flammeus,0.01,0.08,0.68,0.22,nonbreeding,02-15,2.756,12 of 12,Tundra:  Arctic,Grasslands:  Temperate
+Washington,shshaw,Sharp-shinned Hawk,Accipiter striatus,0.67,1.8,1.6,1.32,postbreeding_migration,10-11,2.82,10 of 32,Forests:  Temperate Generalist,NA
+Washington,shtgro,Sharp-tailed Grouse,Tympanuchus phasianellus,0.02,0.02,0.02,0.02,resident,year round resident,NA,12 of 14,Grasslands:  Temperate,Forests:  Boreal
+Washington,snobun,Snow Bunting,Plectrophenax nivalis,0,0.07,0.44,0.04,prebreeding_migration,03-01,1.13,NA,Tundra:  Arctic,NA
+Washington,snogoo,Snow Goose,Anser caerulescens,0,0.16,0.35,0.17,prebreeding_migration,02-15,0.4315,NA,Wetlands:  Tundra,Tundra:  Arctic
+Washington,snoowl1,Snowy Owl,Bubo scandiacus,0,0,0.15,0.05,nonbreeding,02-15,0.4872,NA,Tundra:  Arctic,NA
+Washington,snoplo5,Snowy Plover,Anarhynchus nivosus,0.06,0.04,0.23,0.1,nonbreeding,11-22,0.4711,13 of 13,Coasts:  Beach and Estuary,Wetlands:  Lakes and Rivers
+Washington,solsan,Solitary Sandpiper,Tringa solitaria,0,0.03,0,0,postbreeding_migration,08-09,0.2675,NA,Wetlands:  Boreal,NA
+Washington,sonspa,Song Sparrow,Melospiza melodia,3.25,3.77,4.34,3.29,postbreeding_migration,09-20,5.659,6 of 43,Open Country:  Habitat Mosaic,NA
+Washington,soogro1,Sooty Grouse,Dendragapus fuliginosus,14.36,14.36,14.36,14.36,resident,year round resident,NA,1 of 5,Forests:  Temperate Western,NA
+Washington,sora,Sora,Porzana carolina,0.16,0.06,0,0.4,prebreeding_migration,04-26,2.743,10 of 17,Wetlands:  Freshwater Marsh,NA
+Washington,spoowl,Spotted Owl,Strix occidentalis,0.01,0.01,0.01,0.01,resident,year round resident,NA,7 of 7,Forests:  Temperate Western,Forests:  Mesoamerican Highland
+Washington,sposan,Spotted Sandpiper,Actitis macularius,0.62,0.24,0.04,0.31,prebreeding_migration,05-17,0.7253,6 of 33,Wetlands:  Generalist,NA
+Washington,spotow,Spotted Towhee,Pipilo maculatus,5.71,5.54,4.95,6.46,prebreeding_migration,03-22,7.941,8 of 15,Forests:  Temperate Western,Forests:  Mesoamerican Pine-Oak
+Washington,sprgro,Spruce Grouse,Canachites canadensis,0.07,0.07,0.07,0.07,resident,year round resident,NA,7 of 10,Forests:  Boreal,NA
+Washington,stejay,Steller's Jay,Cyanocitta stelleri,8.46,8.46,8.46,8.46,resident,year round resident,NA,4 of 13,Forests:  Temperate Western,Forests:  Mesoamerican Highland
+Washington,surfbi,Surfbird,Calidris virgata,0,0.68,4.2,0.21,nonbreeding,12-13,7.662,NA,Tundra:  Alpine,NA
+Washington,sursco,Surf Scoter,Melanitta perspicillata,1.83,7.17,5.19,1.87,postbreeding_migration,11-01,10.78,2 of 6,Wetlands:  Boreal,NA
+Washington,swahaw,Swainson's Hawk,Buteo swainsoni,1.2,0.12,0,0.21,prebreeding_migration,05-03,1.524,17 of 20,Grasslands:  Temperate,NA
+Washington,swathr,Swainson's Thrush,Catharus ustulatus,2.82,1.09,0,0.94,breeding,08-09,4.272,2 of 20,Forests:  Boreal,Forests:  Temperate Western
+Washington,towsol,Townsend's Solitaire,Myadestes townsendi,3.21,1.59,0.68,2.59,postbreeding_migration,08-30,5.619,7 of 13,Forests:  Temperate Western,NA
+Washington,towwar,Townsend's Warbler,Setophaga townsendi,7.55,3.49,0.22,5.97,postbreeding_migration,08-09,11.48,4 of 5,Forests:  Temperate Western,NA
+Washington,treswa,Tree Swallow,Tachycineta bicolor,1.02,0.02,0,0.82,prebreeding_migration,03-29,1.727,17 of 47,Wetlands Aerial:  Generalist,NA
+Washington,tribla,Tricolored Blackbird,Agelaius tricolor,0.05,0.05,0.05,0.05,resident,year round resident,NA,4 of 4,Wetlands:  Freshwater Marsh,NA
+Washington,truswa,Trumpeter Swan,Cygnus buccinator,0.02,2.22,9.59,1.74,nonbreeding,02-08,13.32,17 of 19,Wetlands:  Lakes and Rivers,Wetlands:  Freshwater Marsh
+Washington,tunswa,Tundra Swan,Cygnus columbianus,0,0.05,0.18,0.26,prebreeding_migration,03-15,1.45,NA,Wetlands:  Tundra,NA
+Washington,turvul,Turkey Vulture,Cathartes aura,0.25,0.08,0,0.11,postbreeding_migration,09-27,0.3054,38 of 48,Open Country:  Habitat Mosaic,NA
+Washington,varthr,Varied Thrush,Ixoreus naevius,3.9,8.51,22.09,5.84,nonbreeding,02-15,26.18,2 of 6,Forests:  Temperate Western,NA
+Washington,vauswi,Vaux's Swift,Chaetura vauxi,8.76,32.13,0,16.98,postbreeding_migration,09-06,54.53,1 of 6,Forest Aerial:  Temperate Western,Forests Aerial:  Mesoamerican Highland
+Washington,veery,Veery,Catharus fuscescens,0.83,0.07,0,0.33,breeding,06-14,1.116,12 of 29,Forests:  Temperate Eastern,Forests:  Temperate Western
+Washington,vesspa,Vesper Sparrow,Pooecetes gramineus,1.68,0.73,0,1.43,prebreeding_migration,04-19,2.942,10 of 25,Grasslands:  Temperate,NA
+Washington,vigswa,Violet-green Swallow,Tachycineta thalassina,6.03,12.97,0,8.26,postbreeding_migration,09-27,27.58,8 of 16,Forest Aerial:  Temperate Western,Forests Aerial:  Mesoamerican Pine-Oak
+Washington,virrai,Virginia Rail,Rallus limicola,2.31,15.8,11.78,8.89,prebreeding_migration,03-08,32.31,7 of 35,Wetlands:  Freshwater Marsh,NA
+Washington,wantat1,Wandering Tattler,Tringa incana,0,0.11,0,0.06,postbreeding_migration,09-06,1.38,NA,Tundra:  Alpine,Wetlands:  Tundra
+Washington,warvir,Warbling Vireo,Vireo gilvus,3.07,2.81,0,2.64,postbreeding_migration,08-23,5.039,6 of 43,Forests:  Temperate Eastern,Forests:  Temperate Western
+Washington,wesblu,Western Bluebird,Sialia mexicana,3.8,1.18,0.04,3.33,unidentified,04-12,6.156,6 of 11,Forests:  Temperate Western,Forests:  Mesoamerican Pine-Oak
+Washington,wesfly,Western Flycatcher,Empidonax difficilis,10.25,2.81,0,6.87,prebreeding_migration,06-14,11.26,2 of 15,Forests:  Temperate Western,NA
+Washington,wesgre,Western Grebe,Aechmophorus occidentalis,1.24,5.26,13.17,6.33,prebreeding_migration,03-01,17.55,13 of 16,Wetlands:  Freshwater Marsh,NA
+Washington,wesgul,Western Gull,Larus occidentalis,2.26,2.26,2.26,2.26,resident,year round resident,NA,3 of 3,Coasts:  Cliffs and Islands,Coasts:  Marine Waters
+Washington,weskin,Western Kingbird,Tyrannus verticalis,1.25,0.7,0,0.94,breeding,06-28,1.392,17 of 21,Grasslands:  Temperate,Aridlands:  Desert Scrub
+Washington,wesmea,Western Meadowlark,Sturnella neglecta,1.68,1.35,0.67,2.15,prebreeding_migration,03-22,2.643,15 of 22,Grasslands:  Temperate,NA
+Washington,wesowl1,Western Screech-Owl,Megascops kennicottii,0.1,0.1,0.1,0.1,resident,year round resident,NA,7 of 13,Forests:  Temperate Western,Aridlands:  Desert Riparian
+Washington,wessan,Western Sandpiper,Calidris mauri,0.01,1.92,0.11,3.76,prebreeding_migration,04-26,12.81,6 of 6,Wetlands:  Tundra,NA
+Washington,westan,Western Tanager,Piranga ludoviciana,7.71,4,0,4.46,breeding,07-05,8.031,5 of 15,Forests:  Temperate Western,NA
+Washington,wewpew,Western Wood-Pewee,Contopus sordidulus,8.47,4.64,0,5,postbreeding_migration,08-02,9.578,4 of 16,Forests:  Temperate Western,Forests:  Mesoamerican Pine-Oak
+Washington,whbnut,White-breasted Nuthatch,Sitta carolinensis,0.23,0.23,0.23,0.23,resident,year round resident,NA,43 of 48,Forests:  Temperate Eastern,Forests:  Temperate Western
+Washington,whcspa,White-crowned Sparrow,Zonotrichia leucophrys,0.82,3.07,1.33,2.26,postbreeding_migration,09-13,11.51,5 of 11,Tundra:  Arctic,Forests:  Boreal
+Washington,whhwoo,White-headed Woodpecker,Dryobates albolarvatus,1.65,1.65,1.65,1.65,resident,year round resident,NA,3 of 5,Forests:  Temperate Western,NA
+Washington,whimbr,Whimbrel,Numenius phaeopus,0.01,0.01,0,0.12,prebreeding_migration,05-10,0.5074,9 of 9,Tundra:  Arctic,Wetlands:  Boreal
+Washington,whtpta1,White-tailed Ptarmigan,Lagopus leucura,0.48,0.48,0.48,0.48,resident,year round resident,NA,3 of 6,Tundra:  Alpine,NA
+Washington,whtspa,White-throated Sparrow,Zonotrichia albicollis,0,0.01,0,0,postbreeding_migration,10-18,0.01846,NA,Forests:  Boreal,NA
+Washington,whtswi,White-throated Swift,Aeronautes saxatalis,0.63,0.25,0,0.28,breeding,06-07,0.7735,11 of 14,Open Country Aerial:  Habitat Mosaic,NA
+Washington,whwcro,White-winged Crossbill,Loxia leucoptera,0.01,0.09,0.22,0.05,nonbreeding,01-18,0.3155,7 of 7,Forests:  Boreal,Forests:  Temperate Western
+Washington,whwsco2,White-winged Scoter,Melanitta deglandi,0.54,2.46,1.34,0.98,unidentified,01-11,7.076,2 of 6,Wetlands:  Lakes and Rivers,NA
+Washington,wilfly,Willow Flycatcher,Empidonax traillii,13.91,6.58,0,6.73,breeding,06-28,14.89,1 of 39,Open Country:  Habitat Mosaic,Forests:  Temperate Western
+Washington,wilpha,Wilson's Phalarope,Phalaropus tricolor,0.01,0,0,0.02,prebreeding_migration,05-24,0.1822,18 of 18,Wetlands:  Seasonally Wet Grasslands,Wetlands:  Freshwater Marsh
+Washington,wilsap,Williamson's Sapsucker,Sphyrapicus thyroideus,6,3.06,0,11.87,prebreeding_migration,03-15,26.47,7 of 11,Forests:  Temperate Western,NA
+Washington,wilsni1,Wilson's Snipe,Gallinago delicata,0.15,0.31,0.48,0.26,prebreeding_migration,04-05,2.685,13 of 20,Wetlands:  Generalist,NA
+Washington,wiltur,Wild Turkey,Meleagris gallopavo,1.82,1.82,1.82,1.82,resident,year round resident,NA,16 of 49,Forests:  Temperate Generalist,NA
+Washington,wlswar,Wilson's Warbler,Cardellina pusilla,2.4,1.13,0,1.51,prebreeding_migration,05-10,4.079,3 of 12,Forests:  Boreal,Forests:  Temperate Western
+Washington,wooduc,Wood Duck,Aix sponsa,0.51,0.54,0.31,0.44,postbreeding_migration,09-13,0.7704,35 of 48,Wetlands:  Forested,Forests:  Temperate Eastern
+Washington,y00475,American Coot,Fulica americana,1.64,2.7,2.51,2.3,postbreeding_migration,12-06,3.63,9 of 26,Wetlands:  Freshwater Marsh,NA
+Washington,y00478,Iceland Gull,Larus glaucoides,0,0.15,0.59,0.09,postbreeding_migration,10-25,1.885,NA,Coasts:  Cliffs and Islands,Coasts:  Marine Waters
+Washington,yebcha,Yellow-breasted Chat,Icteria virens,1.13,0.55,0,0.34,breeding,07-19,1.432,22 of 38,Forests:  Temperate Eastern,Forests:  Temperate Western
+Washington,yehbla,Yellow-headed Blackbird,Xanthocephalus xanthocephalus,1.34,0.17,0,0.51,breeding,06-07,1.391,10 of 19,Wetlands:  Freshwater Marsh,NA
+Washington,yelwar,Yellow Warbler,Setophaga petechia,1.35,0.66,0,0.84,postbreeding_migration,08-02,1.594,15 of 39,Forests:  Temperate Generalist,Wetlands:  Generalist
+Washington,yerwar,Yellow-rumped Warbler,Setophaga coronata,1.06,1.47,0.08,1.32,prebreeding_migration,04-19,4.693,7 of 23,Forests:  Boreal,Forests:  Temperate Western
